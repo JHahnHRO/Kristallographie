@@ -82,3 +82,28 @@ Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten,
 \end{enumerate}
 \end{example}
 
+\begin{theoremdef}[Satz von Lagrange]
+Sei $G$ eine Gruppe und $U\leq G$ eine Untergruppe. Eine Teilmenge der Form
+\[gU := \Set{gu | u\in U}\]
+heißt \udot{(Links)Nebenklasse von $U$ in $G$}. Die Anzahl aller Linksnebenklassen wird mit $\abs{G:U}$ bezeichnet und heißt \udot{Index von $U$ in $G$}.
+
+Die Teilmengen haben die folgenden Eigenschaften:
+\begin{enumerate}
+\item Alle Nebenklassen von $U$ sind gleich groß: $\forall g\in G: \abs{gU} = \abs{U}$
+\item Zwei Nebenklassen sind entweder identisch oder disjunkt.
+\item Ist $G$ endlich, so gilt $\abs{G:U} = \frac{\abs{G}}{\abs{U}}$.
+\end{enumerate}
+\end{theoremdef}
+\begin{proof}
+a. $U\to gU, u\mapsto gu$ ist eine Bijektion, denn $gU\to U, x\mapsto g^{-1} x$ ist eine inverse Abbildung. Wenn es eine Bijektion zwischen zwei Mengen gibt, dann sind sie gleich groß.
+
+\medbreak
+b. Betrachte $g,h\in G$ und die beiden Nebenklassen $gU$ und $hU$. Angenommen $gU$ und $hU$ sind nicht disjunkt, d.h. es gibt ein $x\in gU\cap hU$. Dann muss es laut Definition zwei Elemente $u_1,u_2\in U$ geben, sodass $x=gu_1$ sowie $x=hu_2$ gilt. Wenn man nun von rechts mit einem beliebigen Element $u\in U$ multipliziert, findet man, dass $xu = g(u_1 u)\in gU$ und $xu=h(u_2 u)\in hU$ ist. Also folgt $xU\subseteq gU$ und $xU\subseteq hU$.
+
+Umgekehrt gilt aber auch $g=xu_1^{-1}$ und $h=xu_2^{-1}$. Mit der gleichen Überlegung folgt also auch $gU\subseteq xU$ und $hU\subseteq xU$. Setzen wir beide Erkenntnisse zusammen, so finden wir $gU=xU=hU$.
+
+\medbreak
+c. Wenn $G$ endlich ist, dann ist $\abs{U}$ sowie die Anzahl der Nebenklassen $\abs{G:U}$ auch endlich. Jedes Element von $g$ ist in mindestens einer Nebenklasse enthalten, nämlich in $gU$ (denn $g=g1$ und $1\in U$). Andererseits kann es nicht in mehr als einer Nebenklasse enthalten sein, denn die sind ja alle disjunkt, wie soeben herausgefunden haben. Also ist jedes Element von $G$ in \emph{genau einer} Nebenklasse enthalten, d.h. wenn $g_1 U$, $g_2 U$, ..., $g_k U$ eine vollständige Auflistung aller Nebenklassen ist (d.h. $k=\abs{G:U})$, dann muss
+\[\abs{G} = \abs{g_1 U} + \abs{g_2 U} + \cdots + \abs{g_k U}\]
+gelten. In a. haben wir jedoch gesehen, dass alle diese Summanden die gleiche Zahl sind, nämlich $\abs{U}$. Also folgt $\abs{G}=\abs{U}+\abs{U}+\cdots+\abs{U} = k\abs{U} = \abs{G:U}\abs{U}$.
+\end{proof}
