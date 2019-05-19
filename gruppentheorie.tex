@@ -1,0 +1,84 @@
+\begin{definition}
+Eine \udot{Gruppe} $(G,\circ)$ besteht aus
+\begin{itemize}
+\item einer Menge $G$ sowie
+\item einer Abbildung $\circ: G\times G\to G$, d.h. einer Verknüpfung, die aus zwei Gruppenelementen $g_1,g_2\in G$ ein neues Gruppenelement $g_1\circ g_2$ macht
+\end{itemize}
+die die folgenden Eigenschaften erfüllen:
+\begin{enumerate}[label=(G\arabic*)]
+\item Assoziativität, d.h. wir dürfen in zusammengesetzten Ausdrücken beliebig umklammern:
+\[\forall x,y\in G: x\circ(y\circ z) = (x\circ y)\circ z\]
+In der Praxis bedeutet das, dass wir Klammern einfach weglassen und z.B. $x\circ y\circ z$ schreiben.
+\item Neutrales Element: Es gibt (genau) ein Element, das gar nichts tut, wenn wir es mit anderen Gruppenelementen verknüpfen:
+\[\exists 1_G\in G \forall x\in G: 1_G\circ x = x = x\circ 1_G\]
+\item Inverse Elemente: Jede durch ein Gruppenelement repräsentierte Aktion kann durch (genau) ein anderes Gruppenelement rückgängig gemacht werden:
+\[\forall x\in G\exists x^{-1}\in G: x\circ x^{-1}=1_G=x^{-1}\circ x\]
+\end{enumerate}
+Manche Gruppen erfüllen zusätzliche Eigenschaften, z.B. wird eine Gruppe \udot{kommutativ} oder \udot{abelsch} genannt, wenn sie
+\begin{enumerate}[label=(G\arabic*),resume]
+\item Kommutativität: Es ist egal, in welcher Reihenfolge wir Elemente verknüpfen:
+\[\forall x,y\in G: x\circ y = y\circ x\]
+\end{enumerate}
+erfüllt.
+\end{definition}
+
+\begin{example}[Symmetriegruppen]
+Wir beschäftigen uns mit Gruppen, weil sie Symmetrien von Objekten beschreiben. Für jedes geometrische oder abstrakt-mathematische Objekt $X$ gibt es eine Gruppe $\Aut(X)$, die alle jeweiligen Kontext relevanten Transformation umfasst, welche $X$ nicht verändert. Die Gruppenverknüpfung $\circ$ ist in diesen Beispielen die Hintereinanderausführung von Transformation, d.h. $f\circ g$ ist die Operation \enquote{$f$ nach $g$}, also diejenige Transformation, die man erhält, wenn man zuerst $g$ und dann $f$ anwendet. Das neutrale Element in diesen Beispielen ist immer die identische Transformation $\id$, also diejenige, die alles so lässt wie es ist.
+
+\begin{enumerate}
+\item Ist $X$ etwa eine Punktmenge im $\IR^n$, z.B. ein Polyeder oder ein Kristall, so ist $\Aut(X)$ die Gruppe aller starren (=abstandserhaltenden) Bewegungen, die $X$ unverändert lassen:
+\[\Aut(X) := \Set{g\in Isom(\IR^n) | g(X) = X}\]
+\item Ist z.B. $X$ ein gleichseitiges Dreieck in der Ebene, dann hat $\Aut(X)$ genau sechs Elemente:
+
+Die Identität, d.h. die Drehung um 0°, die Drehung um 120°, die Drehung um 240° sowie drei Spiegelungen an den drei möglichen Spiegelachsen jeweils durch einen Eckpunkt und den gegenüberliegende Seitenmittelpunkt.
+\item Ist $X$ einfach irgendeine Menge, dann bezeichnet man mit $\Sym(X)$ die \udot{symmetrische Gruppe auf/von $X$}. Da eine beliebige Menge völlig unstrukturiert ist, werden einfach \emph{alle} Abbildungen betrachtet, d.h.
+\[\Sym(X) := \Set{f: X\to X | f\text{ ist bijektiv}}\]
+(Bijektivität ist wichtig, damit wir wirklich inverse Element bekommen. Beliebige Abbildungen sind nicht invertierbar. Im geometrischen Beispiel brauchten wir das nicht, da starre Bewegungen immer invertierbar sind: Jede Verschiebung, Drehung, Punkt- oder Ebenenspiegelung kann durch eine Verschiebung, Drehung, Punkt- bzw. Ebenenspiegelung rückgängig gemacht werden)
+
+Speziell, wenn $X$ eine endliche Menge ist, dann bezeichnet man bijektive Abbildungen $X\to X$ auch als \udot{Permutationen} und die Gruppe $\Sym(X)$ auch als \udot{Permutationsgruppe}. Es gibt genau $\abs{\Sym(X)} = \abs{X}!$ viele Permutationen.
+
+\item Ist z.B. $X=\set{1,2,3}$, dann gibt es genau $3!=6$ Permutationen dieser Menge:
+
+Die Identität
+\[1\mapsto 1, 2\mapsto 2, 3\mapsto 3\]
+drei \udot{Transpositionen}, d.h. Permutationen, die genau zwei Elemente tauschen:
+\[1\mapsto 2, 2\mapsto 1, 3\mapsto 3\]
+\[1\mapsto 3, 2\mapsto 2, 3\mapsto 1\]
+\[1\mapsto 1, 2\mapsto 3, 3\mapsto 2\]
+sowie zwei \udot{3-Zyklen}, die Permutationen, die drei Elemente im Kreis permutieren:
+\[1\mapsto 2, 2\mapsto 3, 3\mapsto 1\]
+\[1\mapsto 3, 2\mapsto 1, 3\mapsto 2\]
+\end{enumerate}
+\end{example}
+
+\begin{example}[Abstrakte Gruppen]
+Es gibt Gruppen, denen man nicht sofort ansieht, dass sie Symmetrien beschreiben. Es gibt auch (wenige) Gruppen, die gar keine Symmetrien beschreiben.
+
+\begin{enumerate}
+\item Zahlenbereiche mit Addition: $\IZ,\IQ,\IR,\IC,\IR^n$ jeweils zusammen mit $\circ=+$ sind kommutative Gruppen. Das neutrale Element ist die Zahl Null bzw. der Nullvektor. Inverse Elemente sind Negative.
+\item Zahlenbereiche mit Multiplikation: $\IQ\setminus\set{0},\IR\setminus\set{0},\IC\setminus\set{0}$ sind jeweils zusammen mit $\circ=\cdot$ kommutative Gruppen. Das neutrale Element ist die Zahl Eins. Inverse Elemente sind Reziproke.
+\end{enumerate}
+
+Gruppen dienen also gleichzeitig der gemeinsamen Beschreibung (einiger) der Eigenschaften, die die uns bekannten Grundrechenarten erfüllen. Sie werden ebenso benutzt, um die Eigenschaften von anderen Strukturen zu beschreiben, die sich in bestimmten Aspekten ähnlich verhalten wie die uns bekannten Zahlenbereiche sich bzgl. Addition und Multiplikation verhalten (sogenannte Ringe und Körper).
+\end{example}
+
+\begin{example}[Untergruppen]
+Kennen wir bereits eine Gruppe $(G,\circ)$ und ist $U\subseteq G$ eine Teilmenge mit den folgenden Eigenschaften:
+\begin{enumerate}[label=(UG\arabic*)]
+\item $U$ enthält das neutrale Element:
+\[1_G\in U\]
+\item $U$ ist unter Multiplikation abgeschlossen:
+\[\forall x,y\in U: x\circ y\in U\]
+\item $U$ ist unter Inversenbildung abgeschlossen:
+\[\forall x\in U: x^{-1}\in U\]
+\end{enumerate}
+Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung.
+
+Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten, sondern nur Symmetrien eines bestimmten Typs.
+
+\begin{enumerate}
+\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung schon.
+\item Die Translationen bilden eine Untergruppe von $Isom(\IR^n)$.
+\end{enumerate}
+\end{example}
+
