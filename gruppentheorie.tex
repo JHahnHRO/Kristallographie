@@ -26,8 +26,9 @@ erfüllt.
 Wir beschäftigen uns mit Gruppen, weil sie Symmetrien von Objekten beschreiben. Für jedes geometrische oder abstrakt-mathematische Objekt $X$ gibt es eine Gruppe $\Aut(X)$, die alle jeweiligen Kontext relevanten Transformation umfasst, welche $X$ nicht verändert. Die Gruppenverknüpfung $\circ$ ist in diesen Beispielen die Hintereinanderausführung von Transformation, d.h. $f\circ g$ ist die Operation \enquote{$f$ nach $g$}, also diejenige Transformation, die man erhält, wenn man zuerst $g$ und dann $f$ anwendet. Das neutrale Element in diesen Beispielen ist immer die identische Transformation $\id$, also diejenige, die alles so lässt wie es ist.
 
 \begin{enumerate}
+\item $\Isom(\IR^n)$ ist eine Gruppe, denn die Verknüpfung von zwei Isometrien ist wieder eine Isometrie, $\id$ ist eine Isometrie, jede Isometrie ist bijektiv und die Umkehrabbildung einer Isometrie ist selbst eine Isometrie.
 \item Ist $X$ etwa eine Punktmenge im $\IR^n$, z.B. ein Polyeder oder ein Kristall, so ist $\Aut(X)$ die Gruppe aller starren (=abstandserhaltenden) Bewegungen, die $X$ unverändert lassen:
-\[\Aut(X) := \Set{g\in Isom(\IR^n) | g(X) = X}\]
+\[\Aut(X) := \Set{g\in\Isom(\IR^n) | g(X) = X}\]
 \item Ist z.B. $X$ ein gleichseitiges Dreieck in der Ebene, dann hat $\Aut(X)$ genau sechs Elemente:
 
 Die Identität, d.h. die Drehung um 0°, die Drehung um 120°, die Drehung um 240° sowie drei Spiegelungen an den drei möglichen Spiegelachsen jeweils durch einen Eckpunkt und den gegenüberliegende Seitenmittelpunkt.
@@ -77,8 +78,52 @@ Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung.
 Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten, sondern nur Symmetrien eines bestimmten Typs.
 
 \begin{enumerate}
-\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung schon.
-\item Die Translationen bilden eine Untergruppe von $Isom(\IR^n)$.
+\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $\Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung oder Translation schon.
+\item Die Translationen bilden eine Untergruppe von $\Isom(\IR^n)$.
 \end{enumerate}
 \end{example}
+
+\begin{theoremdef}[Satz von Lagrange]
+Sei $G$ eine Gruppe und $U\leq G$ eine Untergruppe. Eine Teilmenge der Form
+\[gU := \Set{gu | u\in U}\]
+heißt \udot{(Links)Nebenklasse von $U$ in $G$}. Die Anzahl aller Linksnebenklassen wird mit $\abs{G:U}$ bezeichnet und heißt \udot{Index von $U$ in $G$}.
+
+Die Teilmengen haben die folgenden Eigenschaften:
+\begin{enumerate}
+\item Alle Nebenklassen von $U$ sind gleich groß: $\forall g\in G: \abs{gU} = \abs{U}$
+\item Zwei Nebenklassen sind entweder identisch oder disjunkt.
+\item Ist $G$ endlich, so gilt $\abs{G:U} = \frac{\abs{G}}{\abs{U}}$.
+\end{enumerate}
+\end{theoremdef}
+\begin{proof}
+a. $U\to gU, u\mapsto gu$ ist eine Bijektion, denn $gU\to U, x\mapsto g^{-1} x$ ist eine inverse Abbildung. Wenn es eine Bijektion zwischen zwei Mengen gibt, dann sind sie gleich groß.
+
+\medbreak
+b. Betrachte $g,h\in G$ und die beiden Nebenklassen $gU$ und $hU$. Angenommen $gU$ und $hU$ sind nicht disjunkt, d.h. es gibt ein $x\in gU\cap hU$. Dann muss es laut Definition zwei Elemente $u_1,u_2\in U$ geben, sodass $x=gu_1$ sowie $x=hu_2$ gilt. Wenn man nun von rechts mit einem beliebigen Element $u\in U$ multipliziert, findet man, dass $xu = g(u_1 u)\in gU$ und $xu=h(u_2 u)\in hU$ ist. Also folgt $xU\subseteq gU$ und $xU\subseteq hU$.
+
+Umgekehrt gilt aber auch $g=xu_1^{-1}$ und $h=xu_2^{-1}$. Mit der gleichen Überlegung folgt also auch $gU\subseteq xU$ und $hU\subseteq xU$. Setzen wir beide Erkenntnisse zusammen, so finden wir $gU=xU=hU$.
+
+\medbreak
+c. Wenn $G$ endlich ist, dann ist $\abs{U}$ sowie die Anzahl der Nebenklassen $\abs{G:U}$ auch endlich. Jedes Element von $g$ ist in mindestens einer Nebenklasse enthalten, nämlich in $gU$ (denn $g=g1$ und $1\in U$). Andererseits kann es nicht in mehr als einer Nebenklasse enthalten sein, denn die sind ja alle disjunkt, wie soeben herausgefunden haben. Also ist jedes Element von $G$ in \emph{genau einer} Nebenklasse enthalten, d.h. wenn $g_1 U$, $g_2 U$, ..., $g_k U$ eine vollständige Auflistung aller Nebenklassen ist (d.h. $k=\abs{G:U})$, dann muss
+\[\abs{G} = \abs{g_1 U} + \abs{g_2 U} + \cdots + \abs{g_k U}\]
+gelten. In a. haben wir jedoch gesehen, dass alle diese Summanden die gleiche Zahl sind, nämlich $\abs{U}$. Also folgt $\abs{G}=\abs{U}+\abs{U}+\cdots+\abs{U} = k\abs{U} = \abs{G:U}\abs{U}$.
+\end{proof}
+
+\begin{definition}
+Ist $G$ eine endliche Gruppe, so nennt man ihre Größe $\abs{G}$ auch \udot{Ordnung der Gruppe}. Ist $g\in G$ ein Element von $G$, so nennt man die Ordnung der Untergruppe $\langle g\rangle:=\set{g^k | k\in\IZ}$ auch \udot{Ordnung des Elements}.
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+\item Die Identität hat Ordnung 1.
+\item Spiegelungen sind Elemente der Ordnung 2.
+\item Eine Drehung um den Winkel $\frac{k}{n}2\pi$, wobei $\frac{k}{n}$ vollständig gekürzt ist, hat genau Ordnung $n$.
+\item Eine Drehinversion um einen Winkel $\frac{k}{n}2\pi$, wobei $\frac{k}{n}$ vollständig gekürzt ist, hat Ordnung $n$, wenn $n$ gerade ist, und Ordnung $2n$, wenn $n$ ungerade ist.
+\item Eine Translationen, Schraubungen im Raum und Gleitspiegelungen in der Ebene, die einen Verschiebungsanteil $\neq 0$ haben, haben jeweils unendliche Ordnung.
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+Aufgrund des Satzes von Lagrange sind Elementordnungen immer Teiler der Gruppenordnung. Wenn wir also in einer Symmetriegruppe bestimmte Symmetrien sofort sehen, z.B. eine Drehung um $72°=\frac{2\pi}{5}$ und eine um $120°=\frac{2\pi}{3}$, dann wissen wir, dass die gesamte Symmetriegruppe eine durch $kgV(3,5)=15$ teilbare Ordnung (oder $\infty$) haben muss.
+\end{remark}
 
