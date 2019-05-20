@@ -10,14 +10,14 @@ die die folgende Eigenschaft erfüllt:
 \end{definition}
 
 \begin{example}
-Wenn $G$ bereits als Symmetriegruppe eines Objekts $X$ gegeben ist, dann betrachtet man in 95\% der Fälle die Operation von $G$ auf $X$, die einfach durch Anwenden der Transformationen auf Elemente von $X$ entsteht, d.h.
+Wenn $G$ bereits als Symmetriegruppe eines Objekts $X$ gegeben ist, dann betrachtet man meistens zuerst die Operation von $G$ auf $X$, die einfach durch Anwenden der Transformationen auf Elemente von $X$ entsteht, d.h.
 \[{^g x} := g(x)\]
 
-Das Konzept der Symmetrieoperation ist dafür gedacht, auch diejenigen Fälle zu erfassen, in denen die Gruppe irgendwie anders gegeben ist oder für die 5\% der Fälle, in denen wir mit einer Symmetriegruppe auf anderen Mengen als $X$ selbst operieren wollen.
+Das Konzept der Symmetrieoperation ist dafür gedacht, auch diejenigen Fälle zu erfassen, in denen die Gruppe irgendwie anders gegeben ist, oder Fälle, in denen wir mit einer Symmetriegruppe auf anderen Mengen als $X$ selbst operieren wollen.
 \end{example}
 
 \begin{example}
-Die Gruppe aller starren Bewegungen $Isom(\IR^n)$ operiert nicht nur auf $\IR^n$, d.h. der Menge aller Punkte im $n$-dimensionalen Raum, sondern auch auf vielen abgeleiteten Mengen, z.B. der Menge aller Geraden, der Menge aller Ebenen, der Menge aller Kreise, der Menge aller Kombinationen $(p,G)$ aus einem Punkt und einer Geraden, der Menge aller Kombinationen $(K_1,\ldots,K_5, p_1,\ldots,p_{17}, E_1,E_2,E_3)$ aus fünf Kreisen, siebzehn Punkten und drei Ebenen, uvm.
+Die Gruppe aller starren Bewegungen $\Isom(\IR^n)$ operiert nicht nur auf $\IR^n$, d.h. der Menge aller Punkte im $n$-dimensionalen Raum, sondern auch auf vielen abgeleiteten Mengen, z.B. der Menge aller Geraden, der Menge aller Ebenen, der Menge aller Kreise, der Menge aller Kombinationen $(p,G)$ aus einem Punkt und einer Geraden, der Menge aller Kombinationen $(K_1,\ldots,K_5, p_1,\ldots,p_{17}, E_1,E_2,E_3)$ aus fünf Kreisen, siebzehn Punkten und drei Ebenen, uvm.
 \end{example}
 
 \begin{example}
@@ -27,10 +27,11 @@ eine Operation.
 \end{example}
 
 \begin{lemma}[Offensichtliches]
-Operiert $G$ auf $X$, dann gilt:
+Operiert $G$ auf $X$, dann betrachten wir die Abbildungen $\tau_g: X\to X, x\mapsto {^g x}$. Es gilt:
 \begin{enumerate}
-\item Das Einselement operiert als Identität: $\forall x\in X: {^1 x} = x$
-\item Inverse Elemente operieren wie inverse Abbildungen: Die Abbildung $\tau_g: X\to X, x\mapsto {^g x}$ ist bijektiv für alle $g\in G$ und ihre inverse Abbildung ist $\tau_{g^{-1}}$. 
+\item Das Einselement operiert als Identität: $\tau_1=\id_X$
+\item Inverse Elemente operieren wie inverse Abbildungen: $\tau_g$ ist bijektiv und ihre inverse Abbildung ist $\tau_{g^{-1}}$.
+\item $\tau_{gh} =\tau_g\circ\tau_h$.
 \end{enumerate}
 \end{lemma}
 
@@ -73,8 +74,8 @@ Sei nun $y\in{^G x}$ ein beliebiges Element in der Bahn. Warum tritt es mindeste
 Warum tritt es höchstens einmal auf? Wären $gG_x$ und $hG_x$ zwei Nebenklassen mit ${^g x} = {^h x}$, dann müsste ja $x={^{g^{-1} g} x} ={^{g^{-1} h}x}$ sein, d.h. $g^{-1} h\in G_x$. Das heißt jedoch, dass $h=g(g^{-1} h)\in gG_x$ ist, d.h. $hG_x$ und $gG_x$ haben mindestens ein Element gemeinsam und sind deshalb identisch.
 \end{proof}
 
-\begin{corollary}
-Wir betrachten eine endliche Gruppe $G\leq O(\IR^3)$ von Drehungen und Spiegelungen im $\IR^n$ und einen generischen Punkt $x$ aus der Einheitskugel, d.h. $\norm{x}=1$.
+\begin{example}
+Wir betrachten eine endliche Gruppe $G\leq O(\IR^3)$ von Drehungen und Spiegelungen im $\IR^n$ und einen generischen Punkt $x$ aus der Einheitssphäre, d.h. $\norm{x}=1$.
 
 Wie groß ist die Bahn von $x$ unter $G$? Wir betrachten den Stabilisator $G_x$.
 
@@ -88,12 +89,32 @@ Welche Drehinversionen bewegen $x$ nicht? Gar keine. Wenn $x$ rechts/links der D
 \medbreak
 Welche Punkte der Länge $1$ liegen auf einer gegebenen Drehachse? Genau Zwei: Der \enquote{Nordpol} und \enquote{Südpol} der Drehung.
 
-Welche Punkte der Länge $1$ liegen in einer gegebenen Spiegelebene? Diese bilden einen Großkreis auf der Kugel. (Man denke Längenkreise oder Äquator auf einem Globus)
+Welche Punkte der Länge $1$ liegen in einer gegebenen Spiegelebene? Diese bilden einen Großkreis auf der Sphäre. (Man denke Längenkreise oder Äquator auf einem Globus)
 
 \medbreak
 Wenn wir nur endlich viele Elemente in $G$ haben, dann gibt es nur endlich viele Drehachsen oder Spiegelebenen, die wir betrachten müssen. Das sind also nur endlich viele Großkreise+endlich viele Punkte auf der Einheitskugel.
 
-Das ist eine höchstens eindimensionale Figur auf einer zweidimensionalen Fläche, also werden die allermeisten Punkte der Einheitskugel niemals in dieser Figur liegen. Das heißt, dass für die allermeisten $x$ der Länge $1$ stets $G_x=\set{1}$ liegt.
+Das ist eine höchstens eindimensionale Figur auf einer zweidimensionalen Fläche, also werden die allermeisten Punkte der Einheitssphäre niemals in dieser Figur liegen. Das heißt, dass für die allermeisten $x$ der Länge $1$ stets $G_x=\set{1}$ liegt.
 
-Somit ist ${^G x} = \abs{G:\set{1}} = \abs{G}$.
-\end{corollary}
+Somit ist ${^G x} = \abs{G:\set{1}} = \abs{G}$ für fast alle Punkte der Einheitssphäre. Man nennt diese Zahl auch \udot{Flächenzahl} der Gruppe, weil man diese Vektoren als Normalvektoren von Ebenen tangential zur Einheitskugel auffassen kann, die dann einen Polyeder bilden, der von $G$ invariant gelassen wird.
+\end{example}
+
+\begin{theorem}[Satz von Burnside]
+Sei $G$ eine endliche Gruppe, die auf der endlichen Menge $X$ operiert. Es sei
+\[X/G := \Set{{^G x} | x\in X}\]
+die Menge aller Bahnen dieser Operation. Dann gilt:
+\[\abs{X/G} = \text{durchschnittliche Anzahl von Fixpunkten} = \frac{1}{\abs{G}} \sum_{g\in G} \abs{Fix(g)}\]
+\end{theorem}
+\begin{proof}
+Beweis durch \enquote{doppeltes Abzählen}: Wir betrachten die Menge
+\[Y:=\Set{(g,x)\in G\times X | {^g x} =x}\]
+
+Wenn wir sie auf die eine Weise zählen, erhalten wir:
+\[\abs{Y} = \sum_{g\in G} \abs{\set{g}\times\set{x\in X | {^g x}=x}} = \sum_{g\in G} 1\cdot\abs{Fix(g)}\]
+Zählen wir auf die andere Weise, erhalten wir:
+\[\abs{Y} = \sum_{x\in X} \abs{\set{g\in G | {^g x}=x}\times\set{x}} = \sum_{x\in X} \abs{G_x}1 \]
+Wenn wir nun beachten, dass Elemente derselben Bahn gleich große Stabilisatoren haben, wird für jede Bahn $B={^G x}$ also genau $\abs{B}$-mal $\abs{G_x}=\frac{\abs{G}}{\abs{B}}$ aufaddiert. Wir erhalten also $\abs{Y} = \abs{X/G}\cdot \abs{G}$.
+
+Vergleichen wir beide Zählweisen, erhalten wir also die Gleichung
+\[\abs{X/G} \cdot\abs{G} = \abs{Y} = \sum_{g\in G} \abs{Fix(g)} \qedhere\]
+\end{proof}

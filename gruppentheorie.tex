@@ -26,8 +26,9 @@ erfüllt.
 Wir beschäftigen uns mit Gruppen, weil sie Symmetrien von Objekten beschreiben. Für jedes geometrische oder abstrakt-mathematische Objekt $X$ gibt es eine Gruppe $\Aut(X)$, die alle jeweiligen Kontext relevanten Transformation umfasst, welche $X$ nicht verändert. Die Gruppenverknüpfung $\circ$ ist in diesen Beispielen die Hintereinanderausführung von Transformation, d.h. $f\circ g$ ist die Operation \enquote{$f$ nach $g$}, also diejenige Transformation, die man erhält, wenn man zuerst $g$ und dann $f$ anwendet. Das neutrale Element in diesen Beispielen ist immer die identische Transformation $\id$, also diejenige, die alles so lässt wie es ist.
 
 \begin{enumerate}
+\item $\Isom(\IR^n)$ ist eine Gruppe, denn die Verknüpfung von zwei Isometrien ist wieder eine Isometrie, $\id$ ist eine Isometrie, jede Isometrie ist bijektiv und die Umkehrabbildung einer Isometrie ist selbst eine Isometrie.
 \item Ist $X$ etwa eine Punktmenge im $\IR^n$, z.B. ein Polyeder oder ein Kristall, so ist $\Aut(X)$ die Gruppe aller starren (=abstandserhaltenden) Bewegungen, die $X$ unverändert lassen:
-\[\Aut(X) := \Set{g\in Isom(\IR^n) | g(X) = X}\]
+\[\Aut(X) := \Set{g\in\Isom(\IR^n) | g(X) = X}\]
 \item Ist z.B. $X$ ein gleichseitiges Dreieck in der Ebene, dann hat $\Aut(X)$ genau sechs Elemente:
 
 Die Identität, d.h. die Drehung um 0°, die Drehung um 120°, die Drehung um 240° sowie drei Spiegelungen an den drei möglichen Spiegelachsen jeweils durch einen Eckpunkt und den gegenüberliegende Seitenmittelpunkt.
@@ -77,8 +78,8 @@ Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung.
 Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten, sondern nur Symmetrien eines bestimmten Typs.
 
 \begin{enumerate}
-\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung schon.
-\item Die Translationen bilden eine Untergruppe von $Isom(\IR^n)$.
+\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $\Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung oder Translation schon.
+\item Die Translationen bilden eine Untergruppe von $\Isom(\IR^n)$.
 \end{enumerate}
 \end{example}
 
@@ -107,3 +108,22 @@ c. Wenn $G$ endlich ist, dann ist $\abs{U}$ sowie die Anzahl der Nebenklassen $\
 \[\abs{G} = \abs{g_1 U} + \abs{g_2 U} + \cdots + \abs{g_k U}\]
 gelten. In a. haben wir jedoch gesehen, dass alle diese Summanden die gleiche Zahl sind, nämlich $\abs{U}$. Also folgt $\abs{G}=\abs{U}+\abs{U}+\cdots+\abs{U} = k\abs{U} = \abs{G:U}\abs{U}$.
 \end{proof}
+
+\begin{definition}
+Ist $G$ eine endliche Gruppe, so nennt man ihre Größe $\abs{G}$ auch \udot{Ordnung der Gruppe}. Ist $g\in G$ ein Element von $G$, so nennt man die Ordnung der Untergruppe $\langle g\rangle:=\set{g^k | k\in\IZ}$ auch \udot{Ordnung des Elements}.
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+\item Die Identität hat Ordnung 1.
+\item Spiegelungen sind Elemente der Ordnung 2.
+\item Eine Drehung um den Winkel $\frac{k}{n}2\pi$, wobei $\frac{k}{n}$ vollständig gekürzt ist, hat genau Ordnung $n$.
+\item Eine Drehinversion um einen Winkel $\frac{k}{n}2\pi$, wobei $\frac{k}{n}$ vollständig gekürzt ist, hat Ordnung $n$, wenn $n$ gerade ist, und Ordnung $2n$, wenn $n$ ungerade ist.
+\item Eine Translationen, Schraubungen im Raum und Gleitspiegelungen in der Ebene, die einen Verschiebungsanteil $\neq 0$ haben, haben jeweils unendliche Ordnung.
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+Aufgrund des Satzes von Lagrange sind Elementordnungen immer Teiler der Gruppenordnung. Wenn wir also in einer Symmetriegruppe bestimmte Symmetrien sofort sehen, z.B. eine Drehung um $72°=\frac{2\pi}{5}$ und eine um $120°=\frac{2\pi}{3}$, dann wissen wir, dass die gesamte Symmetriegruppe eine durch $kgV(3,5)=15$ teilbare Ordnung (oder $\infty$) haben muss.
+\end{remark}
+
