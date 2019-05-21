@@ -6,7 +6,10 @@ Eine \udot{Gruppenoperation} besteht aus
 \item einer Abbildung $G\times X\to X, (g,x)\mapsto{^g x}$, die wir uns als \enquote{wende $g$ auf $x$ an} vorstellen.
 \end{itemize}
 die die folgende Eigenschaft erfüllt:
-\[\forall g,h\in G \forall x: {^g(^h x)} = {^{gh}x}\]
+\begin{enumerate}
+\item $\forall x\in X: {^1 x} = x$
+\item $\forall g,h\in G \forall x\in X: {^g(^h x)} = {^{gh}x}$
+\end{enumerate}
 \end{definition}
 
 \begin{example}
