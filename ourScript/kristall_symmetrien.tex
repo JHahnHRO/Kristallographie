@@ -1,0 +1,159 @@
+\begin{lemmadef}[Punktgruppen]
+Ist $\Lambda\subseteq\IR^n$ ein Kristall, $x\in\IR^n$ ein beliebiger Punkt und $G:=\Aut(\Lambda)_x$ die Gruppe all derjenigen Symmetrien des Kristalls, welche den Punkt $x$ nicht bewegen, dann ist $G$ endlich.
+
+Ist $x$ ein Punkt im Kristall selbst, dann nennt man solch ein $G$ eine \udot{Punktgruppe} des Kristalls.
+\end{lemmadef}
+\begin{proof}
+Wir wählen uns ein Koordinatensystem so, dass $x$ der Nullpunkt wird. Starre Bewegungen, die den Nullpunkt fixieren, sind orthogonale Abbildungen.
+
+Wir wählen drei Punkte $a_1,a_2,a_3\in\Lambda$ im Kristall in drei unabhängige Richtungen von $x$ aus. Sei $r:=\max\Set{\norm{a_1},\norm{a_2},\norm{a_3}}$. Aufgrund der Mindestabstand-Bedingung für Kristalle ist
+\[X:=\Set{a\in\Lambda | \norm{a}\leq r}\]
+endlich. Ist $g\in G$, so sind die drei Punkte $g(a_1),g(a_2),g(a_3)$ aus $X$. Weil $a_1,a_2,a_3$ linear unabhängig sind, ist $g$ eindeutig festgelegt durch diese drei Bildpunkte. Es gibt also maximal $\abs{X}^3$ viele Elemente von $G$.
+\end{proof}
+
+\begin{definition}[Kristallsysteme]
+Betrachte alle $n$-dimensionalen Translationsgitter $T=\IZ v_1+\cdots+\IZ v_n\subseteq\IR^n$ und die jeweilige Punktgruppe $G:=\Aut(T)_0$ des Nullpunkts.
+
+Es seien $G_1, G_2, G_3, \ldots$ die so auftretenden Punktgruppen.
+
+Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, wenn alle Punktgruppen von $\Lambda$ Untergruppen von $G_i$ sind, aber nicht von einem kleineren $G_j$.
+\end{definition}
+
+\begin{remark}
+Man kann zeigen, dass es nur eine (stark wachsende) endliche Anzahl von endlichen Gruppen pro Dimension gibt. Daher gibt es auch nur endlich viele Punktgruppen und endlich viele Kristallsysteme pro Dimension.
+\end{remark}
+
+\begin{theorem}[Klassifikation der dreidimensioanlen Kristallsysteme]
+Betrachte ein Translationsgitter $T=\IZ v_1+\IZ v_2+\IZ v_3\subseteq\IR^3$. Es sei $G:=\Aut(T)_0$ die Punktgruppe des Nullpunkts.
+
+$G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von der Inversion und ...
+\begin{enumerate}
+\item \udot{Triklin}: ... nichts weiter.
+\item \udot{Monoklin}: ... einer 2-zähligen Drehung
+\item \udot{Orthorhombisch}: ... zwei 2-zähligen Drehungen um zueinander senkrechte Achsen.
+\item \udot{Trigonal}: ... einer 2- und einer 3-zähligen Drehung um zueinander orthogonale Achsen.
+\item \udot{Tetragonal}: ... einer 2- und einer 4-zähligen Drehung um zueinander orthogonale Achsen.
+\item \udot{Hexagonal}: ... einer 2- und einer 6-zähligen Drehung um zueinander orthogonale Achsen.
+\item \udot{Kubisch}: ... einer 3- und einer 4-zähligen Drehung.
+\end{enumerate}
+\end{theorem}
+
+%TODO
+\textcolor{red}{TODO: Hasse-Diagram mit TikZ}
+
+\begin{remark}
+Gut, das sagt uns jetzt etwas über Symmetrien des Kristalls mit Fixpunkten. Aber was ist mit Symmetrien wie Schraubungen, die gar keine Fixpunkte haben müssen?
+
+Darüber können wir trotzdem etwas aussagen, indem wir sie als Symmetrien eines anderen Gitters auffassen: Wir erinnern uns, dass jede starre Bewegung $g:\IR^n\to\IR^n$ sich schreiben lässt als Anwendung einer orthogonalen Bewegung $Q$ gefolgt von einer Translation $\tau_v$, d.h.
+\[\forall x\in\IR^n: g(x)=Q(x)+v\]
+
+Ist nun $\tau_w$ eine Translation, dann betrachten wir die dazu konjugierte Symmetrie $g\circ\tau_w\circ g^{-1}$. Was für eine Bewegung ist das? Es gilt
+\begin{align*}
+(g\circ\tau_w\circ g^{-1})(x) &= g(\tau_w(g^{-1}(x))) \\
+&= Q(\tau_w(Q^{-1}(x-v))+v \\
+&= Q(Q^{-1}x-Q^{-1}v+w)+v &\text{da $Q^{-1}$ linear ist}\\
+&= x-v+Qw+v &\text{da $Q$ linear ist}\\
+&= x+Qw
+\end{align*}
+D.h. $g\circ\tau_w\circ g^{-1} = \tau_{Q(w)}$ ist wieder eine Translation.
+
+Man sieht außerdem: Es gilt genau dann $g\circ\tau_w\circ g^{-1} = \tau_w$, wenn $Q(w)=w$ ist.
+\end{remark}
+
+\begin{lemma}
+Sei $\Lambda\subseteq\IR^n$ ein Kristall. Dann operiert $G=\Aut(\Lambda)$ auf der Translationsuntergruppe bzw. dem Translationsgitter $Trans(\Lambda)$ durch Konjugation:
+\[{^g \tau_w} := g\circ\tau_w\circ g^{-1} \quad\text{bzw.}\quad {^g w} = Q(w)\]
+(wobei $g(x)=Q(x)+v$ wie oben.)
+\end{lemma}
+
+\begin{remark}
+Man beachte, dass bzgl. dieser Operation die Translationen trivial operieren, d.h. nur der Anteil an $G$, der über Translationen hinausgeht, ist hier wichtig.
+
+Das vereinfacht die Art der vorkommenden Symmetrien drastisch: Wenn $g\in\Aut(\Lambda)$ eine Schraubung um Winkel $\alpha$ ist, dann ist die Symmetrie $R_g:w\mapsto{^g w}$ des Translationsgitters nur noch eine Drehung um Winkel $\alpha$. Analog ist $R_s$ eine Spiegelung, wenn $s$ eine (Gleit)spiegelungen war.
+
+Man beachte außerdem, dass die Punktinversion $v\mapsto -v$ immer eine Symmetrie jedes Translationsgitters ist, d.h. wenn wir statt einer Drehsymmetrie eine Drehinversion finden, dann können wir durch Multiplikation mit der Punktinversion auch immer eine Drehung finden. Eine Ebenenspiegelung ist dasselbe wie eine Drehinversion mit 180°-Winkel. ist also eine Ebenenspiegelung oder Gleitspiegelung in $\Aut(\Gamma)$ enthalten, so hat $Trans(\Lambda)$ eine 180°-Drehsymmetrie.
+\end{remark}
+
+\begin{corollary}
+Sei $\Lambda\subseteq\IR^n$ ein Kristall. Die Gruppe $\Set{R_g | g\in G} \leq \Aut(Trans(\Lambda)) \cap O(\IR^n)$ ist endlich.
+\end{corollary}
+\begin{proof}
+Es ist eine Untergruppe der Automorphismengruppe eines Gitters und alle $R_g$ fixieren den Nullvektor.
+\end{proof}
+
+\begin{theorem}[Geometrische Einschränkungen]
+Sei $\Lambda\subseteq\IR^n$ ein Kristall und $1\neq g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
+\begin{enumerate}
+\item Die einzigen möglichen Winkel sind $180^\circ=\frac{2\pi}{2}, 120^\circ= \frac{2\pi}{3}, 90^\circ=\frac{2\pi}{4}$, $60^\circ=\frac{2\pi}{6}$ oder $\alpha=0$.
+\item Ist $\alpha\neq 0$, dann gibt es unabhängige Vektoren $v_1,v_2,v_3$ im Translationsgitter (nicht notwendigerweise eine Basis), sodass
+\begin{enumerate}
+\item $v_1$ in Richtung der Drehachse von $g$ zeigt und
+\item $v_2$ und $v_3$ senkrecht auf $v_1$ stehen,
+\end{enumerate}
+Ist außerdem $\alpha\neq\pi$, dann können wir zusätzlich auch
+\begin{enumerate}[resume]
+\item $v_3={^g v_2}$
+\end{enumerate}
+erreichen.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Wir betrachten die orthogonale Abbildung $R_g:=w\mapsto{^g w}$ auf dem Translationsgitter. In unserem Fall ist das eine Drehung.
+
+Die Drehachse geht natürlich durch den Nullpunkt, aber weil wir mit Translationen verknüpfen können, hat das Translationsgitter natürlich auch Drehsymmetrien mit  dem gleichen Winkel und paralleler Drehachse durch jeden anderen Punkt des Gitters.
+
+Wir legen uns das Koordinatensystem so, dass die $z$-Achse in Richtung der Drehachse zeigt und betrachten einen beliebigen Vektor $v=\begin{psmallmatrix}x\\y\\z\end{psmallmatrix}$ im Translationsgitter, der nicht in Richtung der Drehachse zeigt, d.h. $(x,y)\neq(0,0)$. Solche Vektoren gibt es, z.B. müssen immer mindestens zwei Vektoren in jeder Basis des Gitters diese Eigenschaft haben. O.B.d.A. können wir sogar annehmen, dass wir das Koordinatensystem so gewählt haben, dass $y=0$ ist.
+
+\medbreak
+Da $R$ das Translationsgitter auf sich selbst abbildet, sind $Rv$ und $R^{-1}v$ wieder Vektoren im Gitter. Wir können explizit beschreiben, was $Rv$ und $R^{-1}v$ sind:
+\[Rv =\begin{pmatrix}\cos(\alpha)x\\\sin(\alpha)x\\z\end{pmatrix}, R^{-1}v =\begin{pmatrix}\cos(\alpha)x\\-\sin(\alpha)x\\z\end{pmatrix}\]
+Daraus folgt, dass der Gittervektor $v_2:=Rv+R^{-1}v-2v$ die Form
+\[(R+R^{-1})v-2v = \begin{pmatrix}(2\cos(\alpha)-2)x\\0\\0\end{pmatrix}\]
+hat.
+
+Kann dies der Nullvektor sein? Das geht nur, wenn $2\cos(\alpha)-2=0$, d.h. $\alpha=0$ ist. Ansonsten haben wir einen von Null verschiedenen Vektor $v_2$ im Gitter gefunden, der senkrecht zur Drehachse ist.
+
+Wenn wir noch einen zweiten, Vektor $v'$ nehmen, der von $v$ und der Drehachse linear unabhängig ist (z.B. wieder einen Basisvektor), dann können wir auf dieselbe Weise einen von $v_2$ linear unabhängigen Vektor $v_3$ finden, der senkrecht zur Drehachse ist. Wenn $\alpha$ nicht zufällig $\pi$ ist, dann ist $Rv_2$ auch linear unabhängig von $v_2$ und senkrecht zur Drehachse.
+
+\medbreak
+Wir betrachten also zwei Gitterpunkte $A\neq B$ mit Differenzvektor $v_2$, die in einer  Ebene senkrecht zur Drehachse liegen (z.B. den Nullpunkt und $v_2$ selbst). Daraus können wir die Punkte $A'$ und $B'$, indem wir die Drehungen anwenden, deren Achsen durch $A$ bzw. $B$ laufen.
+
+Rechnen:
+\[B=A+v_2, \qquad B'=A+Rv_2\]
+\[A=B-v_2, \qquad A'=B-R^{-1}v_2\]
+Die Punkte $A'$,$B'$ sind selbst Gitterpunkte, d.h. ihre Differenz $B'-A'=(A-B)+Rv_2+R^{-1}v_2=(R+R^{-1}-1)v_2$ ist selbst wieder ein Vektor im Translationsgitter. Wir rechnen nach: Wenn $v_2=\begin{psmallmatrix}x_2\\0\\0\end{psmallmatrix}$ ist, dann ist
+\[(R+R^{-1}-1)v_2 = \begin{pmatrix}(2\cos(\alpha)-1)x_2\\0\\0\end{pmatrix}\]
+d.h. $(R+R^{-1})v_2-v_2$ ist ein Vielfaches von $v_2$. Da beides Gittervektoren sind, ist das nur möglich, wenn es sich um ein \emph{ganzzahliges} Vielfaches handelt, d.h. $2\cos(\alpha)-1$ muss eine ganze Zahl sein!
+
+Die einzigen möglichen Werte für $\alpha\in[0,\pi]$, die das erfüllen, sind:
+\[\begin{array}{c|ccccc}
+\alpha & 0 & \frac{2\pi}{6} & \frac{2\pi}{4} & \frac{2\pi}{3} & \pi \\
+\hline
+\cos(\alpha) & 1 & \frac{1}{2} & 0 & -\frac{1}{2} & -1 \\
+2\cos(\alpha)-1 & 1 & 0 & -1 & -2 & -3 \\
+2\cos(\alpha)-2 & 0 & -1 & -2 & -3 & -4
+\end{array}\]
+Das zeigt schon einmal, dass nicht beliebige Winkelwerte für Drehungen eines Translationsgitters vorkommen können.
+
+\medbreak
+Kehren wir zurück zu $v=\begin{psmallmatrix}x\\0\\z\end{psmallmatrix}$ und $v_2=\begin{psmallmatrix}(2\cos(\alpha)-2)x\\0\\0\end{psmallmatrix}$. Aus der Tabelle mit den expliziten Werten lesen wir ab, dass für $k\in\set{1,2,3,4}$ der Gittervektor $v_1:=v_2+kv=\begin{psmallmatrix}0\\0\\kz\end{psmallmatrix}$ in Richtung der Drehachse liegt.
+\end{proof}
+
+\begin{remark}
+Das schließt also insbesondere auch aus, dass es Kristalle mit Dodekaeder-Symmetrien gibt, denn ansonsten müsste es Drehungen der Ordnung 5 im Translationsgitter geben.
+
+Mehr Einschränkungen gibt es jedoch nicht mehr, d.h. jede der endlichen Drehgruppen, die ausschließlich 2-, 3-, 4- oder 6-zählige Symmetrien hat, kommt tatsächlich in der Symmetriegruppe eines Kristalls vor.
+
+Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen. Je höher die Dimension ist, desto höher kann die Ordnung der vorkommenden Drehungen sein. Beispielsweise hat das $n$-dimensionale Würfelgitter $\IZ^n$ eine Symmetrie der Ordnung $n+1$.
+\end{remark}
+
+\begin{example}
+\begin{enumerate}
+\item Der Kristall $\IZ^3\subseteq\IR^3$ hat die Würfelgruppe in seiner Symmetriegruppe. Also besitzt er sowohl 3- als auch 4-zählige Drehsymmetrien. Wenn es eine 4-zählige Drehung gibt, gibt es auch eine 2-zählige.
+\item Der Kristall $(\IZ+(\frac{1+\sqrt{3}i}{2})\IZ) \times \IZ \subseteq \IC\times\IR = \IR^3$ (Honigwaben) hat eine 6-zählige Drehsymmetrie.
+\end{enumerate}
+\end{example}
+
+\begin{remark}
+Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gitterpunkte enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste, kann aber den Vorteil haben, geometrisch einfacher zu sein als eine Basiszelle von $Trans(\Lambda)$ selbst, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$. Es muss keine Basis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
+\end{remark}

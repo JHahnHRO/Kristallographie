@@ -1,0 +1,120 @@
+\begin{definition}
+Eine \udot{Gruppenoperation} besteht aus
+\begin{itemize}
+\item einer Gruppe $(G,\circ)$,
+\item einer Menge $X$,
+\item einer Abbildung $G\times X\to X, (g,x)\mapsto{^g x}$, die wir uns als \enquote{wende $g$ auf $x$ an} vorstellen.
+\end{itemize}
+die die folgende Eigenschaft erfüllt:
+\[\forall g,h\in G \forall x: {^g(^h x)} = {^{gh}x}\]
+\end{definition}
+
+\begin{example}
+Wenn $G$ bereits als Symmetriegruppe eines Objekts $X$ gegeben ist, dann betrachtet man meistens zuerst die Operation von $G$ auf $X$, die einfach durch Anwenden der Transformationen auf Elemente von $X$ entsteht, d.h.
+\[{^g x} := g(x)\]
+
+Das Konzept der Symmetrieoperation ist dafür gedacht, auch diejenigen Fälle zu erfassen, in denen die Gruppe irgendwie anders gegeben ist, oder Fälle, in denen wir mit einer Symmetriegruppe auf anderen Mengen als $X$ selbst operieren wollen.
+\end{example}
+
+\begin{example}
+Die Gruppe aller starren Bewegungen $\Isom(\IR^n)$ operiert nicht nur auf $\IR^n$, d.h. der Menge aller Punkte im $n$-dimensionalen Raum, sondern auch auf vielen abgeleiteten Mengen, z.B. der Menge aller Geraden, der Menge aller Ebenen, der Menge aller Kreise, der Menge aller Kombinationen $(p,G)$ aus einem Punkt und einer Geraden, der Menge aller Kombinationen $(K_1,\ldots,K_5, p_1,\ldots,p_{17}, E_1,E_2,E_3)$ aus fünf Kreisen, siebzehn Punkten und drei Ebenen, uvm.
+\end{example}
+
+\begin{example}
+Sei $v\in\IR^n$ ein fester Vektor. Die abstrakte Gruppe $(\IR,+)$ operiert auf $\IR^n$ durch Translation in Richtung $v$, d.h. für $g\in\IR$ und $x\in\IR^n$ ist
+\[{^g x} := x+gv\]
+eine Operation.
+\end{example}
+
+\begin{lemma}[Offensichtliches]
+Operiert $G$ auf $X$, dann betrachten wir die Abbildungen $\tau_g: X\to X, x\mapsto {^g x}$. Es gilt:
+\begin{enumerate}
+\item Das Einselement operiert als Identität: $\tau_1=\id_X$
+\item Inverse Elemente operieren wie inverse Abbildungen: $\tau_g$ ist bijektiv und ihre inverse Abbildung ist $\tau_{g^{-1}}$.
+\item $\tau_{gh} =\tau_g\circ\tau_h$.
+\end{enumerate}
+\end{lemma}
+
+\begin{definition}[Bahn und Stabilisator]
+Operiert $G$ auf $X$ und ist $x\in X$ ein beliebiges Element, so heißt die Menge
+\[{^G x} := \Set{{^g x} | g\in G}\]
+\udot{Bahn von $x$} oder \udot{Orbit von $x$}.
+
+Die Teilmenge
+\[G_x := \Set{g\in G | {^g x} = x}\]
+von $G$ nennt man \udot{Stabilisator von $x$}.
+\end{definition}
+
+\begin{theorem}[Orbit-Stabiliser-Theorem]
+Operiert $G$ auf $X$ und ist $x\in X$ beliebig, dann gilt:
+\begin{enumerate}
+\item $G_x\leq G$.
+\item $\abs{^G x} = \abs{G:G_x}$
+\end{enumerate}
+\end{theorem}
+\begin{remark}
+Wenn wir also bestimmen wollen, wie viele verschiedene Punkte wir erreichen, indem wir bei $x$ beginnend, alle Elemente der Gruppe anwenden, dann müssen wir nicht die (vielleicht sehr große) Gruppe $G$ komplett durchprobieren.
+
+Es genügt, sich über die Elemente von $G$ Gedanken zu machen, die $x$ überhaupt nicht bewegen, und diese zu zählen. Wenn wir diese Anzahl nämlich haben, dann können wir mittels des Satzes von Lagrange den Index $\abs{G:G_x}$ als $\abs{G} / \abs{G_x}$ berechnen und kennen somit auch die Größe der Bahn von $x$.
+\end{remark}
+
+\begin{proof}
+a. $G_x$ erfüllt $1\in G_x$, denn ${^1 x}=x$. Sind $g,h\in G_x$, dann gilt ${^{gh}x} = {^g(^hx)} = {^g x} = x$, also $gh\in G_x$. Ist $g\in G_x$, dann gilt: ${^{g^{-1}} x} = {^{g^{-1}}(^g x)} = {^{g^{-1}g}x} = {^1 x} = x$, also $g^{-1}\in G_x$. Das sind genau die drei Eigenschaften, die wir brauchen, die eine Untergruppe von $G$ ausmachen.
+
+\medbreak
+b. Es sei $G/G_x:=\Set{hG_x | h\in G}$ die Menge aller Linksnebenklasse von $G_x$ in $G$. Dann ist
+\[G/G_x \to {^G x}, hG_x \mapsto {^h x}\]
+eine bijektive Abbildung, d.h. jedes Element in der rechten Menge tritt einmal und nur einmal als Output eines Elements in der linken Menge auf. Zunächst müssen wir uns Gedanken machen, ob diese Zuordnung überhaupt sinnvoll ist, d.h. ob, wenn dieselbe Nebenklasse auf zwei verschiedene Weisen geschrieben wird $h_1 G_x = h_2 G_x$, die entsprechenden Outputs ${^{h_1} x}$ und ${^{h_2} x}$ auch dieselben sind.
+
+Das gilt, denn $h_1 G_x = h_2 G_x$ bedeutet ja u.A., dass $h_1\in h_2 G_x$ gilt, d.h. es gibt ein Element $u\in G_x$ mit $h_1 = h_2 u$. Daraus folgt ${^{h_1} x} = {^{h_2 u} x} = {^{h_2}(^u x)} = {^{h_2} x}$.
+
+\medbreak
+Sei nun $y\in{^G x}$ ein beliebiges Element in der Bahn. Warum tritt es mindestens einmal als Output der Zuordnung auf? Weil ein Element der Bahn die Gestalt $y={^g x}$ für irgendein $g\in G$ hat und das ist der Output der Linksnebenklasse $gG_x$.
+
+Warum tritt es höchstens einmal auf? Wären $gG_x$ und $hG_x$ zwei Nebenklassen mit ${^g x} = {^h x}$, dann müsste ja $x={^{g^{-1} g} x} ={^{g^{-1} h}x}$ sein, d.h. $g^{-1} h\in G_x$. Das heißt jedoch, dass $h=g(g^{-1} h)\in gG_x$ ist, d.h. $hG_x$ und $gG_x$ haben mindestens ein Element gemeinsam und sind deshalb identisch.
+\end{proof}
+
+\begin{example}
+Wir betrachten eine endliche Gruppe $G\leq O(\IR^3)$ von Drehungen und Spiegelungen im $\IR^n$ und einen generischen Punkt $x$ aus der Einheitssphäre, d.h. $\norm{x}=1$.
+
+Wie groß ist die Bahn von $x$ unter $G$? Wir betrachten den Stabilisator $G_x$.
+
+\medbreak
+Welche Drehungen bewegen $x$ nicht? Genau diejenigen Drehungen, bei denen $x$ auf der Drehachse liegt oder die Drehung um $0°$, d.h. die Identität.
+
+Welche Ebenenspiegelungen bewegen $x$ nicht? Genau diejenigen, bei denen $x$ in der Spiegelebene liegt.
+
+Welche Drehinversionen bewegen $x$ nicht? Gar keine. Wenn $x$ rechts/links der Drehebene ist, dann ist ${^g x}$ links/rechts der Drehebene. Wenn $x$ in der Drehebene ist, wird es gedreht.
+
+\medbreak
+Welche Punkte der Länge $1$ liegen auf einer gegebenen Drehachse? Genau Zwei: Der \enquote{Nordpol} und \enquote{Südpol} der Drehung.
+
+Welche Punkte der Länge $1$ liegen in einer gegebenen Spiegelebene? Diese bilden einen Großkreis auf der Sphäre. (Man denke Längenkreise oder Äquator auf einem Globus)
+
+\medbreak
+Wenn wir nur endlich viele Elemente in $G$ haben, dann gibt es nur endlich viele Drehachsen oder Spiegelebenen, die wir betrachten müssen. Das sind also nur endlich viele Großkreise+endlich viele Punkte auf der Einheitskugel.
+
+Das ist eine höchstens eindimensionale Figur auf einer zweidimensionalen Fläche, also werden die allermeisten Punkte der Einheitssphäre niemals in dieser Figur liegen. Das heißt, dass für die allermeisten $x$ der Länge $1$ stets $G_x=\set{1}$ liegt.
+
+Somit ist ${^G x} = \abs{G:\set{1}} = \abs{G}$ für fast alle Punkte der Einheitssphäre. Man nennt diese Zahl auch \udot{Flächenzahl} der Gruppe, weil man diese Vektoren als Normalvektoren von Ebenen tangential zur Einheitskugel auffassen kann, die dann einen Polyeder bilden, der von $G$ invariant gelassen wird.
+\end{example}
+
+\begin{theorem}[Satz von Burnside]
+Sei $G$ eine endliche Gruppe, die auf der endlichen Menge $X$ operiert. Es sei
+\[X/G := \Set{{^G x} | x\in X}\]
+die Menge aller Bahnen dieser Operation. Dann gilt:
+\[\abs{X/G} = \text{durchschnittliche Anzahl von Fixpunkten} = \frac{1}{\abs{G}} \sum_{g\in G} \abs{Fix(g)}\]
+\end{theorem}
+\begin{proof}
+Beweis durch \enquote{doppeltes Abzählen}: Wir betrachten die Menge
+\[Y:=\Set{(g,x)\in G\times X | {^g x} =x}\]
+
+Wenn wir sie auf die eine Weise zählen, erhalten wir:
+\[\abs{Y} = \sum_{g\in G} \abs{\set{g}\times\set{x\in X | {^g x}=x}} = \sum_{g\in G} 1\cdot\abs{Fix(g)}\]
+Zählen wir auf die andere Weise, erhalten wir:
+\[\abs{Y} = \sum_{x\in X} \abs{\set{g\in G | {^g x}=x}\times\set{x}} = \sum_{x\in X} \abs{G_x}1 \]
+Wenn wir nun beachten, dass Elemente derselben Bahn gleich große Stabilisatoren haben, wird für jede Bahn $B={^G x}$ also genau $\abs{B}$-mal $\abs{G_x}=\frac{\abs{G}}{\abs{B}}$ aufaddiert. Wir erhalten also $\abs{Y} = \abs{X/G}\cdot \abs{G}$.
+
+Vergleichen wir beide Zählweisen, erhalten wir also die Gleichung
+\[\abs{X/G} \cdot\abs{G} = \abs{Y} = \sum_{g\in G} \abs{Fix(g)} \qedhere\]
+\end{proof}
