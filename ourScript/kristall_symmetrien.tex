@@ -1,85 +1,178 @@
-\begin{lemmadef}[Punktgruppen]
-Ist $\Lambda\subseteq\IR^n$ ein Kristall, $x\in\IR^n$ ein beliebiger Punkt und $G:=\Aut(\Lambda)_x$ die Gruppe all derjenigen Symmetrien des Kristalls, welche den Punkt $x$ nicht bewegen, dann ist $G$ endlich.
+% !TeX spellcheck = de_DE
+% !TeX root = kristallographie_skript.tex
 
-Ist $x$ ein Punkt im Kristall selbst, dann nennt man solch ein $G$ eine \udot{Punktgruppe} des Kristalls.
-\end{lemmadef}
+\subsubsection{Punktgruppen}
+
+\begin{definition}[Punktgruppen]
+Sei $G\leq\Isom(\IR^n)$ eine Gruppe von Bewegungen. Wenn es ein $x\in\IR^n$ gibt, das ein Fixpunkt von $G$ ist, d.h.
+\[\forall g\in G: g(x)=x\]
+dann nennt man $G$ eine \udot{Punktgruppe}. Ist zusätzlich auch $G\leq\Aut(\Lambda)$ erfüllt für einen Kristall $\Lambda\subseteq\IR^n$, dann nennt man $G$ eine \udot{kristallographische Punktgruppe}.
+\end{definition}
+
+\begin{lemma}[Punktgruppen vs. endliche Untergruppen]
+Sei $G\leq\Isom(\IR^n)$ eine Gruppe von Bewegungen.
+\begin{enumerate}
+\item Ist $G$ endlich, dann ist $G$ eine Punktgruppe.
+\item Ist $G$ kristallographisch, dann ist $G$ endlich.
+\end{enumerate}
+\end{lemma}
 \begin{proof}
-Wir wählen uns ein Koordinatensystem so, dass $x$ der Nullpunkt wird. Starre Bewegungen, die den Nullpunkt fixieren, sind orthogonale Abbildungen.
+a. Wir haben das eigentlich schon einmal bewiesen: Wenn $x$ ein beliebiger Punkt und $G$ endlich ist, dann ist
+\[\frac{1}{\abs{G}} \sum_{g\in G} g(x)\]
+ein Fixpunkt von ganz $G$.
 
-Wir wählen drei Punkte $a_1,a_2,a_3\in\Lambda$ im Kristall in drei unabhängige Richtungen von $x$ aus. Sei $r:=\max\Set{\norm{a_1},\norm{a_2},\norm{a_3}}$. Aufgrund der Mindestabstand-Bedingung für Kristalle ist
+\medbreak
+b. Wir wählen uns ein Koordinatensystem so, dass der Nullpunkt ein Fixpunkt wird. Starre Bewegungen, die den Nullpunkt fixieren, sind orthogonale Abbildungen.
+
+Wir wählen drei Punkte $a_1,a_2,a_3\in\Lambda$ im Kristall in drei unabhängige Richtungen von $0$ aus. Sei $r:=\max\Set{\norm{a_1},\norm{a_2},\norm{a_3}}$. Aufgrund der Mindestabstand-Bedingung für Kristalle ist
 \[X:=\Set{a\in\Lambda | \norm{a}\leq r}\]
-endlich. Ist $g\in G$, so sind die drei Punkte $g(a_1),g(a_2),g(a_3)$ aus $X$. Weil $a_1,a_2,a_3$ linear unabhängig sind, ist $g$ eindeutig festgelegt durch diese drei Bildpunkte. Es gibt also maximal $\abs{X}^3$ viele Elemente von $G$.
+endlich. Ist $g\in\Aut(\Lambda)$ und $g(0)=0$, so sind die drei Punkte $g(a_1),g(a_2),g(a_3)$ wieder aus $X$. Weil $a_1,a_2,a_3$ linear unabhängig sind und $g$ als orthogonale Abbildung linear ist, ist $g$ eindeutig festgelegt durch diese drei Bildpunkte. Es gibt also maximal $\abs{X}^3$ viele Elemente von $G$.
 \end{proof}
 
-\begin{definition}[Kristallsysteme]
-Betrachte alle $n$-dimensionalen Translationsgitter $T=\IZ v_1+\cdots+\IZ v_n\subseteq\IR^n$ und die jeweilige Punktgruppe $G:=\Aut(T)_0$ des Nullpunkts.
+\begin{remark}
+Nicht jede endliche Punktgruppe ist auch eine kristallographische Gruppe. Wir werden gleich z.B. sehen, dass die Ikosaedergruppe zwar endlich, aber nicht kristallographisch ist.
+\end{remark}
 
-Es seien $G_1, G_2, G_3, \ldots$ die so auftretenden Punktgruppen.
+\subsubsection{Kristallklassen und Kristallsysteme}
 
-Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, wenn alle Punktgruppen von $\Lambda$ Untergruppen von $G_i$ sind, aber nicht von einem kleineren $G_j$.
+\begin{remark}
+Wir wissen, dass es nur eine sehr begrenzte Anzahl von (Konjugationsklassen von) endlichen Untergruppen von $O(\IR^3)$ gibt und wir haben eine Liste, die wir gut verstehen. In der Tat gibt es in jeder Dimension immer nur endlich viele endliche Untergruppen von $O(\IR^n)$.
+
+Es bietet sich daher an, Kristalle danach zu klassifizieren, welche Punktgruppen sie haben. Naiv könnte man einfach die Punktgruppe $\Aut(\Lambda)_0$ betrachten, d.h. die Untergruppe aller derjenigen Symmetrien $g\in\Aut(\Lambda)$, die $g(0)=0$ erfüllen. Das Problem dabei ist, dass es außer der Identität überhaupt keine Symmetrien im Kristall geben muss, die den Nullpunkt festlassen. Der Nullpunkt könnte schlecht gewählt sein relativ zum Kristall, sodass er von keiner der möglichen, von $\id$ verschiedenen Drehung, keiner Spiegelung oder Drehinversion festgelassen wird (was ja die einzigen Bewegungen sind, die überhaupt Fixpunkte haben).
+
+Und selbst wenn das nicht der Fall ist, könnte es sein, dass gar keine von $\id$ verschiedenen Drehungen, Spiegelungen oder Drehinversionen in $\Aut(\Lambda)$ existieren; jede Symmetrie könnte eine Translation, eine Schraubung oder Gleitspiegelung sein. Dann hätten wir keine Information gewonnen und würden viele sehr verschieden aussehende Kristalle in eine gemeinsame Kategorie \enquote{triviale Punktgruppe} einordnen.
+
+Wenn wir das nicht wollen (und das wollen wir nicht), müssen wir uns überlegen, wie wir Symmetrien erfassen, die einen Translationsanteil $\neq 0$ haben, aber nicht gleich einer Translation sind, und wir den translationsfreien Anteil zweier solcher Symmetrie unterscheiden. Es stellt sich heraus, dass es eine andere, vom Kristall bestimmte Punktgruppe gibt, die das für uns tut.
+\end{remark}
+
+\begin{remark}
+Wir erinnern uns, dass jede Bewegung $g:\IR^n\to\IR^n$ sich nach Wahl eines Nullpunkts schreiben lässt als Anwendung einer orthogonalen Bewegung $Q$ gefolgt von einer Translation $\tau_v$, d.h.
+\[\forall x\in\IR^n: g(x)=Q(x)+v\]
+\end{remark}
+
+\begin{lemma}
+Sei $\Lambda\subseteq\IR^n$ ein Kristall. Dann operiert $G=\Aut(\Lambda)$ auf der Translationsuntergruppe bzw. dem Translationsgitter $Trans(\Lambda)$ durch Konjugation:
+\[{^g \tau_w} := g\circ\tau_w\circ g^{-1} \quad\text{bzw.}\quad {^g w} = Q(w)\]
+wobei wie eben $g(x)=Q(x)+v$ ist.
+\end{lemma}
+\begin{proof}
+Zunächst müssen wir beweisen, dass ${^g \tau_w}=g\circ\tau_w\circ g^{-1}$ wieder eine Translation ist.
+
+Was für eine Bewegung ist das? Es gilt für alle Punkte $x\in\IR^n$:
+\begin{align*}
+(g\circ\tau_w\circ g^{-1})(x) &= g(\tau_w(g^{-1}(x))) \\
+&= Q(\tau_w(Q^{-1}(x-v))+v \\
+&= Q(Q^{-1}(x-v)+w)+v \\
+&= Q(Q^{-1}(x-v))+Q(w)+v &\text{da $Q$ linear ist}\\
+&= x-v+Q(w)+v &\text{da }Q\circ Q^{-1}=\id\\
+&= x+Q(w) \\
+&=\tau_{Q(w)}(x)
+\end{align*}
+D.h. $g\circ\tau_w\circ g^{-1} = \tau_{Q(w)}$ ist wieder eine Translation.
+
+\medbreak
+Nun müssen wir nachweisen, dass dies wirklich eine Operation ist. Es gilt
+\[1\circ\tau_w\circ 1^{-1} = \tau_w\circ 1 = \tau_w\]
+also ${^1 w} = w$ und
+\[g\circ(h\circ\tau_w\circ h^{-1})\circ g^{-1} = (g\circ h)\circ\tau_w\circ(h^{-1}\circ g^{-1}) = (g\circ h)\circ\tau_w\circ(g\circ h)^{-1}\]
+also ${^g(^h w)} = {^{g\circ h}w}$. Das sind genau die Bedingungen, die wir brauchen.
+\end{proof}
+
+\begin{remark}
+Man beachte, dass bzgl. dieser Operation die Translationen trivial operieren, d.h. von jedem $g\in G$ ist nur der translationsfreie Anteil (das $Q$) relevant.
+
+Das vereinfacht die Art der vorkommenden Symmetrien drastisch: Wenn $g\in\Aut(\Lambda)$ eine Schraubung um Winkel $\alpha$ ist, dann ist die Symmetrie $R_g:w\mapsto{^g w}$ des Translationsgitters nur noch eine Drehung um Winkel $\alpha$. Analog ist $R_s$ eine Spiegelung, wenn $s$ eine (Gleit)spiegelungen war.
+\end{remark}
+
+\begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
+Wir wählen uns eine Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Abbildungen $R_g$ geometrisch zu interpretieren ist folgende:
+
+Wenn wir $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfach Computerspiele vor: Wenn man am rechten Rand rausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
+
+\medbreak
+$R_g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist $R_g(x)$ derjenige Punkt, der wie folgt entsteht:
+\begin{enumerate}
+\item Zunächst fassen wir $x\in T$ als Punkt $\hat{x}\in Z$ auf.
+\item Dann wenden wir $g$ auf diesen Punkt an.
+\item Das Ergebnis $g(\hat{x})$ liegt in irgendeiner Zelle $Z'$, die eine translatierte Kopie $Z'=\tau(Z)$ der Basiszelle ist (möglicherweise mit einer Verschiebung um $0$, d.h. $\tau=\id$). Wir machen die Translation $\tau$ rückgängig und erhalten wieder einen Punkt in $\hat{y}=\tau^{-1}(g(\hat{x}))\in Z$.
+\item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y=R_g(x)$.
+\end{enumerate}
+\end{remark}
+
+\begin{corollary}
+Sei $\Lambda\subseteq\IR^n$ ein Kristall. Die Gruppe $\Set{R_g | g\in G}$ ist eine kristallographische Punktgruppe.
+\end{corollary}
+\begin{proof}
+Alle $R_g$ sind orthogonal. Insbesondere fixieren sie alle den Nullvektor. Also ist es eine Punktgruppe. Sie ist eine Untergruppe von $\Aut(Trans(\Lambda))$, also eine kristallographische Punktgruppe. 
+\end{proof}
+
+\begin{definition}[Kristallklassen]
+Wir sagen, dass zwei Kristalle $\Lambda,\Lambda'\subseteq\IR^n$ in derselben \udot{Kristallklasse} sind, wenn die beiden Punktgruppen
+\[\Set{R_g | g\in\Aut(\Lambda)}\]
+und
+\[\Set{R_g | g\in\Aut(\Lambda')}\]
+in $O(\IR^n)$ konjugiert sind.
 \end{definition}
 
 \begin{remark}
-Man kann zeigen, dass es nur eine (stark wachsende) endliche Anzahl von endlichen Gruppen pro Dimension gibt. Daher gibt es auch nur endlich viele Punktgruppen und endlich viele Kristallsysteme pro Dimension.
+Es gibt möglicherweise sehr viele Kristallklassen in einer Dimension. Und trotzdem sehen Kristalle in verschiedene Kristallklassen manchmal sehr ähnlich aus.
+
+Manchmal möchte man etwas gröber einteilen, z.B. nur nach der Form der möglichen Basiszellen des Kristalls.
 \end{remark}
 
-\begin{theorem}[Klassifikation der dreidimensioanlen Kristallsysteme]
+\begin{definition}[Kristallsysteme]
+Betrachte alle $n$-dimensionalen Translationsgitter $T=\IZ v_1+\cdots+\IZ v_n\subseteq\IR^n$ und die jeweilige Punktgruppe $\Aut(T)_0$ des Nullpunkts.
+
+Es seien $G_1, G_2, G_3, \ldots$ die so auftretenden Punktgruppen.
+
+Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, die Punktgruppe $\Set{R_g | g\in\Aut(\Lambda)}$ eine Untergruppe von $G_i$ ist, aber nicht von einem kleineren $G_j$.
+\end{definition}
+
+\subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
+
+\begin{remark}
+Unser Ziel ist es jetzt, die dreidimensionalen Kristallsysteme zu beweisen. Laut Definition müssen wir also die Punktgruppen aller Translationsgitter bestimmen.
+\end{remark}
+
+\begin{theorem}[Klassifikation der dreidimensionalen Kristallsysteme]
 Betrachte ein Translationsgitter $T=\IZ v_1+\IZ v_2+\IZ v_3\subseteq\IR^3$. Es sei $G:=\Aut(T)_0$ die Punktgruppe des Nullpunkts.
 
 $G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von der Inversion und ...
 \begin{enumerate}
 \item \udot{Triklin}: ... nichts weiter.
-\item \udot{Monoklin}: ... einer 2-zähligen Drehung
+
+Alle Basiszellen eines triklinen Kristalls sind schiefwinklig.
+
+\item \udot{Monoklin}: ... einer 2-zähligen Drehung.
+
+Jeder monokline Kristall besitzt eine Basiszelle, in denen eine Basisrichtung eine zweizählige Symmetrieachse ist (d.h. der Kristall hat eine 180°-Drehung, -Drehinversion oder -Schraubung um diese Achse) und die anderen beiden Basisrichtungen senkrecht auf ihr stehen.
+
 \item \udot{Orthorhombisch}: ... zwei 2-zähligen Drehungen um zueinander senkrechte Achsen.
-\item \udot{Trigonal}: ... einer 2- und einer 3-zähligen Drehung um zueinander orthogonale Achsen.
-\item \udot{Tetragonal}: ... einer 2- und einer 4-zähligen Drehung um zueinander orthogonale Achsen.
-\item \udot{Hexagonal}: ... einer 2- und einer 6-zähligen Drehung um zueinander orthogonale Achsen.
+
+Jeder orthorhombische Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in der alle drei Basisrichtungen zweizählige Symmetrieachsen sind.
+
+\item \udot{Trigonal}: ... einer 2- und einer 3-zähligen Drehung um zueinander senkrechte Achsen.
+
+Jeder trigonale Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine dreizählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
+
+\item \udot{Tetragonal}: ... einer 2- und einer 4-zähligen Drehung um zueinander senkrechte Achsen.
+
+Jeder tetragonale Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in der eine Basisrichtung eine vierzählige und die anderen beiden zweizählige Symmetrieachsen sind.
+
+\item \udot{Hexagonal}: ... einer 2- und einer 6-zähligen Drehung um zueinander senkrechte Achsen.
+
+Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine sechszählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
+
 \item \udot{Kubisch}: ... einer 3- und einer 4-zähligen Drehung.
+
+Jeder kubische Kristall besitzt eine würfelförmige Basiszelle, in der durch alle drei Basisrichtungen vierzählige Symmetrieachsen laufen und durch alle vier Raumdiagonalen jeweils dreizählige Symmetrieachsen.
 \end{enumerate}
 \end{theorem}
 
 %TODO
 \textcolor{red}{TODO: Hasse-Diagram mit TikZ}
 
-\begin{remark}
-Gut, das sagt uns jetzt etwas über Symmetrien des Kristalls mit Fixpunkten. Aber was ist mit Symmetrien wie Schraubungen, die gar keine Fixpunkte haben müssen?
 
-Darüber können wir trotzdem etwas aussagen, indem wir sie als Symmetrien eines anderen Gitters auffassen: Wir erinnern uns, dass jede starre Bewegung $g:\IR^n\to\IR^n$ sich schreiben lässt als Anwendung einer orthogonalen Bewegung $Q$ gefolgt von einer Translation $\tau_v$, d.h.
-\[\forall x\in\IR^n: g(x)=Q(x)+v\]
-
-Ist nun $\tau_w$ eine Translation, dann betrachten wir die dazu konjugierte Symmetrie $g\circ\tau_w\circ g^{-1}$. Was für eine Bewegung ist das? Es gilt
-\begin{align*}
-(g\circ\tau_w\circ g^{-1})(x) &= g(\tau_w(g^{-1}(x))) \\
-&= Q(\tau_w(Q^{-1}(x-v))+v \\
-&= Q(Q^{-1}x-Q^{-1}v+w)+v &\text{da $Q^{-1}$ linear ist}\\
-&= x-v+Qw+v &\text{da $Q$ linear ist}\\
-&= x+Qw
-\end{align*}
-D.h. $g\circ\tau_w\circ g^{-1} = \tau_{Q(w)}$ ist wieder eine Translation.
-
-Man sieht außerdem: Es gilt genau dann $g\circ\tau_w\circ g^{-1} = \tau_w$, wenn $Q(w)=w$ ist.
-\end{remark}
-
-\begin{lemma}
-Sei $\Lambda\subseteq\IR^n$ ein Kristall. Dann operiert $G=\Aut(\Lambda)$ auf der Translationsuntergruppe bzw. dem Translationsgitter $Trans(\Lambda)$ durch Konjugation:
-\[{^g \tau_w} := g\circ\tau_w\circ g^{-1} \quad\text{bzw.}\quad {^g w} = Q(w)\]
-(wobei $g(x)=Q(x)+v$ wie oben.)
-\end{lemma}
-
-\begin{remark}
-Man beachte, dass bzgl. dieser Operation die Translationen trivial operieren, d.h. nur der Anteil an $G$, der über Translationen hinausgeht, ist hier wichtig.
-
-Das vereinfacht die Art der vorkommenden Symmetrien drastisch: Wenn $g\in\Aut(\Lambda)$ eine Schraubung um Winkel $\alpha$ ist, dann ist die Symmetrie $R_g:w\mapsto{^g w}$ des Translationsgitters nur noch eine Drehung um Winkel $\alpha$. Analog ist $R_s$ eine Spiegelung, wenn $s$ eine (Gleit)spiegelungen war.
-
-Man beachte außerdem, dass die Punktinversion $v\mapsto -v$ immer eine Symmetrie jedes Translationsgitters ist, d.h. wenn wir statt einer Drehsymmetrie eine Drehinversion finden, dann können wir durch Multiplikation mit der Punktinversion auch immer eine Drehung finden. Eine Ebenenspiegelung ist dasselbe wie eine Drehinversion mit 180°-Winkel. ist also eine Ebenenspiegelung oder Gleitspiegelung in $\Aut(\Gamma)$ enthalten, so hat $Trans(\Lambda)$ eine 180°-Drehsymmetrie.
-\end{remark}
-
-\begin{corollary}
-Sei $\Lambda\subseteq\IR^n$ ein Kristall. Die Gruppe $\Set{R_g | g\in G} \leq \Aut(Trans(\Lambda)) \cap O(\IR^n)$ ist endlich.
-\end{corollary}
-\begin{proof}
-Es ist eine Untergruppe der Automorphismengruppe eines Gitters und alle $R_g$ fixieren den Nullvektor.
-\end{proof}
 
 \begin{theorem}[Geometrische Einschränkungen]
 Sei $\Lambda\subseteq\IR^n$ ein Kristall und $1\neq g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
@@ -142,9 +235,9 @@ Kehren wir zurück zu $v=\begin{psmallmatrix}x\\0\\z\end{psmallmatrix}$ und $v_2
 \begin{remark}
 Das schließt also insbesondere auch aus, dass es Kristalle mit Dodekaeder-Symmetrien gibt, denn ansonsten müsste es Drehungen der Ordnung 5 im Translationsgitter geben.
 
-Mehr Einschränkungen gibt es jedoch nicht mehr, d.h. jede der endlichen Drehgruppen, die ausschließlich 2-, 3-, 4- oder 6-zählige Symmetrien hat, kommt tatsächlich in der Symmetriegruppe eines Kristalls vor.
+Mehr Einschränkungen gibt es jedoch nicht mehr, d.h. jede der endlichen Drehgruppen, die ausschließlich 2-, 3-, 4- oder 6-zählige Symmetrien hat, kommt tatsächlich in der Symmetriegruppe eines dreidimensionalen Kristalls vor.
 
-Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen. Je höher die Dimension ist, desto höher kann die Ordnung der vorkommenden Drehungen sein. Beispielsweise hat das $n$-dimensionale Würfelgitter $\IZ^n$ eine Symmetrie der Ordnung $n+1$.
+Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen. Je höher die Dimension ist, desto höher kann die Ordnung der vorkommenden Drehungen sein. Beispielsweise hat das $n$-dimensionale Würfelgitter $\IZ^n$ eine Symmetrie der Ordnung $n+1$. Insbesondere gibt es im $\IR^4$ schon Kristalle mit 5-zähligen Symmetrien.
 \end{remark}
 
 \begin{example}
