@@ -8,7 +8,7 @@ Eine \udot{Gruppenoperation} besteht aus
 die die folgende Eigenschaft erfüllt:
 \begin{enumerate}
 \item $\forall x\in X: {^1 x} = x$
-\item $\forall g,h\in G \forall x\in X: {^g(^h x)} = {^{gh}x}$
+\item $\forall g,h\in G \forall x\in X: {^g(^h x)} = {^{g\circ h}x}$
 \end{enumerate}
 \end{definition}
 
@@ -32,9 +32,8 @@ eine Operation.
 \begin{lemma}[Offensichtliches]
 Operiert $G$ auf $X$, dann betrachten wir die Abbildungen $\tau_g: X\to X, x\mapsto {^g x}$. Es gilt:
 \begin{enumerate}
-\item Das Einselement operiert als Identität: $\tau_1=\id_X$
-\item Inverse Elemente operieren wie inverse Abbildungen: $\tau_g$ ist bijektiv und ihre inverse Abbildung ist $\tau_{g^{-1}}$.
 \item $\tau_{gh} =\tau_g\circ\tau_h$.
+\item Inverse Elemente operieren wie inverse Abbildungen: $\tau_g$ ist bijektiv und ihre inverse Abbildung ist $\tau_{g^{-1}}$.
 \end{enumerate}
 \end{lemma}
 

@@ -78,15 +78,16 @@ Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung.
 Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten, sondern nur Symmetrien eines bestimmten Typs.
 
 \begin{enumerate}
-\item Die orientierungserhaltenden Bewegungen $\IR^n\to\IR^n$ bilden eine Untergruppe von $\Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung oder Translation schon.
+\item Die orientierungserhaltenden Bewegungen (d.h. solche, die Rechtssysteme wieder auf Rechtssysteme abbilden) $\IR^n\to\IR^n$ bilden eine Untergruppe von $\Isom(\IR^n)$. Eine Spiegelung ist nicht orientierungserhaltend, eine Drehung oder Translation schon.
 \item Die Translationen bilden eine Untergruppe von $\Isom(\IR^n)$.
+\item Haben wir einen Nullpunkt gewählt, dann sind die orthogonalen Abbildungen eine Untergruppe von $\Isom(\IR^n)$.
 \end{enumerate}
 \end{example}
 
 \begin{theoremdef}[Satz von Lagrange]
 Sei $G$ eine Gruppe und $U\leq G$ eine Untergruppe. Eine Teilmenge der Form
 \[gU := \Set{gu | u\in U}\]
-heißt \udot{(Links)Nebenklasse von $U$ in $G$}. Die Anzahl aller Linksnebenklassen wird mit $\abs{G:U}$ bezeichnet und heißt \udot{Index von $U$ in $G$}.
+für ein $g\in G$ heißt \udot{(Links)Nebenklasse von $U$ in $G$}. Die Anzahl aller Linksnebenklassen wird mit $\abs{G:U}$ bezeichnet und heißt \udot{Index von $U$ in $G$}.
 
 Die Teilmengen haben die folgenden Eigenschaften:
 \begin{enumerate}
@@ -95,6 +96,18 @@ Die Teilmengen haben die folgenden Eigenschaften:
 \item Ist $G$ endlich, so gilt $\abs{G:U} = \frac{\abs{G}}{\abs{U}}$.
 \end{enumerate}
 \end{theoremdef}
+
+\begin{example}
+\begin{enumerate}
+\item Wir fixieren einen Nullpunkt und betrachten $G=\Isom(\IR^n)$ und $U=O(\IR^n)$. Wenn wir einen Punkt $y\in\IR^n$ haben, dann ist
+\[\Set{h\in G | h(0)=y}\]
+eine Nebenklasse von $U$. Es gibt immer mindestens eine Bewegung, die $0$ auf $y$ abbildet, nämlich die Translation $\tau_y$. Ist $g$ irgendeine Bewegung mit $g(0)=y$, dann gilt
+\[h(x)=y \iff g^{-1}(h(0)) = g^{-1}(y) = x \iff g^{-1}h\in U \iff h=g(g^{-1}h)\in gU\]
+also ist $\Set{h\in G | h(x)=y} = gU$.
+\item Sei $G=\Isom(\IR^n)$ und $U=\Isom_0(\IR^n)$ die Untergruppe aller orientierungserhaltenden Bewegungen. Dann ist die Menge aller orientierungs\emph{umkehrenden} Bewegungen eine Nebenklasse von $U$.
+\end{enumerate}
+\end{example}
+
 \begin{proof}
 a. $U\to gU, u\mapsto gu$ ist eine Bijektion, denn $gU\to U, x\mapsto g^{-1} x$ ist eine inverse Abbildung. Wenn es eine Bijektion zwischen zwei Mengen gibt, dann sind sie gleich groß.
 
@@ -124,6 +137,6 @@ Ist $G$ eine endliche Gruppe, so nennt man ihre Größe $\abs{G}$ auch \udot{Ord
 \end{example}
 
 \begin{remark}
-Aufgrund des Satzes von Lagrange sind Elementordnungen immer Teiler der Gruppenordnung. Wenn wir also in einer Symmetriegruppe bestimmte Symmetrien sofort sehen, z.B. eine Drehung um $72°=\frac{2\pi}{5}$ und eine um $120°=\frac{2\pi}{3}$, dann wissen wir, dass die gesamte Symmetriegruppe eine durch $kgV(3,5)=15$ teilbare Ordnung (oder $\infty$) haben muss.
+Aufgrund des Satzes von Lagrange sind Elementordnungen immer Teiler der Gruppenordnung. Wenn wir also in einer Symmetriegruppe bestimmte Symmetrien sofort sehen, z.B. eine Drehung um $72^\circ=\frac{2\pi}{5}$ und eine um $120^\circ=\frac{2\pi}{3}$, dann wissen wir, dass die gesamte Symmetriegruppe eine durch $kgV(3,5)=15$ teilbare Ordnung (oder $\infty$) haben muss.
 \end{remark}
 
