@@ -65,7 +65,7 @@ Es gibt Gruppen, denen man nicht sofort ansieht, dass sie Symmetrien beschreiben
 Gruppen dienen also gleichzeitig der gemeinsamen Beschreibung (einiger) der Eigenschaften, die die uns bekannten Grundrechenarten erfüllen. Sie werden ebenso benutzt, um die Eigenschaften von anderen Strukturen zu beschreiben, die sich in bestimmten Aspekten ähnlich verhalten wie die uns bekannten Zahlenbereiche sich bzgl. Addition und Multiplikation verhalten (sogenannte Ringe und Körper).
 \end{example}
 
-\begin{example}[Untergruppen]
+\begin{definition}[Untergruppen]
 Kennen wir bereits eine Gruppe $(G,\circ)$ und ist $U\subseteq G$ eine Teilmenge mit den folgenden Eigenschaften:
 \begin{enumerate}[label=(UG\arabic*)]
 \item $U$ enthält das neutrale Element:
@@ -75,8 +75,10 @@ Kennen wir bereits eine Gruppe $(G,\circ)$ und ist $U\subseteq G$ eine Teilmenge
 \item $U$ ist unter Inversenbildung abgeschlossen:
 \[\forall x\in U: x^{-1}\in U\]
 \end{enumerate}
-Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung.
+Dann ist $U$ selbst eine Gruppe mit der gleichen Verknüpfung. Wir schreiben für diesen Sachverhalt $U\leq G$, um deutlich zu machen, dass es sich nicht um eine beliebige Teilmenge handelt, sondern um eine Untergruppe.
+\end{definition}
 
+\begin{example}
 Dies tritt häufig auf, wenn wir nicht alle Symmetrien eines Objekts betrachten, sondern nur Symmetrien eines bestimmten Typs.
 
 \begin{enumerate}
