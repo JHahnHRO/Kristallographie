@@ -42,7 +42,7 @@ Es bietet sich daher an, Kristalle danach zu klassifizieren, welche Punktgruppen
 
 Und selbst wenn das nicht der Fall ist, könnte es sein, dass gar keine von $\id$ verschiedenen Drehungen, Spiegelungen oder Drehinversionen in $\Aut(\Lambda)$ existieren; jede Symmetrie könnte eine Translation, eine Schraubung oder Gleitspiegelung sein. Dann hätten wir keine Information gewonnen und würden viele sehr verschieden aussehende Kristalle in eine gemeinsame Kategorie \enquote{triviale Punktgruppe} einordnen.
 
-Wenn wir das nicht wollen (und das wollen wir nicht), müssen wir uns überlegen, wie wir Symmetrien erfassen, die einen Translationsanteil $\neq 0$ haben, aber nicht gleich einer Translation sind, und wir den translationsfreien Anteil zweier solcher Symmetrie unterscheiden. Es stellt sich heraus, dass es eine andere, vom Kristall bestimmte Punktgruppe gibt, die das für uns tut.
+Wenn wir das nicht wollen (und das wollen wir nicht), müssen wir uns überlegen, wie wir Symmetrien erfassen, die einen Translationsanteil $\neq 0$ haben, aber nicht gleich einer Translation sind, und wir den translationsfreien Anteil zweier solcher Symmetrien unterscheiden. Es stellt sich heraus, dass es eine andere, vom Kristall bestimmte Punktgruppe gibt, die das für uns tut.
 \end{remark}
 
 \begin{remark}
@@ -87,7 +87,7 @@ Das vereinfacht die Art der vorkommenden Symmetrien drastisch: Wenn $g\in\Aut(\L
 \begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
 Wir wählen uns eine Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Abbildungen $R_g$ geometrisch zu interpretieren ist folgende:
 
-Wenn wir $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfach Computerspiele vor: Wenn man am rechten Rand rausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
+Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfache Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
 
 \medbreak
 $R_g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist $R_g(x)$ derjenige Punkt, der wie folgt entsteht:
@@ -117,7 +117,7 @@ in $O(\IR^n)$ konjugiert sind.
 \begin{remark}
 Es gibt möglicherweise sehr viele Kristallklassen in einer Dimension. Und trotzdem sehen Kristalle in verschiedene Kristallklassen manchmal sehr ähnlich aus.
 
-Manchmal möchte man etwas gröber einteilen, z.B. nur nach der Form der möglichen Basiszellen des Kristalls.
+Deshalb möchten wir zusätzlich zur Einteilung in Kristallklassen die Kristalle etwas gröber einteilen und zwar nach der Form der möglichen Basiszellen des Kristalls.
 \end{remark}
 
 \begin{definition}[Kristallsysteme]
@@ -125,7 +125,7 @@ Betrachte alle $n$-dimensionalen Translationsgitter $T=\IZ v_1+\cdots+\IZ v_n\su
 
 Es seien $G_1, G_2, G_3, \ldots$ die so auftretenden Punktgruppen.
 
-Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, die Punktgruppe $\Set{R_g | g\in\Aut(\Lambda)}$ eine Untergruppe von $G_i$ ist, aber nicht von einem kleineren $G_j$.
+Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, wenn die Punktgruppe $\Set{R_g | g\in\Aut(\Lambda)}$ eine Untergruppe von $G_i$ ist, aber nicht von einem kleineren $G_j$.
 \end{definition}
 
 \subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
@@ -134,40 +134,38 @@ Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wi
 Unser Ziel ist es jetzt, die dreidimensionalen Kristallsysteme zu beweisen. Laut Definition müssen wir also die Punktgruppen aller Translationsgitter bestimmen.
 \end{remark}
 
-\begin{theorem}[Klassifikation der dreidimensionalen Kristallsysteme]
+\begin{theoremdef}[Klassifikation der dreidimensionalen Kristallsysteme]
 Betrachte ein Translationsgitter $T=\IZ v_1+\IZ v_2+\IZ v_3\subseteq\IR^3$. Es sei $G:=\Aut(T)_0$ die Punktgruppe des Nullpunkts.
 
-$G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von der Inversion und ...
+$G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von ...
 \begin{enumerate}
-\item \udot{Triklin}: ... nichts weiter.
+\item \udot{Triklin}: ... der Inversion.
 
-Alle Basiszellen eines triklinen Kristalls sind schiefwinklig.
-
-\item \udot{Monoklin}: ... einer 2-zähligen Drehung.
+\item \udot{Monoklin}: ... der Inversion und einer 2-zähligen Drehung.
 
 Jeder monokline Kristall besitzt eine Basiszelle, in denen eine Basisrichtung eine zweizählige Symmetrieachse ist (d.h. der Kristall hat eine 180°-Drehung, -Drehinversion oder -Schraubung um diese Achse) und die anderen beiden Basisrichtungen senkrecht auf ihr stehen.
 
-\item \udot{Orthorhombisch}: ... zwei 2-zähligen Drehungen um zueinander senkrechte Achsen.
+\item \udot{Orthorhombisch}: ... der Inversion und zwei 2-zähligen Drehungen um zueinander senkrechte Achsen.
 
 Jeder orthorhombische Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in der alle drei Basisrichtungen zweizählige Symmetrieachsen sind.
 
-\item \udot{Trigonal}: ... einer 2- und einer 3-zähligen Drehung um zueinander senkrechte Achsen.
+\item \udot{Trigonal}: ... der Inversion, einer 2- und einer 3-zähligen Drehung um zueinander senkrechte Achsen.
 
 Jeder trigonale Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine dreizählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
 
-\item \udot{Tetragonal}: ... einer 2- und einer 4-zähligen Drehung um zueinander senkrechte Achsen.
+\item \udot{Tetragonal}: ... der Inversion, einer 2- und einer 4-zähligen Drehung um zueinander senkrechte Achsen.
 
 Jeder tetragonale Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in der eine Basisrichtung eine vierzählige und die anderen beiden zweizählige Symmetrieachsen sind.
 
-\item \udot{Hexagonal}: ... einer 2- und einer 6-zähligen Drehung um zueinander senkrechte Achsen.
+\item \udot{Hexagonal}: ... der Inversion, einer 2- und einer 6-zähligen Drehung um zueinander senkrechte Achsen.
 
 Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine sechszählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
 
-\item \udot{Kubisch}: ... einer 3- und einer 4-zähligen Drehung.
+\item \udot{Kubisch}: ... der Inversion, einer 3- und einer 4-zähligen Drehung.
 
 Jeder kubische Kristall besitzt eine würfelförmige Basiszelle, in der durch alle drei Basisrichtungen vierzählige Symmetrieachsen laufen und durch alle vier Raumdiagonalen jeweils dreizählige Symmetrieachsen.
 \end{enumerate}
-\end{theorem}
+\end{theoremdef}
 
 %TODO
 \textcolor{red}{TODO: Hasse-Diagram mit TikZ}
@@ -193,7 +191,7 @@ erreichen.
 \begin{proof}
 Wir betrachten die orthogonale Abbildung $R_g:=w\mapsto{^g w}$ auf dem Translationsgitter. In unserem Fall ist das eine Drehung.
 
-Die Drehachse geht natürlich durch den Nullpunkt, aber weil wir mit Translationen verknüpfen können, hat das Translationsgitter natürlich auch Drehsymmetrien mit  dem gleichen Winkel und paralleler Drehachse durch jeden anderen Punkt des Gitters.
+Die Drehachse geht natürlich durch den Nullpunkt, aber weil wir mit Translationen verknüpfen können, hat das Translationsgitter natürlich auch Drehsymmetrien mit gleichem Winkel und paralleler Drehachse durch jeden anderen Punkt des Gitters.
 
 Wir legen uns das Koordinatensystem so, dass die $z$-Achse in Richtung der Drehachse zeigt und betrachten einen beliebigen Vektor $v=\begin{psmallmatrix}x\\y\\z\end{psmallmatrix}$ im Translationsgitter, der nicht in Richtung der Drehachse zeigt, d.h. $(x,y)\neq(0,0)$. Solche Vektoren gibt es, z.B. müssen immer mindestens zwei Vektoren in jeder Basis des Gitters diese Eigenschaft haben. O.B.d.A. können wir sogar annehmen, dass wir das Koordinatensystem so gewählt haben, dass $y=0$ ist.
 
