@@ -9,7 +9,7 @@ Eine \udot{Gruppe} $(G,\circ)$ besteht aus
 die die folgenden Eigenschaften erfüllen:
 \begin{enumerate}[label=(G\arabic*)]
 \item Assoziativität, d.h. wir dürfen in zusammengesetzten Ausdrücken beliebig umklammern:
-\[\forall x,y\in G: x\circ(y\circ z) = (x\circ y)\circ z\]
+\[\forall x,y,z\in G: x\circ(y\circ z) = (x\circ y)\circ z\]
 In der Praxis bedeutet das, dass wir Klammern einfach weglassen und z.B. $x\circ y\circ z$ schreiben.
 \item Neutrales Element: Es gibt (genau) ein Element, das gar nichts tut, wenn wir es mit anderen Gruppenelementen verknüpfen:
 \[\exists 1_G\in G \forall x\in G: 1_G\circ x = x = x\circ 1_G\]
@@ -108,7 +108,7 @@ Die Teilmengen haben die folgenden Eigenschaften:
 \item Wir fixieren einen Nullpunkt und betrachten $G=\Isom(\IR^n)$ und $U=O(\IR^n)$. Wenn wir einen Punkt $y\in\IR^n$ haben, dann ist
 \[\Set{h\in G | h(0)=y}\]
 eine Nebenklasse von $U$. Es gibt immer mindestens eine Bewegung, die $0$ auf $y$ abbildet, nämlich die Translation $\tau_y$. Ist $g$ irgendeine Bewegung mit $g(0)=y$, dann gilt
-\[h(x)=y \iff g^{-1}(h(0)) = g^{-1}(y) = x \iff g^{-1}h\in U \iff h=g(g^{-1}h)\in gU\]
+\[h(x)=y \iff g^{-1}(h(0)) = g^{-1}(y) = 0 \iff g^{-1}h\in U \iff h=g(g^{-1}h)\in gU\]
 also ist $\Set{h\in G | h(x)=y} = gU$.
 \item Sei $G=\Isom(\IR^n)$ und $U=\Isom_0(\IR^n)$ die Untergruppe aller orientierungserhaltenden Bewegungen. Dann ist die Menge aller orientierungs\emph{umkehrenden} Bewegungen eine Nebenklasse von $U$.
 \end{enumerate}
