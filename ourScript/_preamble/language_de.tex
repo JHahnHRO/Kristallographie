@@ -12,7 +12,6 @@
 % Language specific strings
 %   Names of theorem environments
 
-%\makeatletter
 \addto\captionsngerman{
 	% \see command from makeidx
 %	\@ifpackageloaded{makeidx}{
@@ -30,10 +29,21 @@
 	\renewcommand{\captionstringconvention}{Vereinbaring}
 	\renewcommand{\captionstringremark}{Bemerkung}
 }
+\makeatletter
 %\@ifpackageloaded{biblatex}{
 %\DefineBibliographyStrings{german}{
 %	bibliography = {Bibliographie},
 %	references = {Referenzen}
 %}
 %}{}
-%\makeatother
+\@ifpackageloaded{exframe}{
+	\exerciseconfig{termsheet}{Blatt}
+	\exerciseconfig{termsheets}{Blätter}
+	\exerciseconfig{termproblem}{Aufgabe}
+	\exerciseconfig{termproblems}{Aufgaben}
+	\exerciseconfig{termsolution}{Lösung}
+	\exerciseconfig{termsolutions}{Lösungen}
+	\exerciseconfig{termpoint}{Punkt}
+	\exerciseconfig{termpoints}{Punkte}
+}
+\makeatother
