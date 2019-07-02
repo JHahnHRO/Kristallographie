@@ -41,12 +41,11 @@ Es sei $f:\IR^n\to\IR^n$ eine Bewegung. Dann gilt:
 \item $\forall v_1,v_2\in\IR^n: f(v_1+v_2)=f(v_1)+f(v_2)$
 \item $\forall v\in\IR^n, \lambda\in\IR: f(\lambda v)=\lambda f(v)$.
 \end{enumerate}
-\item Haben wir einen Nullpunkt gewählt, dann ist ein beliebiges $f$ eine orthogonale Abbildung gefolgt von einer Translation.
 \item $f$ erhält das Skalarprodukt von Vektoren und Winkel zwischen Vektoren.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-a. Sei zunächst $0\leq \lambda\leq 1$. Der Punkt $\lambda p_1+(1-\lambda)p_0 = p_0+\lambda(p_1-p_0) = p_1-(1-\lambda)(p_1-p_0)$ ist genau derjenige Punkt, der genau Abstand $\lambda\norm{p_1-p_0}$ von $p_0$ und $(1-\lambda)\norm{p_1-p_0}$ von $p_1$ hat und es gibt nur einen solchen Punkt. Daher ist $f(\lambda p_1+(1-\lambda)p_0)$ genau derjenige Punkt, der den Abstand $\lambda\norm{p_1-p_0}=\lambda\norm{f(p_1)-f(p_0)}$ von $f(p_0$ und den Abstand $(1-\lambda)\norm{p_1-p_0} = (1-\lambda)\norm{f(p_1)-f(p_0)}$ hat. Weil es nur einen solchen Punkt gibt, muss $f(\lambda p_1+(1-\lambda)p_0) = \lambda f(p_0)+(1-\lambda)f(p_1)$ sein.
+a. Sei zunächst $0\leq \lambda\leq 1$. Der Punkt $\lambda p_1+(1-\lambda)p_0 = p_0+\lambda(p_1-p_0) = p_1-(1-\lambda)(p_1-p_0)$ ist genau derjenige Punkt, der genau Abstand $\lambda\norm{p_1-p_0}$ von $p_0$ und $(1-\lambda)\norm{p_1-p_0}$ von $p_1$ hat und es gibt nur einen solchen Punkt. Daher ist $f(\lambda p_1+(1-\lambda)p_0)$ genau derjenige Punkt, der den Abstand $\lambda\norm{p_1-p_0}=\lambda\norm{f(p_1)-f(p_0)}$ von $f(p_0)$ und den Abstand $(1-\lambda)\norm{p_1-p_0} = (1-\lambda)\norm{f(p_1)-f(p_0)}$ von $f(p_1)$ hat. Weil es nur einen solchen Punkt gibt, muss $f(\lambda p_1+(1-\lambda)p_0) = \lambda f(p_0)+(1-\lambda)f(p_1)$ sein.
 
 Im allgemeinen Fall liegen die drei Punkte $p_0$, $p_1$ und $p_\lambda:=\lambda p_1+(1-\lambda)p_0$ ja auf einer gemeinsamen Geraden. Es gibt also immer einen, der zwischen den anderen zweien positioniert ist. Wenn das z.B. $p_0$ ist, dann gibt es eine Gleichung der Form $p_0 = \alpha p_\lambda + (1-\alpha)p_1$ mit $\alpha\in [0,1]$ (Übung: Man berechne $\alpha$ aus $\lambda$ und umgekehrt). Wenn $p_1$ zwischen $p_0$ und $p_\lambda$ liegt, gibt es analog eine Gleichung der Form $p_1=\beta p_\lambda + (1-\beta)p_1$ mit $\beta\in[0,1]$. In beiden Fällen folgt aus dem schon bewiesenen auch die gleiche Gleichung für $f(p_0)$, $f(p_1)$ und $f(p_\lambda)$.
 
@@ -57,10 +56,7 @@ Daraus folgern wir nun:
 \[f(v_1+v_2) = 2f(\tfrac{1}{2}(v_1+v_2)) = 2f(\tfrac{1}{2}v_1 + \tfrac{1}{2}v_2) \overset{a.}{=} 2(\tfrac{1}{2}f(v_1)+\tfrac{1}{2}f(v_2))=f(v_1)+f(v_2)\]
 
 \medbreak
-c. Ist $f(0)=:v$, dann betrachten wir die Translation $\tau_v$. Dann ist nämlich $(\tau_v^{-1}\circ f)(0) = 0$, also ist $f=\tau_v\circ(\tau_v^{-1}\circ f)$ eine Komposition aus der orthogonalen Abbildung $\tau_v^{-1}\circ f$ gefolgt von der Translation $\tau_v$.
-
-\medbreak
-d. folgt aus $\tfrac{1}{2}(\norm{v_1+v_2}^2-\norm{v_1}^2-\norm{v_2}^2)=\braket{v_1,v_2}$, $\norm{v}=\norm{f(v)}$ und b.
+c. folgt aus $\tfrac{1}{2}(\norm{v_1+v_2}^2-\norm{v_1}^2-\norm{v_2}^2)=\braket{v_1,v_2}$, $\norm{v}=\norm{f(v)}$ und b.
 
 Winkelerhaltung folgt dann aus $\cos(\sphericalangle(v_1,v_2)) = \frac{\braket{v_1,v_2}}{\norm{v_1}\cdot\norm{v_2}}$.
 \end{proof}
@@ -70,11 +66,27 @@ Aus der Linearität und der Tatsache, dass wir nur Räume endlicher Dimension be
 \[\norm{p_1-p_2} = \norm{f(f^{-1}(p_1))-f(f^{-1}(p_2))} = \norm{f^{-1}(p_1)-f^{-1}(p_2)}\]
 \end{remark}
 
+\subsection{Klassifikation der Bewegungen}
+
+\begin{lemma}[Reduktion von beliebigen auf orthogonale Bewegungen]
+Haben wir einen Nullpunkt gewählt, dann ist ein beliebiges $f\in\Isom(\IR^n)$ eine orthogonale Abbildung gefolgt von einer Translation (mglw. um den Abstand $0$).
+\end{lemma}
+\begin{proof}
+st $f(0)=:v$, dann betrachten wir die Translation $\tau_v$. Dann ist nämlich $(\tau_v^{-1}\circ f)(0) = 0$, also ist $f=\tau_v\circ(\tau_v^{-1}\circ f)$ eine Komposition aus der orthogonalen Abbildung $\tau_v^{-1}\circ f$ gefolgt von der Translation $\tau_v$.
+\end{proof}
+
 \begin{theorem}[Klassifikation von Bewegungen in kleinen Dimensionen]
-Alle Bewegungen des
+Alle orthogonalen Abbildungen des
+\begin{enumerate}
+\item $\IR^1$ sind die Identität oder Spiegelung im Nullpunkt.
+\item $\IR^2$ sind Drehungen (ggf. um den Winkel $0$) um den Nullpunkt oder Spiegelungen an Geraden durch den Nullpunkt.
+\item $\IR^3$ sind Drehungen oder Drehinversionen (ggf. um den Drehwinkel $0$) um eine Achse durch den Nullpunkt oder Ebenenspiegelungen an Ebenen durch den Nullpunkt.
+\end{enumerate}
+
+Allgemeiner: Alle Bewegungen des
 \begin{enumerate}
 \item $\IR^1$ sind Translationen oder Spiegelungen.
-\item $\IR^2$ sind Drehungen oder Geradenspiegelungen gefolgt von einer Translation (ggf. um den Abstand $0$).
-\item $\IR^3$ sind Drehungen, Ebenenspiegelungen oder Drehinversionen (ggf. um den Drehwinkel $0$) gefolgt von einer Translation (ggf. um den Abstand $0$).
+\item $\IR^2$ sind Drehungen (ggf. um den Drehwinkel $0$) oder Geradenspiegelungen gefolgt von einer Translation (ggf. um den Abstand $0$).
+\item $\IR^3$ sind Drehungen oder Drehinversionen (ggf. um den Drehwinkel $0$) oder Ebenenspiegelungen gefolgt von einer Translation (ggf. um den Abstand $0$).
 \end{enumerate}
 \end{theorem}

@@ -9,7 +9,7 @@ Die Anzahl der Symmetrien, aufgeschlüsselt nach Typen (Spiegelungen, 2-, 3-, 4-
 Welche Polyeder gleich viele Symmetrien haben
 \end{subproblem}
 \begin{subproblem}
-Welche Polyeder die gleiche Symmetriegruppe haben
+Welche Polyeder \enquote{die gleiche} Symmetriegruppe haben (ohne jetzt genau zu sagen, was das heißt. Wir präzisieren das später.)
 \end{subproblem}
 für so viele Polyeder, wie du Lust hast.
 \end{problem}
@@ -29,7 +29,7 @@ Zeige zunächst, dass die folgenden Abbildungen $G\to G$ bijektiv sind:
 \end{subproblem}
 In anderen Worten: Die Gleichungen $gx=y$, $xg=y$ bzw. $gxg^{-1} = y$ sind für alle $y\in G$ eindeutig nach $x$ lösbar.
 
-\begin{subproblem}
+\begin{subproblem}[difficulty={mittel}]
 Umgekehrt: Es sei umgekehrt $X$ eine nichtleere Menge und $\ast: X\times X\to X$ eine assoziative Verknüpfung, die folgende Eigenschaft hat:
 \[\forall g,y\in X: (\exists! x\in X: g \ast x=y) \wedge (\exists! x\in X: x \ast g=y)\]
 d.h. die Gleichungen $g \ast x=y$ und $x \ast g=y$ sind eindeutig nach $x$ lösbar, egal, was $g$ und $y$ sind. Zeige, dass $(X,\ast)$ eine Gruppe ist.
@@ -57,7 +57,7 @@ $\forall x,y\in G: \kappa_g(xy) = \kappa_g(x)\kappa_g(y)$.
 
 
 
-\begin{problem}[title={Diedergruppen / Automorphismen des regulären $n$-Ecks}]
+\begin{problem}[title={Diedergruppen / Symmetrien des regulären $n$-Ecks}]
 Es seien $\rho_0,\rho_{2\pi/3},\rho_{4\pi/3}, \sigma_0, \sigma_{\pi/3}, \sigma_{2\pi/3}$ die Abbildungen in \ref{figure:Dih_6}.
 \begin{figure}[ht]
 
@@ -108,20 +108,20 @@ Es seien $\rho_0,\rho_{2\pi/3},\rho_{4\pi/3}, \sigma_0, \sigma_{\pi/3}, \sigma_{
 \caption{Die sechs Elemente von $Aut(\triangleright)$; Obere Zeile von links nach rechts: $\rho_0,\rho_{2\pi/3},\rho_{4\pi/3}$, untere Zeile: $\sigma_0,\sigma_{\pi/3}, \sigma_{2\pi/3}$.}
 \label{figure:Dih_6}
 \end{figure}
-Überlegen Sie sich geometrisch, dass ...
+Überlege dir geometrisch, dass ...
 \begin{enumerate}
 \item ... $(\Set{\rho_0,\rho_{\pi/3},\rho_{2\pi/3},\sigma_0,\sigma_{\pi/3}, \sigma_{2\pi/3}},\circ)$ eine Gruppe ist.
 \item ... diese Gruppe nicht abelsch ist.
 \item $\sigma_\theta\circ \rho_\alpha\circ\sigma_\theta^{-1} = \rho_{-\alpha}$ für alle $\alpha$ und $\theta$.
 \end{enumerate}
-Bonus: Beschreiben Sie eine analoge Gruppe für das regelmäßige $n$-Eck. Wie viele Elemente hat sie?
+Bonus: Beschreibe eine analoge Gruppe für das regelmäßige $n$-Eck. Wie viele Elemente hat diese?
 
 Allgemein: Ist $\rho_\alpha$ die Rotation um $\alpha\in\IR$ und $\sigma_\theta$ die Spiegelung an der Achse, die um $\theta\in\IR$ gegen die $x$-Achse geneigt ist, dann gilt 
-\[\rho_\alpha \circ \rho_{\alpha'} = \rho_{\alpha+\alpha'}, \rho_\alpha \circ \sigma_\theta = \sigma_{\alpha/2 + \theta}, \sigma_\alpha\circ\rho_\alpha = \sigma_{\theta - \alpha/2} \;\text{und}\; \sigma_{\theta}\circ\sigma_{\theta'} = \rho_{2(\theta-\theta')}\]
+\[\rho_\alpha \circ \rho_{\alpha'} = \rho_{\alpha+\alpha'},\quad \rho_\alpha \circ \sigma_\theta = \sigma_{\alpha/2 + \theta},\quad \sigma_\alpha\circ\rho_\alpha = \sigma_{\theta - \alpha/2} \;\text{und}\; \sigma_{\theta}\circ\sigma_{\theta'} = \rho_{2(\theta-\theta')}\]
 für alle $\alpha,\alpha'\in\IR$, $\theta,\theta'\in\IR$.
 
 Dann 
-\[Dih(n)=Aut(n\text{-Eck}) = \Set{\rho_{k\frac{2\pi}{n}}, \sigma_{l\frac{\pi}{n}} | 0\leq k,l<n}\]
+\[Dih(n):=\Aut(n\text{-Eck}) = \Set{\rho_{k\frac{2\pi}{n}}, \sigma_{l\frac{\pi}{n}} | 0\leq k,l<n}\]
 für alle $n\geq 3$.
 \end{problem}
 
@@ -139,7 +139,7 @@ mit der Komposition eine Gruppe bildet.
 Dies ist die sogenannte \udot{affine Gruppe}.
 
 \begin{subproblem}
-Beweise, dass $Isom(\IR^n)\leq Aff(\IR^n)$ ist.
+Beweise, dass $\Isom(\IR^n)\leq Aff(\IR^n)$ ist.
 \end{subproblem}
 \end{problem}
 
@@ -176,7 +176,7 @@ Zwei Zyklen heißen \udot{disjunkt}, wenn die Mengen der jeweils bewegten Elemen
 \begin{subproblem}[difficulty={leicht bis mittel}]
 Beweise: \emph{Jede} Permutation ist ein Produkt von disjunkten Zyklen.
 
-(Hinweis: Bild malen.)
+(Hinweis: Zeichne einen Graph, welche Zahl auf welche abgebildet wird.)
 \end{subproblem}
 
 \begin{subproblem}[difficulty={leicht}]
@@ -231,21 +231,32 @@ Wenn eine (und somit alle) diese Bedingungen erfüllt sind, dann nennt man $U$ e
 \begin{subproblem}[difficulty={sehr leicht}]
 Zeige: In einer abelschen Gruppe ist \emph{jede} Untergruppe ein Normalteiler.
 \end{subproblem}
+\begin{subproblem}
+Die Untergruppe der orientierungserhaltenden Bewegungen ist ein Normalteiler von $\Isom(\IR^n)$. Die Untergruppe der Translationen auch.
+\end{subproblem}
 \begin{subproblem}[difficulty={leicht}]
-Finde eine Untergruppe von $S_3$, die kein Normalteiler von $S_3$ ist.
+Finde alle Normalteiler von $S_3$ und eine Untergruppe von $S_3$, die kein Normalteiler ist.
+\end{subproblem}
+\begin{subproblem}[difficulty={mittel}]
+Finde alle Normalteiler von $S_4$.
 \end{subproblem}
 \begin{subproblem}[difficulty={schwer}]
-Finde eine Gruppe, in der zwar jede Untergruppe ein Normalteiler ist, die jedoch nicht abelsch ist.
+Finde eine Gruppe, in der zwar jede Untergruppe ein Normalteiler ist, die jedoch nicht abelsch ist. Hinweis: Quaternionen oder komplexe $2\times 2$-Matrizen benutzen.
 \end{subproblem}
 \end{problem}
 
-\begin{problem}[title={Normalteiler und Untergruppen},difficulty={leicht bis mittel}]
+\begin{problem}[title={Normalteiler und Untergruppen}]
 Sei $G$ ein Gruppe, $N\unlhd G$ und $U\leq G$. Zeige:
 
-$NU = UN := \set{un | u\in U, n\in N}$ ist wieder eine Untergruppe von $G$.
+\begin{subproblem}[difficulty={leicht}]
+$N\cap U$ ist ein Normalteiler von $U$
+\end{subproblem}
+\begin{subproblem}[difficulty={leicht bis mittel}]
+$NU = UN := \set{un | u\in U, n\in N}$ ist eine Untergruppe von $G$.
+\end{subproblem}
 \end{problem}
 
-\begin{problem}[title={Quotientengruppen I: Konstruktion}, difficulty={fortgeschritten}]
+\begin{problem}[title={Quotientengruppen}, difficulty={fortgeschritten}]
 Normalteiler benötigt man, um sinnvoll von Quotienten reden zu können. Was ist ein Quotient einer Gruppe?
 
 Ist $G$ eine Gruppe und $U\leq G$ eine Untergruppe, so ist der Quotient das, was entsteht, wenn wir alle Information, die in $U$ steckt, vergessen, d.h. jedes Element von $U$ mit $1$ identifizieren. Wir möchten gerne, dass das Ergebnis wieder eine Gruppe ist.
@@ -269,9 +280,9 @@ Es seien $G,H$ zwei Gruppen. Eine Abbildung $\phi: G\to H$ heißt \udot{Gruppenh
 \[\forall g_1,g_2\in G: \phi(g_1\circ g_2) = \phi(g_1)\circ \phi(g_2)\]
 erfüllt.
 
-Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der die Gruppenelemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das sehr bis gar nichts mit $G$ zu tun haben muss) mit auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
+Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der die man Gruppenelemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das sehr bis gar nichts mit $G$ zu tun haben muss) auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
 
-Beispiel:
+Präziser:
 \begin{subproblem}
 $G$ operiere auf einer Menge $\Omega$. Die Abbildungen $\tau_g: \Omega\to\Omega, x\mapsto{^g x}$ sind bijektiv und $\tau: G\to Sym(\Omega), g\mapsto\tau_g$ ist ein Homomorphismus.
 
@@ -280,21 +291,20 @@ Umgekehrt: Jeder Homomorphismus $\phi: G\to Sym(\Omega)$ definiert eine Gruppeno
 
 Zur Veranschaulichung betrachte die Würfelgruppe $W$, d.h. die Isometriegruppe des Würfels. Zeige:
 \begin{subproblem}
-$W$ operiert auf der Menge der Ecken, Kanten bzw. Seiten des Würfels. Beschreibe auf welche Art von Permutationen die Homomorphismen $W\to Sym(8)$, $W\to Sym(12)$ bzw. $W\to Sym(6)$ die dreizähligen, vierzähligen Drehungen und die Inversion abgebildet werden.
+$W$ operiert auf der Menge der Ecken, Kanten bzw. Seiten des Würfels. Zeige, dass die drei Homomorphismen $W\to Sym(8)$, $W\to Sym(12)$ bzw. $W\to Sym(6)$ injektiv, aber nicht surjektiv sind und beschreibe auf welche Art von Permutationen sie jeweils die dreizähligen, vierzähligen Drehungen, die Spiegelungen bzw. die Inversion abbilden.
 \end{subproblem}
 \begin{subproblem}
 Betrachte die beiden eingeschriebenen regulären Tetraeder im Würfel:
 
 \begin{tikzpicture}[scale=2.0]
-\draw
+\draw[thick]
 (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
-\draw
+\draw[thick]
 (1,1,0) -- (1,1,1)
 (1,0,0) -- (1,0,1)
 (0,1,0) -- (0,1,1)
 (1,0,0) -- (1,1,0) -- (0,1,0);
-
-\draw[dotted]
+\draw[thick,dotted]
 (0,0,0) -- (1,0,0)
 (0,0,0) -- (0,1,0)
 (0,0,0) -- (0,0,1);
@@ -321,15 +331,14 @@ Beweise, dass $W$ auf der Menge dieser beiden Tetraeder operiert. Welche Symmetr
 $W$ operiert auch auf der Menge der vier Raumdiagonalen
 
 \begin{tikzpicture}[scale=2.0]
-\draw
+\draw[thick]
 (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
-\draw
+\draw[thick]
 (1,1,0) -- (1,1,1)
 (1,0,0) -- (1,0,1)
 (0,1,0) -- (0,1,1)
 (1,0,0) -- (1,1,0) -- (0,1,0);
-
-\draw[dotted]
+\draw[thick,dotted]
 (0,0,0) -- (1,0,0)
 (0,0,0) -- (0,1,0)
 (0,0,0) -- (0,0,1);
@@ -343,10 +352,95 @@ $W$ operiert auch auf der Menge der vier Raumdiagonalen
 
 Zeige, dass der dadurch definierte Homomorphismus $W\to Sym(4)$ surjektiv ist. Es gibt genau eine Symmetrie $s\in W$, die nicht die Identität ist, aber trotzdem auf das neutrale Element von $Sym(4)$ abgebildet wird. Welche?
 \end{subproblem}
+\begin{subproblem}
+Die sechs Seitenmittelpunkte bilden die Ecken eines Oktaeders. Die acht Seitenmittelpunkte eines Oktaeders bilden einen Würfel.
+
+\begin{tabular}{cc}
+\begin{tikzpicture}
+\draw[thick]
+(-1,-1,+1) -- (+1,-1,+1) -- (+1,+1,+1) -- (-1,+1,+1) -- cycle;
+\draw[thick]
+(+1,+1,-1) -- (+1,+1,+1)
+(+1,-1,-1) -- (+1,-1,+1)
+(-1,+1,-1) -- (-1,+1,+1)
+(+1,-1,-1) -- (+1,+1,-1) -- (-1,+1,-1);
+\draw[thick,dotted]
+(-1,-1,-1) -- (+1,-1,-1)
+(-1,-1,-1) -- (-1,+1,-1)
+(-1,-1,-1) -- (-1,-1,+1);
+
+\draw[dashed]
+(+1,0,0) -- (0,0,+1) -- (-1,0,0) -- (0,0,-1) -- cycle;
+\draw[dashed]
+(0,+1,0) -- (+1,0,0) -- (0,-1,0)
+(0,+1,0) -- (0,0,+1) -- (0,-1,0)
+(0,+1,0) -- (-1,0,0) -- (0,-1,0)
+(0,+1,0) -- (0,0,-1) -- (0,-1,0);
+
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=0.5]
+\draw[dashed]
+(-1,-1,+1) -- (+1,-1,+1) -- (+1,+1,+1) -- (-1,+1,+1) -- cycle;
+\draw[dashed]
+(+1,+1,-1) -- (+1,+1,+1)
+(+1,-1,-1) -- (+1,-1,+1)
+(-1,+1,-1) -- (-1,+1,+1)
+(+1,-1,-1) -- (+1,+1,-1) -- (-1,+1,-1);
+\draw[dotted]
+(-1,-1,-1) -- (+1,-1,-1)
+(-1,-1,-1) -- (-1,+1,-1)
+(-1,-1,-1) -- (-1,-1,+1);
+
+\draw[thick]
+(+3,0,0) -- (0,0,+3) -- (-3,0,0);
+\draw[thick,dotted]
+(-3,0,0) -- (0,0,-3) -- (+3,0,0);
+\draw
+(0,+3,0) -- (+3,0,0) -- (0,-3,0)
+(0,+3,0) -- (0,0,+3) -- (0,-3,0)
+(0,+3,0) -- (-3,0,0) -- (0,-3,0);
+\draw[thick,dotted]
+(0,+3,0) -- (0,0,-3) -- (0,-3,0);
+\end{tikzpicture}
+\end{tabular}
+
+Daher operiert die Würfelgruppe auch als Symmetriegruppe eines Oktaeders, d.h. es gibt einen Homomorphismus $W\to O$. Umgekehrt gibt es einen Homomorphismus $O\to W$. Mache dir klar, dass es sich dabei um zwei zueinander inverse Abbildungen handelt. Die Würfelgruppe und die Oktaedergruppe sind also gleich.
+\end{subproblem}
 
 Es sei nun $T$ die Tetraeder-Gruppe, d.h. die Isometriegruppe des regelmäßigen Tetraeders. 
 \begin{subproblem}
 Zeige: $T$ operiert auf der Menge der vier Eckpunkte des Tetraeders und der dazugehörige (so wie in a. definierte) Gruppenhomomorphismus $T\to Sym(4)$ ist bijektiv.
+\end{subproblem}
+\begin{subproblem}
+Die Kantenmittelpunkte der sechs Kanten eines regulären Tetraeders bilden einen Oktaeder.
+
+\begin{tikzpicture}
+\draw[blue,thick]
+(+1,+1,+1) -- (+1,-1,-1)
+(+1,+1,+1) -- (-1,+1,-1)
+(+1,+1,+1) -- (-1,-1,+1);
+\draw[blue,thick,dotted]
+(+1,-1,-1) -- (-1,+1,-1);
+\draw[blue,thick]
+(-1,+1,-1) -- (-1,-1,+1)
+(-1,-1,+1) -- (+1,-1,-1);
+
+\draw[dashed]
+(+1,0,0) -- (0,0,+1) -- (-1,0,0) -- (0,0,-1) -- cycle;
+\draw[dashed]
+(0,+1,0) -- (+1,0,0) -- (0,-1,0)
+(0,+1,0) -- (0,0,+1) -- (0,-1,0)
+(0,+1,0) -- (-1,0,0) -- (0,-1,0)
+(0,+1,0) -- (0,0,-1) -- (0,-1,0);
+\end{tikzpicture}
+
+Dies liefert uns einen Homomorphismus $T\to O$. Zeige, dass dieser injektiv, aber nicht surjektiv ist. Die Tetraeder ist also eine Untergruppe der Oktaedergruppe=Würfelgruppe, aber nicht gleich.
+\end{subproblem}
+
+\begin{subproblem}[difficulty={mittel bis schwer}]
+Mache dir wie auch für die Würfel- und Oktaedergruppe klar, dass die Ikosaeder- und die Dodekaedergruppe gleich sind.
+
+Finde außerdem einen nichttrivialen Homomorphismus $I\to Sym(5)$. (Hinweis: Im Dodekaeder gibt es fünf einbeschriebene Würfel).
 \end{subproblem}
 \end{problem}
 
