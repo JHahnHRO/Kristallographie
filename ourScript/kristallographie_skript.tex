@@ -1,7 +1,17 @@
 % !TeX root = kristallographie_skript.tex
 % !TeX spellcheck = de_DE
 \documentclass[fontsize=11pt,fleqn,a4paper]{scrartcl}
+
 \input{_preamble/master_preamble.tex}
+
+\usepackage{fontspec}
+\fontspec[Path=./crystSymbols/cryst/]{cryst}
+\DeclareFontFamily{U}{cry}{\hyphenchar\font=-1}
+\DeclareFontShape{U}{cry}{m}{n}{ <-> cryst}{}
+\newcommand{\sym}[1]{{\usefont{U}{cry}{m}{n} \symbol{#1}}}
+
+%\newfont{\symfont}{cryst}
+%\newcommand{\sym}[1]{{\symfont}}
 
 \title{Kristallographie}
 \author{Johannes Hahn \and Andrea Hanke}
@@ -11,9 +21,12 @@
 \maketitle
 
 \section{Geometrie}
+bla
+\sym{42}
+bla
 \input{geometrie.tex}
 
-\input{geometrie_uebungen.tex}
+%\input{geometrie_uebungen.tex}
 
 \section{Gruppentheorie}
 \input{gruppentheorie.tex}
@@ -22,7 +35,7 @@
 \subsection{Klassifikation der endlichen Bewegungsgruppen in $\leq 3$ Dimensionen}
 \input{endliche_bewegungsgruppen.tex}
 
-\input{gruppentheorie_uebungen.tex}
+%\input{gruppentheorie_uebungen.tex}
 
 \pagebreak
 \section{Kristalle}
@@ -30,6 +43,6 @@
 \subsection{Punktgruppen, Kristallklassen und Kristallsysteme}
 \input{kristall_symmetrien.tex}
 
-\input{kristalle_uebungen.tex}
+%\input{kristalle_uebungen.tex}
 
 \end{document}
