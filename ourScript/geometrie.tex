@@ -126,3 +126,48 @@ Allgemeiner: Alle Bewegungen des
 \item $\IR^3$ sind Drehungen oder Drehinversionen (ggf. um den Drehwinkel $0$) oder Ebenenspiegelungen gefolgt von einer Translation (ggf. um den Abstand $0$).
 \end{enumerate}
 \end{theorem}
+
+\subsection{Stereografische Projektion}
+Mittels der stereografischen Projektion werden alle Punkte auf der Kugeloberfläche von $S^3$ bis auf dem Südpol als Punkte auf einer Ebene dargestellt. Wir nutzen sie, um Orientierungen von Vektoren im dreidimensionalen Raum zueinander im zweidimensionalen Raum darzustellen. Diese Vektoren können verschiedenes symbolisieren, bei uns meist die Orientierung von Drehachsen und Flächennormalen von konvexen Körpern.
+\begin{figure}%{0.5\linewidth}
+\centering
+\begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./pictures/stpr1.jpg}
+	\caption{Schnittpunkte der Flächennormalen auf $S^2$}
+\end{subfigure}%
+\begin{subfigure}{0.4\textwidth}
+	\centering
+	\includegraphics[width=1.2\linewidth]{./pictures/stpr2.jpg}
+	\caption{Projektion auf die Äquatorebene}
+\end{subfigure}
+\caption{Stereografische Projektion eines konvexen Körpers}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./pictures/stpr3.jpg}
+	\caption{Stereografische Projektion verschiedener Körper}
+\end{figure}
+
+\begin{figure}
+	\centering
+\begin{subfigure}{1\textwidth}
+	\centering
+	\includegraphics[width=1.1\linewidth]{./pictures/stpr4.jpg}
+	\caption{Lage der Winkel $\phi$ und $\rho$}
+\end{subfigure}
+\begin{subfigure}{0.9\textwidth}
+	\centering
+	\includegraphics[width=0.8\linewidth]{./pictures/stpr5.jpg}
+	\caption{Das Wulffsche Netz}
+\end{subfigure}
+	\caption{Orientierung ablesen mit dem Wulffschen Netz}
+\end{figure}
+ Dazu nutzen wir eine Kugel mit Oberfläche $S^2$, Mittelpunkt $m$, Nordpol $N$, Südpol $S$ und Äquatorebene $A$. Die Vektoren, die wir darstellen wollen, verlängern wir zu von $m$ ausgehenden Halbgeraden, die $S^2$ in einem Schnittpunkt $p$ schneiden. Jeder dieser Schnittpunkte $p$ wird mit einer Geraden mit dem Südpol der Kugel verbunden. Der Schnittpunkt $a$ einer solchen Geraden mit der Äquatorebene ist die Projektion des Vektors.
+ Diese Stereografische Projektion ist winkelerhaltend (aber nicht abstandserhaltend) und eignet sich daher, Orientierungen  (aber keine Tranlationen) in 3D auf einem (unendlich großen) Stück Papier darzustellen. Man beachte, dass bei dieser Konstruktion alle Punkte auf der Nordhalbkugel innerhalb des Äquatorkreises projiziert werden, der Äquator auf sich selbst abgebildet wird und alle Punkte der Südhalbkugel außerhalb des Äquators landen. 
+
+Eine in der Kristallographie oft verwendete Variation der stereografischen Projektion ist die folgende: Alle Punkte der Nordhalbkugel werden mit dem Südpol verbunden und die Schnittpunkte werden mit einem Kreuz gekennzeichnet. Alle Punkte der Südhalbkugel werden hingegen mit dem Nordpol verbunden und die Schnittpunkte werden mit einem Kreis gekennzeichnet. Dadurch braucht es nur noch ein endlich großes Stück Papier (nämlich genau die Fläche, die durch den Äquator eingeschlossen wird).
+Oft wird diese (kristallographische) stereografische Projektion benutzt, um 3-dimensionale konvexe Körper darzustellen. Dazu werden die Normalenvektoren aller Flächen vom Körper wie oben beschrieben projiziert. Man kann sich auch vorstellen, dass der Mittelpunkt des konvexen Körpers auf dem Mittelpunkt $m$ der Kugel sitzt und dann die Flächennormalen verlängern, bis sie $S^2$ durchstoßen. Aber Achtung: Der Ursprung der projizierten Flächennormalen des konvexen Körpers ist nicht frei wählbar - er muss mit dem Schnittpunkt der entsprechenden Halbgeraden von $m$ aus übereinstimmen. Insbesondere liegt der Ursprung oft, aber nicht notwendigerweise auf dem Flächenmittelpunkt.
+ 
+Nebst der Transportabilität einer solch erhaltenen Projektion (man beachte das Gewicht eines unendlich großen Blatt Papiers), hat diese Variation der stereografischen Projektion auch den Vorteil, dass Spiegelungen am Äquator sowie die Inversion am Kugelmittelpunkt sehr leicht erkennbar sind. Der Nachteil ist, dass Drehungen, die nicht senkrecht zur Äquatorebene stehen (oder bei 2-zähligen Drehungen \sym{2} auch in Äquatorebene liegen) deutlich schwieriger auszuführen sind. Wie wir im Folgenden noch sehen werden, stört uns dieser Nachteil aber fast nie, da für kristallographische Anwendungen die möglichen Orientierungen sehr eingeschränkt sind.
