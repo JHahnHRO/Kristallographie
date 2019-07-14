@@ -143,7 +143,7 @@ $G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von ...
 
 \item \udot{Monoklin}: ... der Inversion und einer 2-zähligen Drehung.
 
-Jeder monokline Kristall besitzt eine Basiszelle, in denen eine Basisrichtung eine zweizählige Symmetrieachse ist (d.h. der Kristall hat eine 180°-Drehung, -Drehinversion oder -Schraubung um diese Achse) und die anderen beiden Basisrichtungen senkrecht auf ihr stehen.
+Jeder monokline Kristall besitzt eine Basiszelle, in denen eine Basisrichtung eine zweizählige Symmetrieachse ist (d.h. der Kristall hat eine \SI{180}{\degree}-Drehung, -Drehinversion oder -Schraubung um diese Achse) und die anderen beiden Basisrichtungen senkrecht auf ihr stehen.
 
 \item \udot{Orthorhombisch}: ... der Inversion und zwei 2-zähligen Drehungen um zueinander senkrechte Achsen.
 
@@ -151,7 +151,7 @@ Jeder orthorhombische Kristall besitzt eine Basiszelle mit drei rechten Winkeln,
 
 \item \udot{Trigonal}: ... der Inversion, einer 2- und einer 3-zähligen Drehung um zueinander senkrechte Achsen.
 
-Jeder trigonale Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine dreizählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
+Jeder trigonale Kristall besitzt eine Basiszelle, in der die Winkel $\SI{90}{\degree}$, $\SI{90}{\degree}$ und $\SI{120}{\degree}$ sind, eine Basisrichtung eine dreizählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
 
 \item \udot{Tetragonal}: ... der Inversion, einer 2- und einer 4-zähligen Drehung um zueinander senkrechte Achsen.
 
@@ -159,24 +159,51 @@ Jeder tetragonale Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in 
 
 \item \udot{Hexagonal}: ... der Inversion, einer 2- und einer 6-zähligen Drehung um zueinander senkrechte Achsen.
 
-Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $90^\circ$, $90^\circ$ und $120^\circ$ sind, eine Basisrichtung eine sechszählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
+Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $\SI{90}{\degree}$, $\SI{90}{\degree}$ und $\SI{120}{\degree}$ sind, eine Basisrichtung eine sechszählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
 
 \item \udot{Kubisch}: ... der Inversion, einer 3- und einer 4-zähligen Drehung.
 
 Jeder kubische Kristall besitzt eine würfelförmige Basiszelle, in der durch alle drei Basisrichtungen vierzählige Symmetrieachsen laufen und durch alle vier Raumdiagonalen jeweils dreizählige Symmetrieachsen.
 \end{enumerate}
+Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_diagramm_kristallsysteme} angegeben.
 \end{theoremdef}
 
-%TODO
-\textcolor{red}{TODO: Hasse-Diagram mit TikZ}
+\begin{figure}[ht]
+\begin{tikzpicture}[yscale=2]
+\node (kubisch) at (0,4.585) % ~\log_2(24) = \log_2(6)+2
+	{Kubisch};
+\node (hexagonal) at (0,3.585) % ~\log_2(12) = \log_2(6)+1
+	{Hexagonal};
+\node (tetragonal) at (2,3)
+	{Tetragonal};
+\node (trigonal) at (-2,2.585) % ~\log_2(6)
+	{Trigonal};
+\node (orthorhombisch) at (1,2)
+	{Orthorhombisch};
+\node (monoklin) at (0,1)
+	{Monoklin};
+\node (triklin) at (0,0)
+	{Triklin};
 
+\path
+(triklin) edge (monoklin)
+(monoklin) edge (orthorhombisch)
+(monoklin) edge (trigonal)
+(orthorhombisch) edge (hexagonal)
+(orthorhombisch) edge (tetragonal)
+(tetragonal) edge (kubisch)
+(trigonal) edge (kubisch)
+(trigonal) edge (hexagonal);
+\end{tikzpicture}
+\label{kristalle:hasse_diagramm_kristallsysteme}
+\caption{Hasse-Diagramm der sieben dreidimensionalen Kristallsysteme}
+\end{figure}
 
-
-\begin{theorem}[Geometrische Einschränkungen]
+\begin{theorem}[Geometrische Einschränkungen]\label{kristalle:kristallographische_einschränkung}
 Sei $\Lambda\subseteq\IR^n$ ein Kristall und $1\neq g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
 \begin{enumerate}
-\item Die einzigen möglichen Winkel sind $180^\circ=\frac{2\pi}{2}, 120^\circ= \frac{2\pi}{3}, 90^\circ=\frac{2\pi}{4}$, $60^\circ=\frac{2\pi}{6}$ oder $\alpha=0$.
-\item Ist $\alpha\neq 0$, dann gibt es unabhängige Vektoren $v_1,v_2,v_3$ im Translationsgitter (nicht notwendigerweise eine Basis), sodass
+\item Die einzigen möglichen Winkel sind $\SI{180}{\degree}=\frac{2\pi}{2}, \SI{120}{\degree}= \frac{2\pi}{3}, \SI{90}{\degree}=\frac{2\pi}{4}$, $\SI{60}{\degree}=\frac{2\pi}{6}$ oder $\alpha=0$.
+\item Ist $\alpha\neq 0$, dann gibt es unabhängige Vektoren $v_1, v_2, v_3$ im Translationsgitter (nicht notwendigerweise eine Basis des Translationsgitters), sodass
 \begin{enumerate}
 \item $v_1$ in Richtung der Drehachse von $g$ zeigt und
 \item $v_2$ und $v_3$ senkrecht auf $v_1$ stehen,
@@ -246,5 +273,11 @@ Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen.
 \end{example}
 
 \begin{remark}
-Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gitterpunkte enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste, kann aber den Vorteil haben, geometrisch einfacher zu sein als eine Basiszelle von $Trans(\Lambda)$ selbst, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$. Es muss keine Basis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
+Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gittervektoren enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste (sie ist also keine \emph{elementare} Basiszelle), kann aber den Vorteil haben, geometrisch einfacher zu sein als eine elementare Basiszelle, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$. Es muss keine Basis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
 \end{remark}
+
+\begin{proof}[Beweis der Klassifikation der Kristallsysteme]
+Es ist $G\leq O(\IR^3)$ und somit $D:=G\cap SO(\IR^3)$ eine Untergruppe von $G$, die Untergruppe aller \emph{orientierungserhaltenden} Symmetrien. Man beachte nun, dass wir stets die Inversion im Nullpunkt in $G$ enthalten haben, da dies immer eine Symmetrie von $T$ ist (es muss keine Symmetrie des $T$ zugrundeliegenden Kristalls sein).
+
+Jedes Element $g\in G$ ist entweder bereits in $D$ enthalten oder $-g$ ist in $D$ enthalten. Daher ist $G=\Set{\pm g | g\in G} = \braket{-1,D}$. Es genügt also, die möglichen Drehgruppen zu klassifizieren. $G$ (und damit auch $D$) ist endlich, weil es eine kristallographische Punktgruppe ist. Wir kennen aufgrund von \ref{gruppen:klassifikation_drehgruppen_in_3D} alle möglichen, endlichen Drehgruppen und aufgrund von \ref{kristalle:kristallographische_einschränkung} können aber nur solche Drehgruppen auftreten, in den alle Drehungen Ordnung 1,2,3,4 oder 6 haben. Das reduziert unsere Liste auf genau die angegebenen Gruppen.
+\end{proof}
