@@ -79,13 +79,26 @@ also ${^g(^h w)} = {^{g\circ h}w}$. Das sind genau die Bedingungen, die wir brau
 \end{proof}
 
 \begin{remark}
-Man beachte, dass bzgl. dieser Operation die Translationen trivial operieren, d.h. von jedem $g\in G$ ist nur der translationsfreie Anteil (das $Q$) relevant.
+Man beachte, dass bzgl. dieser Operation die Translationen und nur die Translationen trivial operieren, d.h. von jedem $g\in G$ ist nur der translationsfreie Anteil (das $Q$) relevant.
 
 Das vereinfacht die Art der vorkommenden Symmetrien drastisch: Wenn $g\in\Aut(\Lambda)$ eine Schraubung um Winkel $\alpha$ ist, dann ist die Symmetrie $R_g:w\mapsto{^g w}$ des Translationsgitters nur noch eine Drehung um Winkel $\alpha$. Analog ist $R_s$ eine Spiegelung, wenn $s$ eine (Gleit)spiegelungen war.
 \end{remark}
 
+\begin{corollary}
+Sei $\Lambda\subseteq\IR^n$ ein Kristall. Die Gruppe $\Set{R_g | g\in G}$ ist eine kristallographische Punktgruppe. Insbesondere ist sie endlich.
+\end{corollary}
+\begin{proof}
+Alle $R_g$ sind orthogonal. Insbesondere fixieren sie alle den Nullvektor. Also ist es eine Punktgruppe. Sie ist eine Untergruppe von $\Aut(Trans(\Lambda))$, also eine kristallographische Punktgruppe. 
+\end{proof}
+
+\begin{remark}
+Sofern die Übungsaufgaben zu Normalteilern und Quotienten bearbeitet wurden: Die Translationsuntergruppe ist ein Normalteiler (da -- wie eben bewiesen -- konjugieren mit beliebigen $g\in G$ aus Translationen wieder Translationen macht). Es ist also wohldefiniert, von der Quotientengruppe $\Aut(\Lambda) / Trans(\Lambda)$ zu sprechen.
+
+Die Punktgruppe $\Set{R_g | g\in G}$ ist kanonisch isomorph zu diesem Quotienten.
+\end{remark}
+
 \begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
-Wir wählen uns eine Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Abbildungen $R_g$ geometrisch zu interpretieren ist folgende:
+Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}$ geometrisch zu interpretieren ist folgende:
 
 Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfache Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
 
@@ -97,14 +110,12 @@ $R_g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die f
 \item Das Ergebnis $g(\hat{x})$ liegt in irgendeiner Zelle $Z'$, die eine translatierte Kopie $Z'=\tau(Z)$ der Basiszelle ist (möglicherweise mit einer Verschiebung um $0$, d.h. $\tau=\id$). Wir machen die Translation $\tau$ rückgängig und erhalten wieder einen Punkt in $\hat{y}=\tau^{-1}(g(\hat{x}))\in Z$.
 \item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y=R_g(x)$.
 \end{enumerate}
+
+Man beachte, dass diese Symmetrien $T\to T$ nicht analog zu den Symmetrien $Trans(\Lambda)\to Trans(\Lambda)$ sein müssen. Ist etwa $g$ eine Schraubung oder eine Drehung, so ist $R_g: Trans(\Lambda) \to Trans(\Lambda)$ in beiden Fällen eine Drehung. Hingegen operieren Schraubungen und Drehungen nicht identisch auf $T$.
+
+Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf eine Weise als Symmetriegruppe auftreten kann. Dieselbe Gruppe (hier $\Aut(\Lambda) / Trans(\Lambda)$) kann auf verschiedenen Objekten (hier etwa: Dem Translationsgitter und dem 3-Torus) auf völlig verschiedene Arten operieren.
 \end{remark}
 
-\begin{corollary}
-Sei $\Lambda\subseteq\IR^n$ ein Kristall. Die Gruppe $\Set{R_g | g\in G}$ ist eine kristallographische Punktgruppe.
-\end{corollary}
-\begin{proof}
-Alle $R_g$ sind orthogonal. Insbesondere fixieren sie alle den Nullvektor. Also ist es eine Punktgruppe. Sie ist eine Untergruppe von $\Aut(Trans(\Lambda))$, also eine kristallographische Punktgruppe. 
-\end{proof}
 
 \begin{definition}[Kristallklassen]
 Wir sagen, dass zwei Kristalle $\Lambda,\Lambda'\subseteq\IR^n$ in derselben \udot{Kristallklasse} sind, wenn die beiden Punktgruppen
@@ -131,7 +142,7 @@ Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wi
 \subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
 
 \begin{remark}
-Unser Ziel ist es jetzt, die dreidimensionalen Kristallsysteme zu beweisen. Laut Definition müssen wir also die Punktgruppen aller Translationsgitter bestimmen.
+Unser Ziel ist es jetzt, die dreidimensionalen Kristallsysteme zu klassifizieren. Laut Definition müssen wir also die Punktgruppen aller Translationsgitter bestimmen.
 \end{remark}
 
 \begin{theoremdef}[Klassifikation der dreidimensionalen Kristallsysteme]
