@@ -55,12 +55,13 @@ $G$ operiert wirklich auf $\Omega$, denn wenn $g(x)=x$ gilt und $h\in G$ ist, da
 \medbreak
 Schritt 2: Zählen.
 
-Da jede Drehung außer der um 0° die Punkte auf der Drehachse fixiert, hat jedes Element $g\in G\setminus\set{1}$ genau zwei Fixpunkte der Länge 1. Die Identität hat natürlich genau $\abs{\Omega}$ Fixpunkte.
+Da jede Drehung $g\neq\id$ nur die Punkte auf ihrer Drehachse fixiert, hat jedes Element $g\in G\setminus\set{\id}$ genau zwei Fixpunkte der Länge 1. Die Identität hat natürlich genau $\abs{\Omega}$ Fixpunkte.
 
 Es sei $r:=\abs{\Omega/G}$ die Anzahl der Bahnen der Operation von $G$ auf $\Omega$, $p_1,\ldots,p_r$ je ein Punkt aus jeder Bahn und $a_i:=\abs{G_{p_i}}$ die Größe der dazugehörigen Stabilisatoren. Aufgrund des Satzes von Burnside gilt also:
 \begin{align*}
 r &= \frac{1}{\abs{G}}\sum_{g\in G} \abs{Fix(g)} \\
-&=\frac{\abs{\Omega} + (\abs{G}-1)2}{\abs{G}} \\
+&=\frac{1}{\abs{G}}(\abs{Fix(\id)} + \sum_{g\in G\setminus\set{\id}} \abs{Fix(g)}) \\
+&=\frac{\abs{\Omega}}{\abs{G}} + \frac{(\abs{G}-1)2}{\abs{G}} \\
 &=\frac{\sum_{i=1}^r \abs{^G p_i}}{\abs{G}} + 2(1-\frac{1}{\abs{G}}) \\
 &=\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_r}+2(1-\frac{1}{\abs{G}})
 \end{align*}
@@ -114,7 +115,7 @@ Jede dieser Gruppen kommt als Drehgruppe eines Polyeders vor. Die Diedergruppen 
 \end{remark}
 
 \begin{remark}
-\emph{Nicht} jede dieser Gruppen kommt auch in den Symmetrien eines dreidimensionalen Kristalls vor, z.B. gibt es keine dreidimensionalen Kristalle mit Ikosaeder/Dodekaeder-Symmetrie und keine, die Drehungen der Ordnung 5 oder $\geq 7$ enthalten. Nur Drehungen der Ordnung 2,3,4 und 6 treten in Kristallen auf. Wir werden noch sehen, wieso.
+\emph{Nicht} jede dieser Gruppen kommt auch in den Symmetrien eines dreidimensionalen Kristalls vor, z.B. gibt es keine dreidimensionalen Kristalle mit Ikosaeder/Dodekaeder-Symmetrie und keine, die Drehungen der Ordnung 5 oder $\geq 7$ enthalten. Nur Drehungen der Ordnung 2,3,4 und 6 treten in Kristallen auf. Wir werden in \ref{kristalle:kristallographische_einschränkung} noch sehen, wieso.
 
-(Es gibt aber durchaus vierdimensionale Kristalle mit Ikosaedersymmetrien und sechsdimensionale Kristalle mit siebenzähligen Drehsymmetrien etc.)
+Es gibt aber durchaus vierdimensionale Kristalle mit Ikosaedersymmetrien und sechsdimensionale Kristalle mit siebenzähligen Drehsymmetrien etc.
 \end{remark}

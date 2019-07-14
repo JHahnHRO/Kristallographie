@@ -92,28 +92,28 @@ Alle $R_g$ sind orthogonal. Insbesondere fixieren sie alle den Nullvektor. Also 
 \end{proof}
 
 \begin{remark}
-Sofern die Übungsaufgaben zu Normalteilern und Quotienten bearbeitet wurden: Die Translationsuntergruppe ist ein Normalteiler (da -- wie eben bewiesen -- konjugieren mit beliebigen $g\in G$ aus Translationen wieder Translationen macht). Es ist also wohldefiniert, von der Quotientengruppe $\Aut(\Lambda) / Trans(\Lambda)$ zu sprechen.
+Sofern die Übungsaufgaben zu Normalteilern und Quotienten bearbeitet wurden: Die Translationsuntergruppe $\mathcal{T}\leq\Aut(\lambda)$ ist ein Normalteiler (da -- wie eben bewiesen -- konjugieren mit beliebigen $g\in G$ aus Translationen wieder Translationen macht). Es ist also wohldefiniert, von der Quotientengruppe $\Aut(\Lambda) / \mathcal{T}$ zu sprechen.
 
-Die Punktgruppe $\Set{R_g | g\in G}$ ist kanonisch isomorph zu diesem Quotienten.
+Die Punktgruppe $\Set{R_g | g\in G}$ ist kanonisch isomorph zu diesem Quotienten, indem wir $R_g$ und $g\mathcal{T}$ identifizieren.
 \end{remark}
 
 \begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
-Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}$ geometrisch zu interpretieren ist folgende:
+Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}=\Aut(\Lambda)/\mathcal{T}$ geometrisch zu interpretieren ist folgende:
 
 Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfache Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
 
 \medbreak
-$R_g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist $R_g(x)$ derjenige Punkt, der wie folgt entsteht:
+$g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist ${^g x}$ derjenige Punkt, der wie folgt entsteht:
 \begin{enumerate}
 \item Zunächst fassen wir $x\in T$ als Punkt $\hat{x}\in Z$ auf.
 \item Dann wenden wir $g$ auf diesen Punkt an.
 \item Das Ergebnis $g(\hat{x})$ liegt in irgendeiner Zelle $Z'$, die eine translatierte Kopie $Z'=\tau(Z)$ der Basiszelle ist (möglicherweise mit einer Verschiebung um $0$, d.h. $\tau=\id$). Wir machen die Translation $\tau$ rückgängig und erhalten wieder einen Punkt in $\hat{y}=\tau^{-1}(g(\hat{x}))\in Z$.
-\item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y=R_g(x)$.
+\item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y={^g x}$.
 \end{enumerate}
 
-Man beachte, dass diese Symmetrien $T\to T$ nicht analog zu den Symmetrien $Trans(\Lambda)\to Trans(\Lambda)$ sein müssen. Ist etwa $g$ eine Schraubung oder eine Drehung, so ist $R_g: Trans(\Lambda) \to Trans(\Lambda)$ in beiden Fällen eine Drehung. Hingegen operieren Schraubungen und Drehungen nicht identisch auf $T$.
+Man beachte, dass diese Symmetrien ${^g}: T\to T$ nicht analog zu den Symmetrien $R_g: Trans(\Lambda)\to Trans(\Lambda)$ sein müssen. Ist etwa $g$ eine Schraubung oder eine Drehung, so ist $R_g: Trans(\Lambda) \to Trans(\Lambda)$ in beiden Fällen eine Drehung. Hingegen operieren Schraubungen und Drehungen nicht unbedingt identisch auf dem 3-Torus.
 
-Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf eine Weise als Symmetriegruppe auftreten kann. Dieselbe Gruppe (hier $\Aut(\Lambda) / Trans(\Lambda)$) kann auf verschiedenen Objekten (hier etwa: Dem Translationsgitter und dem 3-Torus) auf völlig verschiedene Arten operieren.
+Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf eine Weise als Symmetriegruppe auftreten kann. Dieselbe Gruppe (hier $\Aut(\Lambda) /\mathcal{T}$) kann auf verschiedenen Objekten (hier etwa: Dem Translationsgitter und dem 3-Torus) auf völlig verschiedene Arten operieren.
 \end{remark}
 
 
@@ -126,7 +126,7 @@ in $O(\IR^n)$ konjugiert sind.
 \end{definition}
 
 \begin{remark}
-Es gibt möglicherweise sehr viele Kristallklassen in einer Dimension. Und trotzdem sehen Kristalle in verschiedene Kristallklassen manchmal sehr ähnlich aus.
+Es gibt immer endlich viele, aber möglicherweise sehr viele Kristallklassen in einer Dimension. Im dreidimensionalen Raum gibt es z.B. 32 Kristallklassen. Und trotzdem sehen Kristalle in verschiedene Kristallklassen manchmal sehr ähnlich aus.
 
 Deshalb möchten wir zusätzlich zur Einteilung in Kristallklassen die Kristalle etwas gröber einteilen und zwar nach der Form der möglichen Basiszellen des Kristalls.
 \end{remark}
@@ -138,6 +138,10 @@ Es seien $G_1, G_2, G_3, \ldots$ die so auftretenden Punktgruppen.
 
 Ein Kristall $\Lambda\subseteq\IR^n$ gehört zum selben \udot{Kristallsystem} wie $G_i$, wenn die Punktgruppe $\Set{R_g | g\in\Aut(\Lambda)}$ eine Untergruppe von $G_i$ ist, aber nicht von einem kleineren $G_j$.
 \end{definition}
+
+\begin{remark}
+Man beachte, dass in diesem Fall wirklich $\Aut(T)_0 = \set{R_g | g\in \Aut(T)}$ ist. Für einen allgemeinen Kristall kann die linke Seite eine echt kleinere Gruppe sein als die rechte Seite.
+\end{remark}
 
 \subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
 
@@ -211,7 +215,7 @@ Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_dia
 \end{figure}
 
 \begin{theorem}[Geometrische Einschränkungen]\label{kristalle:kristallographische_einschränkung}
-Sei $\Lambda\subseteq\IR^n$ ein Kristall und $1\neq g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
+Sei $\Lambda\subseteq\IR^n$ ein Kristall und $g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
 \begin{enumerate}
 \item Die einzigen möglichen Winkel sind $\SI{180}{\degree}=\frac{2\pi}{2}, \SI{120}{\degree}= \frac{2\pi}{3}, \SI{90}{\degree}=\frac{2\pi}{4}$, $\SI{60}{\degree}=\frac{2\pi}{6}$ oder $\alpha=0$.
 \item Ist $\alpha\neq 0$, dann gibt es unabhängige Vektoren $v_1, v_2, v_3$ im Translationsgitter (nicht notwendigerweise eine Basis des Translationsgitters), sodass
@@ -290,5 +294,5 @@ Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden h
 \begin{proof}[Beweis der Klassifikation der Kristallsysteme]
 Es ist $G\leq O(\IR^3)$ und somit $D:=G\cap SO(\IR^3)$ eine Untergruppe von $G$, die Untergruppe aller \emph{orientierungserhaltenden} Symmetrien. Man beachte nun, dass wir stets die Inversion im Nullpunkt in $G$ enthalten haben, da dies immer eine Symmetrie von $T$ ist (es muss keine Symmetrie des $T$ zugrundeliegenden Kristalls sein).
 
-Jedes Element $g\in G$ ist entweder bereits in $D$ enthalten oder $-g$ ist in $D$ enthalten. Daher ist $G=\Set{\pm g | g\in G} = \braket{-1,D}$. Es genügt also, die möglichen Drehgruppen zu klassifizieren. $G$ (und damit auch $D$) ist endlich, weil es eine kristallographische Punktgruppe ist. Wir kennen aufgrund von \ref{gruppen:klassifikation_drehgruppen_in_3D} alle möglichen, endlichen Drehgruppen und aufgrund von \ref{kristalle:kristallographische_einschränkung} können aber nur solche Drehgruppen auftreten, in den alle Drehungen Ordnung 1,2,3,4 oder 6 haben. Das reduziert unsere Liste auf genau die angegebenen Gruppen.
+Jedes Element $g\in G$ ist entweder bereits in $D$ enthalten oder $-g$ ist in $D$ enthalten. Daher ist $G=\Set{\pm g | g\in G} = \braket{-1,D}$. Es genügt also, die möglichen Drehgruppen zu klassifizieren. $G$ (und damit auch $D$) ist endlich, weil es eine kristallographische Punktgruppe ist. Wir kennen aufgrund von \ref{gruppen:klassifikation_drehgruppen_in_3D} alle möglichen, endlichen Drehgruppen und aufgrund von \ref{kristalle:kristallographische_einschränkung} können aber nur solche Drehgruppen auftreten, in den alle Drehungen Ordnung 1,2,3,4 oder 6 haben. Das reduziert unsere Liste der möglichen Gruppen bereits drastisch.
 \end{proof}

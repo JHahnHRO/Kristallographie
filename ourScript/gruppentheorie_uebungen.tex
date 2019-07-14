@@ -282,7 +282,7 @@ Es seien $G,H$ zwei Gruppen. Eine Abbildung $\phi: G\to H$ heißt \udot{Gruppenh
 \[\forall g_1,g_2\in G: \phi(g_1\circ g_2) = \phi(g_1)\circ \phi(g_2)\]
 erfüllt.
 
-Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der die man Gruppenelemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das sehr bis gar nichts mit $G$ zu tun haben muss) auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
+Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der die man Gruppenelemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das wenig bis gar nichts mit $G$ zu tun haben muss) auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
 
 Präziser:
 \begin{subproblem}
@@ -462,9 +462,9 @@ Wenn $G$ auf $\Omega$ operiert, dann sind Stabilisatoren von Punkten in derselbe
 
 Wieso interessiert uns das? Zeige:
 \begin{subproblem}
-Wenn $X,Y\subseteq\IR^n$ kongruente geometrische Objekte sind (z.B. zwei Würfel, zwei reguläre Tetraeder, ...), dann sind $\Aut(X)$ und $\Aut(Y)$ zueinander konjugierte, aber nicht unbedingt gleiche Untergruppen von $Isom(\IR^n)$.
+Wenn $X,Y\subseteq\IR^n$ kongruente geometrische Objekte sind (z.B. zwei Würfel, zwei reguläre Tetraeder, ...), dann sind $\Aut(X)$ und $\Aut(Y)$ zueinander konjugierte, aber nicht unbedingt gleiche Untergruppen von $\Isom(\IR^n)$.
 \end{subproblem}
-D.h. wenn wir die Symmetriegruppen von geometrischen Objekten bestimmen wollen, dann wollen wir eigentlich (bestimmte) Untergruppen von $Isom(\IR^n)$ \emph{bis auf Konjugation} bestimmen, denn natürlich wollen wir Untergruppen, die von kongruenten Objekten kommen, als gleich ansehen.
+D.h. wenn wir die Symmetriegruppen von geometrischen Objekten bestimmen wollen, dann wollen wir eigentlich (bestimmte) Untergruppen von $\Isom(\IR^n)$ \emph{bis auf Konjugation} bestimmen, denn natürlich wollen wir Untergruppen, die von kongruenten Objekten kommen, als gleich ansehen.
 \end{problem}
 
 
@@ -497,7 +497,7 @@ Es sei nun $\kappa_g: G\to G, x\mapsto gxg^{-1}$ der Konjugationsautomorphismus.
 \begin{problem}[title={Cayley-Einbettung; \enquote{Jede Gruppe ist eine Permutationsgruppe}}]
 Sei $G$ eine Gruppe. Für jedes $g\in G$ sei $\lambda_g: G\to G, x\mapsto gx$ die Linksmultiplikationsabbildung.
 
-Zeige, dass $\lambda: G\to Sym(G), g\mapsto\lambda_g$ ein injektiver Gruppenhomomorphismus ist.
+Zeige, dass $\lambda: G\to \Sym(G), g\mapsto\lambda_g$ ein injektiver Gruppenhomomorphismus ist.
 \end{problem}
 
 \begin{problem}
