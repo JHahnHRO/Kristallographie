@@ -36,9 +36,10 @@ Wir beschäftigen uns mit Gruppen, weil sie Symmetrien von Objekten beschreiben.
 \item Ist z.B. $X$ ein gleichseitiges Dreieck in der Ebene, dann hat $\Aut(X)$ genau sechs Elemente:
 
 Die Identität, d.h. die Drehung um $\SI{0}{\degree}$, die Drehung um $\SI{120}{\degree}$, die Drehung um $\SI{240}{\degree}$ sowie drei Spiegelungen an den drei möglichen Spiegelachsen jeweils durch einen Eckpunkt und den gegenüberliegende Seitenmittelpunkt.
-\item Ist $X$ einfach irgendeine Menge, dann bezeichnet man mit $\Sym(X)$ die \udot{symmetrische Gruppe auf/von $X$}. Da eine beliebige Menge völlig unstrukturiert ist, werden einfach \emph{alle} Abbildungen betrachtet, d.h.
+
+\item Ist $X$ einfach irgendeine Menge ohne geometrische oder irgendeine andere Struktur, dann bezeichnet man mit $\Sym(X)$ die \udot{symmetrische Gruppe auf/von $X$}. Dass die Menge unstrukturiert ist, bedeutet, dass wir einfach \emph{alle} Abbildungen $X\to X$ betrachten, d.h.
 \[\Sym(X) := \Set{f: X\to X | f\text{ ist bijektiv}}\]
-(Bijektivität ist wichtig, damit wir wirklich inverse Element bekommen. Beliebige Abbildungen sind nicht invertierbar. Im geometrischen Beispiel brauchten wir das nicht, da starre Bewegungen immer invertierbar sind: Jede Verschiebung, Drehung, Punkt- oder Ebenenspiegelung kann durch eine Verschiebung, Drehung, Punkt- bzw. Ebenenspiegelung rückgängig gemacht werden)
+(Bijektivität ist wichtig, damit wir wirklich inverse Element bekommen. Beliebige Abbildungen sind nicht invertierbar. Im geometrischen Beispiel brauchten wir das nicht, da starre Bewegungen zwnagsweise invertierbar sind)
 
 Speziell, wenn $X$ eine endliche Menge ist, dann bezeichnet man bijektive Abbildungen $X\to X$ auch als \udot{Permutationen} und die Gruppe $\Sym(X)$ auch als \udot{Permutationsgruppe}. Es gibt genau $\abs{\Sym(X)} = \abs{X}!$ viele Permutationen.
 
@@ -57,7 +58,7 @@ sowie zwei \udot{3-Zyklen}, die Permutationen, die drei Elemente im Kreis permut
 \end{example}
 
 \begin{example}[Abstrakte Gruppen]
-Es gibt Gruppen, denen man nicht sofort ansieht, dass sie Symmetrien beschreiben. Es gibt auch (wenige) Gruppen, die gar keine Symmetrien beschreiben.
+Es gibt Gruppen, denen man nicht sofort ansieht, dass sie Symmetrien beschreiben. Es gibt auch Gruppen, die gar keine Symmetrien geometrischer Objekte beschreiben.
 
 \begin{enumerate}
 \item Zahlenbereiche mit Addition: $\IZ,\IQ,\IR,\IC,\IR^n$ jeweils zusammen mit $\circ=+$ sind kommutative Gruppen. Das neutrale Element ist die Zahl Null bzw. der Nullvektor. Inverse Elemente sind Negative.

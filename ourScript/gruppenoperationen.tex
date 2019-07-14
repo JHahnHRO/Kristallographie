@@ -34,7 +34,7 @@ eine Operation.
 \begin{lemma}[Offensichtliches]
 Operiert $G$ auf $X$, dann betrachten wir die Abbildungen $\tau_g: X\to X, x\mapsto {^g x}$. Es gilt:
 \begin{enumerate}
-\item $\tau_{gh} =\tau_g\circ\tau_h$.
+\item $\tau_1=\id_X$ und $\tau_{gh} =\tau_g\circ\tau_h$.
 \item Inverse Elemente operieren wie inverse Abbildungen: $\tau_g$ ist bijektiv und ihre inverse Abbildung ist $\tau_{g^{-1}}$.
 \end{enumerate}
 \end{lemma}
@@ -42,14 +42,14 @@ Operiert $G$ auf $X$, dann betrachten wir die Abbildungen $\tau_g: X\to X, x\map
 \begin{definition}[Bahn und Stabilisator]
 Operiert $G$ auf $X$ und ist $x\in X$ ein beliebiges Element, so heißt die Menge
 \[{^G x} := \Set{{^g x} | g\in G}\]
-\udot{Bahn von $x$} oder \udot{Orbit von $x$}.
+\udot{Bahn von $x$}.
 
 Die Teilmenge
 \[G_x := \Set{g\in G | {^g x} = x}\]
 von $G$ nennt man \udot{Stabilisator von $x$}.
 \end{definition}
 
-\begin{theorem}[Orbit-Stabiliser-Theorem]
+\begin{theorem}[Bahn-Stabilisator-Theorem]
 Operiert $G$ auf $X$ und ist $x\in X$ beliebig, dann gilt:
 \begin{enumerate}
 \item $G_x\leq G$.
