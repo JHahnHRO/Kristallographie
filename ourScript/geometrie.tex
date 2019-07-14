@@ -27,6 +27,44 @@ $\alpha$ wird dabei als Drehwinkel bezeichnet. Die Drehachse erkennt man daran, 
 \end{enumerate}
 \end{example}
 
+\begin{table}[]
+	\caption{Symmetrieoperationen ohne Translationsanteil}
+	\begin{tabular}{cC{4cm}C{5cm}c}
+		\toprule
+		Symbol    & Bezeichnung im Hermann-Maguin-Symbol       & Symmetrieoperation                           & Gruppenordnung \\
+		\midrule
+		\sym{0}   & $\overline{1}$                             & Inversion                                    & 1              \\
+		\sym{2}   & $2$                                        & 2-zählige Drehachse                          & 1              \\
+		\sym{3}   & $3$                                        & 3-zählige Drehachse                          & 3              \\
+		\sym{4}   & $4$                                        & 4-zählige Drehachse                          & 4              \\
+		\sym{6}   & $6$                                        & 6-zählige Drehachse                          & 6              \\
+		\sym{30}  & $\overline{3}$ "drei quer"                 & 3-zählige Drehinversionsachse                & 6              \\
+		\sym{40}  & $\overline{4}$ "vier quer"                 & 4-zählige Drehinversionsachse                & 4              \\
+		\sym{60}  & $\overline{6}$ "sechs quer"                & 6-zählige Drehinversionsachse                 & 6              \\
+		& $m \hspace{0.5cm}(=\overline{2})$                        & Spiegelung an der Ebene                      & 2              \\
+		\sym{102} & $\frac{2}{m}$ "zwei über m"                & 2-zählige Drehung senkrecht zur Spiegelebene & 4              \\
+		\sym{103} & $\frac{3}{m} = \overline{6}$ "drei über m" & 3-zählige Drehung senkrecht zur Spiegelebene & 6              \\
+%		&                                            &                                              &               \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[]
+	\caption{Symmetrieoperationen mit Translationsanteil}
+	\begin{tabular}{C{1.5cm}C{3cm}C{5cm}C{3cm}c}
+		\toprule
+		Symbol                                                       & Bezeichnung im Hermann-Maguin-Symbol       & Symmetrieoperation mit Translation um $t$                                                                                                                                                                       & Gruppenordnung auf $T^3$ & \\
+		\midrule
+		\sym{21}                                                     & $2_1$                                      & 2-zählige Schraubenachse, $t=\frac{1}{2}$                                                                                                                                                                       & 1                      &  \\
+		\sym{31} \ \  \sym{32}                                       & $3_1$ \ \  $3_2$                           & 3-zählige Schraubenachsen, $t=\frac{1}{3}, t=\frac{2}{3}$                                                                                                                                                       & 3                       & \\
+		\sym{41}\ \  \sym{42} \ \ \sym{43}                           & $4_1$ \ \ $4_2$ \ \newline $4_3$                  & 4-zählige Schraubenachsen, $t=\frac{1}{4}, t=\frac{2}{4}, t=\frac{3}{4}$                                                                                                                                        & 4                        & \\
+		\sym{61} \ \ \sym{62} \ \ \sym{63} \ \ \sym{64} \ \ \sym{65} & $6_1 \ \ 6_2$ \ \newline $6_3$ \ \ $6_4$ \ \newline $6_5$ & 6-zählige Schraubenachsen, $t=\frac{1}{6}, t=\frac{2}{6}, t=\frac{3}{6},$\newline$ t=\frac{4}{6}, t=\frac{5}{6}$                                                                                                          & 6                       & \\
+		\sym{9}                                                      & $a, b, c, n, d$                            &  Gleitspiegelebenen, $t=\frac{1}{2}\vc{a}, t=\frac{1}{2}\vc{b}, t=\frac{1}{2}\vc{c}, t=\frac{1}{2}(\vc{\tau_1}+\vc{\tau_2}), t=\frac{1}{4}(\vc{\tau_1} +\vc{\tau_2}) $ & 2, 4 & \\                  
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
 \begin{definition}
 Angenommen, wir haben einen Nullpunkt gewählt. Eine Isometrie, die den Nullpunkt fixiert, wird \udot{orthogonale} Abbildung genannt.
 \end{definition}

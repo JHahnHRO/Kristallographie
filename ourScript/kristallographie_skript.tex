@@ -10,6 +10,11 @@
 \DeclareFontShape{U}{cry}{m}{n}{ <-> cryst}{}
 \newcommand{\sym}[1]{{\usefont{U}{cry}{m}{n} \symbol{#1}}}
 
+\usepackage{miller} %mit \hkl{} oder \hkl[] oder \hkl<> oder \hkl() könnte man hier die Miller-Indezes ganz einfach verwenden
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering}p{#1}}
+\newcommand{\vc}[1]{\ensuremath{\mathbf{#1}}}
 %\newfont{\symfont}{cryst}
 %\newcommand{\sym}[1]{{\symfont}}
 
@@ -21,9 +26,6 @@
 \maketitle
 
 \section{Geometrie}
-bla
-\sym{42}
-bla
 \input{geometrie.tex}
 
 %\input{geometrie_uebungen.tex}
