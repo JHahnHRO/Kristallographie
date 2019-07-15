@@ -69,3 +69,14 @@ Da es unendlich viele Basiszellen gibt und die meisten (vielleicht sogar alle) d
 
 Es ist daher wünschenswert, sich möglichst hübsche Basiszellen zu besorgen. Die müssen aber gar nicht existieren; es könnte sein, dass alle Basiszellen hässlich sind. Kristalle werden anhand ihrer Symmetrien in Kristallklassen und Kristallsysteme eingeordnet, die auch charakterisieren, was wir bestenfalls von einer Basiszelle erwarten können.
 \end{remark}
+
+\begin{lemma}[Basen aus kürzesten Vektoren]\label{kristalle:gitterbasen_2D_kuerzeste_vektoren}
+Sei $T\subseteq\IR^2$ ein zweidimensionales (!) Translationsgitter. Es sei $w_1\in T\setminus\set{0}$ ein Vektor kürzester Länge und $w_2\in T \setminus \IR w_1$ ein Vektor, der unter allen zu $w_1$ unabhängigen Gittervektoren die kürzeste Länge hat. Dann ist $\set{w_1,w_2}$ eine Gitterbasis.
+\end{lemma}
+\begin{proof}
+Nach Wahl ist $\norm{w_2}\geq\norm{w_1}$. Es sei $\theta=\sphericalangle(w_1,w_2) \in (0,\pi)$ der Winkel zwischen den beiden Vektoren.
+
+Wir betrachten die Zelle $Z:=\Set{\lambda_1 w_1+ \lambda_2 w_2 | 0\leq \lambda_1,\lambda_2\leq 1}$, die von diesen beiden Vektoren aufgespannt wird. Die beiden Vektoren sind genau dann eine Gitterbasis, wenn in $Z$ keine weiteren Gittervektoren außer den vier offensichtlichen $0,w_1,w_2,w_1+w_2$ enthalten sind. Auf den Kanten existieren keine weiteren Gittervektoren, weil sonst $w_1$ oder $w_2$ nicht kürzest möglich wäre.
+
+Wir betrachten den Kreis um den Nullpunkt, der durch $w_2$ geht. Beachte, dass $w_1$ drin liegt in diesem Kreis, weil $\norm{w_1}\leq \norm{w_2}$. Innerhalb dieses Kreises liegen keine nichtoffensichtlichen Gittervektoren, denn diese hätten ja Länge $<\norm{w_2}$ im Gegensatz zur Wahl von $w_2$ als Gittervektor kürzester Länge. Wenn auf oder außerhalb des Kreises nun noch Gittervektoren lägen, dann wäre aber der Differenzvektor zum Eckpunkt  $w_1+w_2$ kürzer. Erneut ist das ein Widerspruch zur Wahl von $w_2$. Also kann nirgendwo in $Z$ ein anderer Basisvektor liegen.
+\end{proof}

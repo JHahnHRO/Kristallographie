@@ -33,7 +33,7 @@ endlich. Ist $g\in\Aut(\Lambda)$ und $g(0)=0$, so sind die drei Punkte $g(a_1),g
 Nicht jede endliche Punktgruppe ist auch eine kristallographische Gruppe. Wir werden gleich z.B. sehen, dass die Ikosaedergruppe zwar endlich, aber nicht kristallographisch ist.
 \end{remark}
 
-\subsubsection{Kristallklassen und Kristallsysteme}
+\subsubsection{Kristallklassen und Gittersysteme}
 
 \begin{remark}
 Wir wissen, dass es nur eine sehr begrenzte Anzahl von (Konjugationsklassen von) endlichen Untergruppen von $O(\IR^3)$ gibt und wir haben eine Liste, die wir gut verstehen. In der Tat gibt es in jeder Dimension immer nur endlich viele endliche Untergruppen von $O(\IR^n)$.
@@ -335,15 +335,4 @@ Wir betrachten die folgende Menge von Vektoren
 Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und erzeugt ganz $T$, weil die Gitterbasis $\set{w_1,w_2,g(w_2)}$ darin enthalten ist. Die Vektoren der rechten Menge bilden die Eckpunkte eines 3-,4-, bzw. 6-seitigen (Anti)Prismas. Die linke Menge enthält zwei zusätzliche Punkte über- bzw. unterhalb des Prismas. Alle zusammen bilden also einen konvexen Körper, dessen Symmetriegruppe in $\Aut(T)_0$ enthalten ist. Die Symmetriegruppe des (Anti)Prismas enthält aber jeweils auch die 3-, 4- bzw. 6-zähligen Diedergruppe.
 
 Die Tetraedergruppe enthält eine 3-zählige Drehung, aber keine Diedergruppe, wird also damit auch ausgeschlossen.
-\end{proof}
-
-\begin{lemma}[Basen aus kürzesten Vektoren]\label{kristalle:gitterbasen_2D_kuerzeste_vektoren}
-Sei $T\subseteq\IR^2$ ein zweidimensionales (!) Translationsgitter. Es sei $w_1\in T\setminus\set{0}$ ein Vektor kürzester Länge und $w_2\in T \setminus \IR w_1$ ein Vektor, der unter allen zu $w_1$ unabhängigen Gittervektoren die kürzeste Länge hat. Dann ist $\set{w_1,w_2}$ eine Gitterbasis.
-\end{lemma}
-\begin{proof}
-Nach Wahl ist $\norm{w_2}\geq\norm{w_1}$. Es sei $\theta=\sphericalangle(w_1,w_2) \in (0,\pi)$ der Winkel zwischen den beiden Vektoren.
-
-Wir betrachten die Zelle $Z:=\Set{\lambda_1 w_1+ \lambda_2 w_2 | 0\leq \lambda_1,\lambda_2\leq 1}$, die von diesen beiden Vektoren aufgespannt wird. Die beiden Vektoren sind genau dann eine Gitterbasis, wenn in $Z$ keine weiteren Gittervektoren außer den vier offensichtlichen $0,w_1,w_2,w_1+w_2$ enthalten sind. Auf den Kanten existieren keine weiteren Gittervektoren, weil sonst $w_1$ oder $w_2$ nicht kürzest möglich wäre.
-
-Wir betrachten den Kreis um den Nullpunkt, der durch $w_2$ geht. Beachte, dass $w_1$ drin liegt in diesem Kreis, weil $\norm{w_1}\leq \norm{w_2}$. Innerhalb dieses Kreises liegen keine nichtoffensichtlichen Gittervektoren, denn diese hätten ja Länge $<\norm{w_2}$ im Gegensatz zur Wahl von $w_2$ als Gittervektor kürzester Länge. Wenn auf oder außerhalb des Kreises nun noch Gittervektoren lägen, dann wäre aber der Differenzvektor zum Eckpunkt  $w_1+w_2$ kürzer. Erneut ist das ein Widerspruch zur Wahl von $w_2$. Also kann nirgendwo in $Z$ ein anderer Basisvektor liegen.
 \end{proof}
