@@ -48,8 +48,12 @@ Eine Basiszelle, in der $Z$ das kleinstmöglichen Volumen hat, heißt \udot{elem
 $Z$ heißt \emph{Basis}zelle, weil die Kantenvektoren $v_1,v_2,v_3$ eine Basis von $\IR^3$ bilden, da sie linear unabhängig sind.
 
 \textsc{Achtung}: Sie müssen keine Basis von $Trans(\Lambda)$ bilden, z.B. könnten wir im kubischen Gitter $\IZ^3$ ja die Vektoren $2e_1,3e_2,5e_3$ betrachten. Sie sind linear unabhängig, aber kein Erzeugendensystem von $\IZ^3$, weil z.B. $e_1+e_2+e_3$ nicht als ganzzahlige Linearkombination von $2e_1, 3e_2$ und $5e_3$ darstellbar ist.
+\end{remark}
 
-Die Vektoren $v_1,v_2,v_3$ bilden eine Basis von $Trans(\Lambda)$ dann und nur dann, wenn die Basiszelle elementar ist.
+\begin{remark}
+Man kann zeigen: Die Vektoren $v_1,v_2,v_3$ bilden eine Basis von $Trans(\Lambda)$ dann und nur dann, wenn die Basiszelle elementar ist.
+
+Alle elementaren Basiszellen haben das gleiche Volumen. Das Volumen einer Basiszelle steht im Zusammenhang damit, wie viele Vektoren noch in der Basiszelle enthalten sind außer den Eckpunkten.
 \end{remark}
 
 \begin{remark}[Von Basiszellen zurück zu Kristallen]
@@ -57,7 +61,7 @@ Hat man umgekehrt einen Parallelepiped
 \[Z:=\Set{\lambda_1v_1+\lambda_2v_2+\lambda_3v_3 | 0\leq\lambda_1,\lambda_2,\lambda_3\leq 1}\]
 zusammen mit einem irgendeinem Motiv $M\subseteq Z$, dann lässt sich dann wieder ein Kristall bauen, indem man die Translationen entlang der Vektoren $v_1,v_2,v_3$ wiederholt anwendet.
 
-\textsc{Achtung}: Der so erhaltende Kristall hat $Z$ als Basiszelle (und $M$ als Motiv), aber i.A. nicht als elementare Basiszelle, es könnte eine kleinere Zelle geben. $v_1,v_2,v_3$ müssen auch keine Basis des Translationsgitters sein. Es könnte z.B. sein, dass es $\frac{1}{42}v_1+\frac{1}{7}v_2$ auch eine Translation des so erhaltenen Gitters ist. Das hängt vom Motiv ab.
+\textsc{Achtung}: Der so erhaltende Kristall hat $Z$ als Basiszelle (und $M$ als Motiv), aber i.A. nicht als elementare Basiszelle, es könnte eine kleinere Zelle geben. $v_1,v_2,v_3$ müssen auch keine Basis des Translationsgitters sein. Das hängt vom Motiv ab.
 \end{remark}
 
 \begin{remark}
