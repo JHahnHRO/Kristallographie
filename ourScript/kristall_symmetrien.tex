@@ -298,7 +298,7 @@ Wenn wir diese Konstruktion jeweils auf diejenige Drehung mit der höchsten Ordn
 \end{remark}
 
 \begin{proof}[Beweis der Klassifikation der Kristallsysteme]
-Es ist $G\leq O(\IR^3)$ und somit $D:=G\cap SO(\IR^3)$ eine Untergruppe von $G$, die Untergruppe aller \emph{orientierungserhaltenden} Symmetrien. Man beachte nun, dass wir stets die Inversion im Nullpunkt in $G$ enthalten haben, da dies immer eine Symmetrie von $T$ ist (es muss keine Symmetrie des $T$ zugrundeliegenden Kristalls sein).
+Es ist $G\leq O(\IR^3)$ und somit $D:=G\cap SO(\IR^3)$ eine Untergruppe von $G$, die Untergruppe aller \emph{orientierungserhaltenden} Symmetrien. Man beachte nun, dass die Inversion im Nullpunkt stets in $G$ enthalten ist, da dies immer eine Symmetrie von $T$ ist (es muss keine Symmetrie des $T$ zugrundeliegenden Kristalls sein).
 
 Jedes Element $g\in G$ ist entweder bereits in $D$ enthalten oder $-g$ ist in $D$ enthalten. Daher ist $G=\Set{\pm g | g\in G} = \braket{-1,D}$. Es genügt also, die möglichen Drehgruppen zu klassifizieren. $G$ (und damit auch $D$) ist endlich, weil es eine kristallographische Punktgruppe ist. Wir kennen aufgrund von \ref{gruppen:klassifikation_drehgruppen_in_3D} alle möglichen, endlichen Drehgruppen und aufgrund von \ref{kristalle:kristallographische_einschraenkung} können aber nur solche Drehgruppen auftreten, in denen alle Drehungen Ordnung 1,2,3,4 oder 6 haben. Das reduziert unsere Liste der möglichen Gruppen drastisch von unendlich vielen zu nur noch elf:
 
@@ -310,7 +310,7 @@ $D$ könnte sein:
 \item Würfel-/Oktaedergruppe: $D$ könnte die Drehgruppe eines Würfels sein
 \end{enumerate}
 
-Die Gruppen, die wir uns als Ziel gesetzt haben, sind darin bereits enthalten: Es sind genau die triviale Gruppe (=triklin), die 2-zählige Drehung (=monoklin), die Diedergruppen (trigonal, orthorhombisch, tetragonal bzw. hexagonal) sowie die Würfelgruppe (=kubisch). Wir müssen noch ausschließen, dass zyklische Gruppen der Ordnungen 3,4,6 oder die Tetraedergruppe vorkommen. Ein Weg, das einzusehen, ist, die folgende Behauptung zu beweisen:
+Die Gruppen, die wir uns als Ziel gesetzt haben, sind darin bereits enthalten: Es sind genau die triviale Gruppe (=triklin), die 2-zählige Drehung (=monoklin), die 2-, 3-, 4- bzw. 6-zähligen Diedergruppen (orthorhombisch, trigonal, tetragonal bzw. hexagonal) sowie die Würfelgruppe (=kubisch). Wir müssen noch ausschließen, dass zyklische Gruppen der Ordnungen 3,4,6 oder die Tetraedergruppe vorkommen. Ein Weg, das einzusehen, ist, die folgende Behauptung zu beweisen:
 
 \medbreak
 \fbox{\parbox{\textwidth}{Ist $g\in\Aut(T)_0$ eine 3-, 4- oder 6-zählige Drehung, dann besitzt $T$ eine Gitterbasis $w_1,w_2,w_3$, sodass $w_1$ parallel zu Drehachse von $g$ ist und $w_3=g(w_2)$ ist.}}
@@ -332,7 +332,7 @@ Haben wir erst einmal so eine Basis gefunden, dann können wir nun weitere Symme
 
 Wir betrachten die folgende Menge von Vektoren
 \[\set{\pm w_1}\cup\set{\pm g^k(w_2) | k=0,1,\ldots,\ord(g)} \subseteq T.\]
-Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und erzeugt ganz $T$, weil die Gitterbasis $\set{w_1,w_2,g(w_2)}$ darin enthalten ist. Die Vektoren der rechten Menge bilden die Eckpunkte eines 3-,4-, bzw. 6-seitigen Prismas. Die linke Menge enthält zwei zusätzliche Punkte über- bzw. unterhalb des Prismas. Alle zusammen bilden also einen konvexen Körper, dessen Symmetriegruppe in $\Aut(T)_0$ enthalten ist. Die Symmetriegruppe des Prismas enthält aber jeweils auch die 3-, 4- bzw. 6-zähligen Diedergruppe.
+Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und erzeugt ganz $T$, weil die Gitterbasis $\set{w_1,w_2,g(w_2)}$ darin enthalten ist. Die Vektoren der rechten Menge bilden die Eckpunkte eines 3-,4-, bzw. 6-seitigen (Anti)Prismas. Die linke Menge enthält zwei zusätzliche Punkte über- bzw. unterhalb des Prismas. Alle zusammen bilden also einen konvexen Körper, dessen Symmetriegruppe in $\Aut(T)_0$ enthalten ist. Die Symmetriegruppe des (Anti)Prismas enthält aber jeweils auch die 3-, 4- bzw. 6-zähligen Diedergruppe.
 
 Die Tetraedergruppe enthält eine 3-zählige Drehung, aber keine Diedergruppe, wird also damit auch ausgeschlossen.
 \end{proof}
