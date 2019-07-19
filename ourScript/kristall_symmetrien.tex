@@ -323,8 +323,8 @@ Wenn wir nun alle Gittervektoren in die $x$-$y$-Ebene projizieren, erhalten wir 
 \[v_2' := \begin{pmatrix} x_2 \\ y_2\end{pmatrix}, v_3' := \begin{pmatrix} x_3 \\ y_3 \end{pmatrix}.\]
 Da das ursprüngliche Gitter die Rotation $g$ als Symmetrie hatte, hat auch das projizierte Gitter $g$ als Rotationssymmetrie. Wir wissen aus \ref{kristalle:gitterbasen_2D_kuerzeste_vektoren}, dass wir eine Basis dieses Gitters finden können, indem wir kürzeste Vektoren suchen. Sei $w_2'\in T'\setminus\set{0}$ ein kürzester Vektor. Dann ist $w_3':=g(w_2')\in T'$ ebenfalls ein kürzester Vektor, weil $g$ eine Isometrie ist, der außerdem von $w_2'$ unabhängig ist, weil $g$ $>2$-zählig ist.
 
-Da $\set{v_2',v_3'}$ eine Gitterbasis ist, gibt es $\alpha,\beta,\gamma,\delta\in\IZ$ mit $w_2'=\alpha v_1'+\beta v_2'$ und $w_2'=\gamma v_1'+\delta v_2'$. Wir kehren wieder zurück zum Gitter $T$, indem wir
-\[w_2:=\alpha v_1+\beta v_2, w_3 := g(w_2)\]
+Da $\set{v_2',v_3'}$ eine Gitterbasis von $T'$ ist, gibt es $\alpha,\beta,\gamma,\delta\in\IZ$ mit $w_2'=\alpha v_1'+\beta v_2'$ und $w_2'=\gamma v_1'+\delta v_2'$. Wir kehren wieder zurück zum Gitter $T$, indem wir
+\[w_2:=\alpha v_2+\beta v_3, \quad w_3 := g(w_2) \;(=\gamma v_2+\delta v_3+??v_1)\]
 definieren. Nun ist $w_1:=v_1, w_2,w_3$ die gesuchte Gitterbasis.
 
 \bigbreak
@@ -332,7 +332,7 @@ Haben wir erst einmal so eine Basis gefunden, dann können wir nun weitere Symme
 
 Wir betrachten die folgende Menge von Vektoren
 \[\set{\pm w_1}\cup\set{\pm g^k(w_2) | k=0,1,\ldots,\ord(g)} \subseteq T.\]
-Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und erzeugt ganz $T$, weil die Gitterbasis $\set{w_1,w_2,g(w_2)}$ darin enthalten ist. Die Vektoren der rechten Menge bilden die Eckpunkte eines 3-,4-, bzw. 6-seitigen (Anti)Prismas (falls $w_2$ und $w_3$ nicht schon senkrecht zu $w_1$ sind) oder eines ebenen 6-, 4-, bzw. 6-Ecks, also Ein Prisma de Höhe 0 (falls $w_2$ und $w_3$ senkrecht zu $w_1$ sind). Die linke Menge enthält zwei zusätzliche Punkte über- bzw. unterhalb des Prismas. Alle zusammen bilden also einen konvexen Körper, dessen Symmetriegruppe in $\Aut(T)_0$ enthalten ist. Die Symmetriegruppe des (Anti)Prismas enthält aber jeweils auch die 3-, 4- bzw. 6-zähligen Diedergruppe. Diese muss also auch bereits in $\Aut(T)_0$ enthalten sein.
+Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und erzeugt ganz $T$, weil die Gitterbasis $\set{w_1,w_2,g(w_2)}$ darin enthalten ist. Die Vektoren der rechten Menge bilden die Eckpunkte eines 3-,4-, bzw. 6-seitigen (Anti)Prismas (falls $w_2$ und $w_3$ nicht senkrecht zu $w_1$ sind, also außerhalb der Projektionsebene liegen) oder eines ebenen 6-, 4-, bzw. 6-Ecks, also ein Prisma der Höhe 0 (falls $w_2$ und $w_3$ senkrecht zu $w_1$ sind, als in der Projektionsebene liegen). Die linke Menge enthält zwei zusätzliche Punkte über- bzw. unterhalb des Prismas. Alle zusammen bilden also die Eckpunkte eins konvexen Polyeders, dessen Symmetriegruppe in $\Aut(T)_0$ enthalten ist. Die Symmetriegruppe des (Anti)Prismas enthält aber jeweils auch die 3-, 4- bzw. 6-zähligen Diedergruppe. Diese muss also auch bereits in $\Aut(T)_0$ enthalten sein.
 
 Die Tetraedergruppe enthält eine 3-zählige Drehung, aber keine Diedergruppe, wird also damit auch ausgeschlossen.
 \end{proof}
