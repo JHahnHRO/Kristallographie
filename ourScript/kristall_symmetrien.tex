@@ -17,14 +17,12 @@ Sei $G\leq\Isom(\IR^n)$ eine Gruppe von Bewegungen.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-a. Wir haben das eigentlich schon einmal bewiesen: Wenn $x$ ein beliebiger Punkt und $G$ endlich ist, dann ist
+a. Wir haben das eigentlich schon einmal bewiesen: Wenn $x$ ein beliebiger Punkt und $G$ endlich ist, dann ist der Schwerpunkt der Basis
 \[\frac{1}{\abs{G}} \sum_{g\in G} g(x)\]
 ein Fixpunkt von ganz $G$.
 
 \medbreak
-b. Wir wählen uns ein Koordinatensystem so, dass der Nullpunkt ein Fixpunkt wird. Starre Bewegungen, die den Nullpunkt fixieren, sind orthogonale Abbildungen.
-
-Wir wählen drei Punkte $a_1,a_2,a_3\in\Lambda$ im Kristall in drei unabhängige Richtungen von $0$ aus. Sei $r:=\max\Set{\norm{a_1},\norm{a_2},\norm{a_3}}$. Aufgrund der Mindestabstand-Bedingung für Kristalle ist
+b. Wir wählen uns ein Koordinatensystem so, dass der Nullpunkt ein Fixpunkt wird, sowie drei Punkte $a_1,a_2,a_3\in\Lambda$ im Kristall in drei unabhängige Richtungen von $0$ aus. Sei $r:=\max\Set{\norm{a_1},\norm{a_2},\norm{a_3}}$. Aufgrund der Mindestabstand-Bedingung für Kristalle ist
 \[X:=\Set{a\in\Lambda | \norm{a}\leq r}\]
 endlich. Ist $g\in\Aut(\Lambda)$ und $g(0)=0$, so sind die drei Punkte $g(a_1),g(a_2),g(a_3)$ wieder aus $X$. Weil $a_1,a_2,a_3$ linear unabhängig sind und $g$ als orthogonale Abbildung linear ist, ist $g$ eindeutig festgelegt durch diese drei Bildpunkte. Es gibt also maximal $\abs{X}^3$ viele Elemente von $G$.
 \end{proof}
@@ -100,7 +98,7 @@ Die Punktgruppe $\Set{R_g | g\in G}$ ist kanonisch isomorph zu diesem Quotienten
 \begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
 Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}=\Aut(\Lambda)/\mathcal{T}$ geometrisch zu interpretieren ist folgende:
 
-Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse einfache Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
+Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse, simple Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
 
 \medbreak
 $g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist ${^g x}$ derjenige Punkt, der wie folgt entsteht:
@@ -119,9 +117,9 @@ Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf e
 
 \begin{definition}[Kristallklassen]
 Wir sagen, dass zwei Kristalle $\Lambda,\Lambda'\subseteq\IR^n$ in derselben \udot{Kristallklasse} sind, wenn die beiden Punktgruppen
-\[\Set{R_g | g\in\Aut(\Lambda)}\]
+\[\Set{R_g | g\in\Aut(\Lambda)} \leq \Aut(Trans(\Lambda))_0 \]
 und
-\[\Set{R_g | g\in\Aut(\Lambda')}\]
+\[\Set{R_g | g\in\Aut(\Lambda')} \leq \Aut(Trans(\Lambda'))_0 \]
 in $O(\IR^n)$ konjugiert sind.
 \end{definition}
 
@@ -141,13 +139,13 @@ Wir sagen $\Lambda,\Lambda'$ sind im selben \udot{Gittersystem}, wenn die Punktg
 Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(\Lambda)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind, d.h. wir vergessen hierbei das Motiv der Kristalle.
 \end{remark}
 
-\subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
+\subsubsection{Klassifikation der dreidimensionalen Gittersysteme}
 
 \begin{remark}
 Unser Ziel ist es jetzt, die dreidimensionalen Gittersysteme zu klassifizieren. Laut Definition müssen wir also die Punktgruppen aller Translationsgitter bestimmen. Konkret wollen wir in diesem Abschnitt den folgenden Satz beweisen:
 \end{remark}
 
-\begin{theoremdef}[Klassifikation der dreidimensionalen Kristallsysteme]
+\begin{theoremdef}[Klassifikation der dreidimensionalen Gittersysteme]
 Betrachte ein Translationsgitter $T=\IZ v_1+\IZ v_2+\IZ v_3\subseteq\IR^3$. Es sei $G:=\Aut(T)_0$ die Punktgruppe des Nullpunkts.
 
 $G$ ist dann genau eine der folgenden sieben Gruppen: $G$ ist erzeugt von ...
@@ -178,25 +176,34 @@ Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $\SI{90}{\de
 
 Jeder kubische Kristall besitzt eine würfelförmige Basiszelle, in der durch alle drei Basisrichtungen vierzählige Symmetrieachsen laufen und durch alle vier Raumdiagonalen jeweils dreizählige Symmetrieachsen.
 \end{enumerate}
-Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_diagramm_kristallsysteme} angegeben.
+Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_diagramm_Gittersysteme} angegeben.
 \end{theoremdef}
 
 \begin{figure}[ht]
 \begin{tikzpicture}[yscale=2]
 \node (kubisch) at (0,4.585) % ~\log_2(24) = \log_2(6)+2
 	{Kubisch};
+\node at (-3,4.585) {24};
 \node (hexagonal) at (0,3.585) % ~\log_2(12) = \log_2(6)+1
 	{Hexagonal};
+\node at (-3,3.585) {12};
 \node (tetragonal) at (2,3)
 	{Tetragonal};
+\node at (-3,3) {8};
 \node (trigonal) at (-2,2.585) % ~\log_2(6)
 	{Trigonal};
+\node at (-3,2.585) {6};
 \node (orthorhombisch) at (1,2)
 	{Orthorhombisch};
+\node at (-3,2) {4};
 \node (monoklin) at (0,1)
 	{Monoklin};
+\node at (-3,1) {2};
 \node (triklin) at (0,0)
 	{Triklin};
+\node at (-3,0) {1};
+
+\draw (-2.75,-0.5) -- (-2.75,5); 
 
 \path
 (triklin) edge (monoklin)
@@ -208,14 +215,14 @@ Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_dia
 (trigonal) edge (kubisch)
 (trigonal) edge (hexagonal);
 \end{tikzpicture}
-\caption{Hasse-Diagramm der sieben dreidimensionalen Kristallsysteme}
-\label{kristalle:hasse_diagramm_kristallsysteme}
+\caption{Hasse-Diagramm der sieben dreidimensionalen Gittersysteme zusammen mit der Ordnung der jeweiligen Drehgruppe}
+\label{kristalle:hasse_diagramm_Gittersysteme}
 \end{figure}
 
 \begin{remark}
-Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht alle kristallographische Punktgruppen und zweitens eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine andere dieser Gruppen als $\Aut(T)_0$ vorkommen kann.
+Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht alle kristallographischen Punktgruppen und zweitens eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine anderen Gruppen als $\Aut(T)_0$ vorkommen kann.
 
-Das werden wir in zwei Schritten tun: Mit Hilfe der sogenannten \enquote{kristallographischen Restriktion} werden wir von unendlich vielen auf elf Fälle reduzieren. Im zweiten Schritt werden wir mit einer genaueren Analyse den übrigen elf noch einmal vier ausschließen.
+Das werden wir in zwei Schritten tun: Mit Hilfe der sogenannten \enquote{kristallographischen Restriktion} werden wir von unendlich vielen auf elf Fälle reduzieren. Im zweiten Schritt werden wir mit einer genaueren Analyse von den übrigen elf noch einmal vier ausschließen.
 \end{remark}
 
 \begin{theorem}[Kristallographische Einschränkung]\label{kristalle:kristallographische_einschraenkung}
@@ -234,12 +241,13 @@ Ist außerdem $\alpha\neq\pi$, dann können wir zusätzlich auch
 erreichen.
 \end{enumerate}
 \end{theorem}
+
 \begin{proof}
 Wir betrachten die orthogonale Abbildung $R_g:=w\mapsto{^g w}$ auf dem Translationsgitter. In unserem Fall ist das eine Drehung.
 
 Die Drehachse geht natürlich durch den Nullpunkt, aber weil wir mit Translationen verknüpfen können, hat das Translationsgitter natürlich auch Drehsymmetrien mit gleichem Winkel und paralleler Drehachse durch jeden anderen Punkt des Gitters.
 
-Wir legen uns das Koordinatensystem so, dass die $z$-Achse in Richtung der Drehachse zeigt und betrachten einen beliebigen Vektor $v=\begin{psmallmatrix}x\\y\\z\end{psmallmatrix}$ im Translationsgitter, der nicht in Richtung der Drehachse zeigt, d.h. $(x,y)\neq(0,0)$. Solche Vektoren gibt es, z.B. müssen immer mindestens zwei Vektoren in jeder Basis des Gitters diese Eigenschaft haben. O.B.d.A. können wir sogar annehmen, dass wir das Koordinatensystem so gewählt haben, dass $y=0$ ist.
+Wir legen uns das Koordinatensystem so, dass die $z$-Achse in Richtung der Drehachse zeigt und betrachten einen beliebigen Vektor $v=\begin{psmallmatrix}x\\y\\z\end{psmallmatrix}$ im Translationsgitter, der nicht in Richtung der Drehachse zeigt, d.h. $(x,y)\neq(0,0)$. Solche Vektoren gibt es, z.B. müssen immer mindestens zwei Vektoren in jeder Gitterbasis diese Eigenschaft haben. O.B.d.A. können wir sogar annehmen, dass wir das Koordinatensystem so gewählt haben, dass $y=0$ ist.
 
 \medbreak
 Da $R$ das Translationsgitter auf sich selbst abbildet, sind $Rv$ und $R^{-1}v$ wieder Vektoren im Gitter. Wir können explizit beschreiben, was $Rv$ und $R^{-1}v$ sind:
@@ -281,23 +289,23 @@ Das schließt also insbesondere auch aus, dass es Kristalle mit Dodekaeder-Symme
 
 Mehr Einschränkungen gibt es jedoch nicht mehr, d.h. jede der endlichen Drehgruppen, die ausschließlich 2-, 3-, 4- oder 6-zählige Symmetrien hat, kommt tatsächlich in der Symmetriegruppe eines dreidimensionalen Kristalls vor.
 
-Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen. Je höher die Dimension ist, desto höher kann die Ordnung der vorkommenden Drehungen sein. Beispielsweise hat das $n$-dimensionale Würfelgitter $\IZ^n$ eine Symmetrie der Ordnung $n+1$. Insbesondere gibt es im $\IR^4$ schon Kristalle mit 5-zähligen Symmetrien.
+Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen. Es gibt zwar in jeder Dimension nur eine endliche Liste von möglichen Elementordnungen, aber je höher die Dimension ist, desto höher kann die Ordnung der vorkommenden Drehungen/Schraubungen sein. Beispielsweise hat das $n$-dimensionale Würfelgitter $\IZ^n$ eine Symmetrie der Ordnung $n+1$. Insbesondere gibt es im $\IR^4$ schon Kristalle mit 5-zähligen Symmetrien.
 \end{remark}
 
 \begin{example}
 \begin{enumerate}
 \item Der Kristall $\IZ^3\subseteq\IR^3$ hat die Würfelgruppe in seiner Symmetriegruppe. Also besitzt er sowohl 3- als auch 4-zählige Drehsymmetrien. Wenn es eine 4-zählige Drehung gibt, gibt es auch eine 2-zählige.
-\item Der Kristall $(\IZ+(\frac{1+\sqrt{3}i}{2})\IZ) \times \IZ \subseteq \IC\times\IR = \IR^3$ (Honigwaben) hat eine 6-zählige Drehsymmetrie.
+\item Der Kristall $(\IZ+\IZ(\tfrac{1+\sqrt{3}i}{2})) \times \IZ \subseteq \IC\times\IR = \IR^3$ (Honigwaben) hat eine 6-zählige Drehsymmetrie.
 \end{enumerate}
 \end{example}
 
 \begin{remark}
-Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gittervektoren enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste (sie ist also keine \emph{elementare} Basiszelle), kann aber den Vorteil haben, geometrisch einfacher zu sein als eine elementare Basiszelle, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$. Es muss keine Basis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
+Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gittervektoren enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste (sie ist also keine \emph{elementare} Basiszelle), kann aber den Vorteil haben, geometrisch einfacher zu sein als eine elementare Basiszelle, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$, d.h. die Basiszelle mit den Kanten $v_1,v_2,v_3$ ist ein rechtwinkliges Prisma mit einem Parallelogramm als Grundfläche (das auch ein Rechteck oder ein Quadrat sein kann) Es muss keine Gitterbasis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
 
 Wenn wir diese Konstruktion jeweils auf diejenige Drehung mit der höchsten Ordnung anwenden, dann erhalten wir die Basiszellen aus dem Klassifikationssatz.
 \end{remark}
 
-\begin{proof}[Beweis der Klassifikation der Kristallsysteme]
+\begin{proof}[Beweis der Klassifikation der Gittersysteme]
 Es ist $G\leq O(\IR^3)$ und somit $D:=G\cap SO(\IR^3)$ eine Untergruppe von $G$, die Untergruppe aller \emph{orientierungserhaltenden} Symmetrien. Man beachte nun, dass die Inversion im Nullpunkt stets in $G$ enthalten ist, da dies immer eine Symmetrie von $T$ ist (es muss keine Symmetrie des $T$ zugrundeliegenden Kristalls sein).
 
 Jedes Element $g\in G$ ist entweder bereits in $D$ enthalten oder $-g$ ist in $D$ enthalten. Daher ist $G=\Set{\pm g | g\in G} = \braket{-1,D}$. Es genügt also, die möglichen Drehgruppen zu klassifizieren. $G$ (und damit auch $D$) ist endlich, weil es eine kristallographische Punktgruppe ist. Wir kennen aufgrund von \ref{gruppen:klassifikation_drehgruppen_in_3D} alle möglichen, endlichen Drehgruppen und aufgrund von \ref{kristalle:kristallographische_einschraenkung} können aber nur solche Drehgruppen auftreten, in denen alle Drehungen Ordnung 1,2,3,4 oder 6 haben. Das reduziert unsere Liste der möglichen Gruppen drastisch von unendlich vielen zu nur noch elf:
@@ -321,14 +329,14 @@ Dazu benutzen wir, dass es eine Gitterbasis $v_1,v_2,v_3$ gibt, in der $v_1$ par
 
 Wenn wir nun alle Gittervektoren in die $x$-$y$-Ebene projizieren, erhalten wir ein zweidimensionales Gitter $T'$, mit Gitterbasis
 \[v_2' := \begin{pmatrix} x_2 \\ y_2\end{pmatrix}, v_3' := \begin{pmatrix} x_3 \\ y_3 \end{pmatrix}.\]
-Da das ursprüngliche Gitter die Rotation $g$ als Symmetrie hatte, hat auch das projizierte Gitter $g$ als Rotationssymmetrie. Wir wissen aus \ref{kristalle:gitterbasen_2D_kuerzeste_vektoren}, dass wir eine Basis dieses Gitters finden können, indem wir kürzeste Vektoren suchen. Sei $w_2'\in T'\setminus\set{0}$ ein kürzester Vektor. Dann ist $w_3':=g(w_2')\in T'$ ebenfalls ein kürzester Vektor, weil $g$ eine Isometrie ist, der außerdem von $w_2'$ unabhängig ist, weil $g$ $>2$-zählig ist.
+Da das ursprüngliche Gitter die Rotation $g$ als Symmetrie hatte, hat auch das projizierte Gitter $g$ als Rotationssymmetrie. Wir wissen aus \ref{kristalle:gitterbasen_2D_kuerzeste_vektoren}, dass wir eine Gitterbasis dieses Gitters finden können, indem wir kürzeste Vektoren suchen. Sei $w_2'\in T'\setminus\set{0}$ ein kürzester Vektor. Dann ist $w_3':=g(w_2')\in T'$ ebenfalls ein kürzester Vektor, weil $g$ eine Isometrie ist, der außerdem von $w_2'$ unabhängig ist, weil $g$ $>2$-zählig ist.
 
 Da $\set{v_2',v_3'}$ eine Gitterbasis von $T'$ ist, gibt es $\alpha,\beta,\gamma,\delta\in\IZ$ mit $w_2'=\alpha v_1'+\beta v_2'$ und $w_2'=\gamma v_1'+\delta v_2'$. Wir kehren wieder zurück zum Gitter $T$, indem wir
 \[w_2:=\alpha v_2+\beta v_3, \quad w_3 := g(w_2) \;(=\gamma v_2+\delta v_3+??v_1)\]
 definieren. Nun ist $w_1:=v_1, w_2,w_3$ die gesuchte Gitterbasis.
 
 \bigbreak
-Haben wir erst einmal so eine Basis gefunden, dann können wir nun weitere Symmetrien des Gitters $T$ finden und somit ausschließen, dass die zyklischen Gruppen der Ordnung 3,4,6 bzw. die Tetraedergruppe vorkommen.
+Haben wir erst einmal so eine Gitterbasis gefunden, dann können wir nun weitere Symmetrien des Gitters $T$ finden und somit ausschließen, dass die zyklischen Gruppen der Ordnung 3,4,6 bzw. die Tetraedergruppe vorkommen.
 
 Wir betrachten die folgende Menge von Vektoren
 \[\set{\pm w_1}\cup\set{\pm g^k(w_2) | k=0,1,\ldots,\ord(g)} \subseteq T.\]

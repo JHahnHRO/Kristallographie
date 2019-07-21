@@ -21,7 +21,7 @@ Insbesondere impliziert die Bedingung des Mindestabstands, dass es nur abzählba
 \begin{definition}
 Die \udot{Symmetriegruppe} oder auch \udot{Raumgruppe} eines Kristalls $\Lambda$ ist die Gruppe aller starren (=abstandserhaltenden) Bewegungen, die das Gitter in sich selbst abbilden:
 \[\Aut(\Lambda) := \Set{s\in \operatorname{Isom}(\IR^3) | s(\Lambda)=\Lambda}\]
-Nach Definition enthält $\Aut(\Lambda)$ mindestens die drei Translationen $x\mapsto x+t_i$. Die Menge \emph{aller} Translationen, die $\Lambda$ in sich selbst abbilden, ist eine Untergruppe von $\Aut(\Lambda)$.
+Nach Definition enthält $\Aut(\Lambda)$ mindestens die drei Translationen $x\mapsto x+v_i$. Die Menge \emph{aller} Translationen, die $\Lambda$ in sich selbst abbilden, ist eine Untergruppe von $\Aut(\Lambda)$.
 \end{definition}
 
 \begin{definition}
@@ -41,17 +41,17 @@ Es sei $\Lambda$ ein Kristall. Wählen wir drei unabhängige $v_1,v_2,v_3\in Tra
 \[Z:=\Set{a+\lambda_1 v_1 + \lambda_2 v_2 + \lambda_3 v_3 | 0\leq \lambda_i \leq 1}\]
 eine \udot{Basiszelle von $\Lambda$} und die Menge $M:=Z\cap\Lambda$ man \udot{Motiv} des Kristalls.
 
-Eine Basiszelle, in der $Z$ das kleinstmöglichen Volumen hat, heißt \udot{elementare Basiszelle} des Gitters.
+Eine Basiszelle, die das kleinstmöglichen Volumen hat, heißt \udot{elementare Basiszelle} des Gitters.
 \end{definition}
 
 \begin{remark}
-$Z$ heißt \emph{Basis}zelle, weil die Kantenvektoren $v_1,v_2,v_3$ eine Basis von $\IR^3$ bilden, da sie linear unabhängig sind.
+$Z$ heißt \emph{Basis}zelle, weil die Kantenvektoren $v_1,v_2,v_3$ eine Vektorraumbasis von $\IR^3$ bilden, da sie linear unabhängig sind.
 
-\textsc{Achtung}: Sie müssen keine Basis von $Trans(\Lambda)$ bilden, z.B. könnten wir im kubischen Gitter $\IZ^3$ ja die Vektoren $2e_1,3e_2,5e_3$ betrachten. Sie sind linear unabhängig, aber kein Erzeugendensystem von $\IZ^3$, weil z.B. $e_1+e_2+e_3$ nicht als ganzzahlige Linearkombination von $2e_1, 3e_2$ und $5e_3$ darstellbar ist.
+\textsc{Achtung}: Sie müssen keine Gitterbasis von $Trans(\Lambda)$ bilden, d.h. wir können nicht zwangsläufig jeden Gittervektor als ganzzahlige Linearkombination von $v_1,v_2,v_3$ erzeugen. Z.B. könnten wir im kubischen Gitter $\IZ^3$ ja die Vektoren $2e_1,3e_2,5e_3$ betrachten. Sie sind linear unabhängig, aber kein Erzeugendensystem von $\IZ^3$, weil z.B. $e_1+e_2+e_3$ nicht als ganzzahlige Linearkombination von $2e_1, 3e_2$ und $5e_3$ darstellbar ist.
 \end{remark}
 
 \begin{remark}
-Man kann zeigen: Die Vektoren $v_1,v_2,v_3$ bilden eine Basis von $Trans(\Lambda)$ dann und nur dann, wenn die Basiszelle elementar ist.
+Man kann zeigen: Die Vektoren $v_1,v_2,v_3$ bilden eine Gitterbasis von $Trans(\Lambda)$ dann und nur dann, wenn die Basiszelle elementar ist.
 
 Alle elementaren Basiszellen haben das gleiche Volumen. Das Volumen einer Basiszelle steht im Zusammenhang damit, wie viele Vektoren noch in der Basiszelle enthalten sind außer den Eckpunkten.
 \end{remark}
@@ -61,22 +61,20 @@ Hat man umgekehrt einen Parallelepiped
 \[Z:=\Set{\lambda_1v_1+\lambda_2v_2+\lambda_3v_3 | 0\leq\lambda_1,\lambda_2,\lambda_3\leq 1}\]
 zusammen mit einem irgendeinem Motiv $M\subseteq Z$, dann lässt sich dann wieder ein Kristall bauen, indem man die Translationen entlang der Vektoren $v_1,v_2,v_3$ wiederholt anwendet.
 
-\textsc{Achtung}: Der so erhaltende Kristall hat $Z$ als Basiszelle (und $M$ als Motiv), aber i.A. nicht als elementare Basiszelle, es könnte eine kleinere Zelle geben. $v_1,v_2,v_3$ müssen auch keine Basis des Translationsgitters sein. Das hängt vom Motiv ab.
+\textsc{Achtung}: Der so erhaltende Kristall hat $Z$ als Basiszelle (und $M$ als Motiv), aber i.A. nicht als elementare Basiszelle, es könnte eine kleinere Zelle geben, weil sich das Motiv $M$ zufällig schon innerhalb von $Z$ wiederholt.
 \end{remark}
 
 \begin{remark}
 Da es unendlich viele Basiszellen gibt und die meisten (vielleicht sogar alle) davon furchtbar schiefwinklig sind, kann man i.A. wenig Aussagen über die Symmetrie des Kristalls treffen, wenn man nur eine beliebige Basiszelle und das Motiv kennt.
 
-Es ist daher wünschenswert, sich möglichst hübsche Basiszellen zu besorgen. Die müssen aber gar nicht existieren; es könnte sein, dass alle Basiszellen hässlich sind. Kristalle werden anhand ihrer Symmetrien in Kristallklassen und Kristallsysteme eingeordnet, die auch charakterisieren, was wir bestenfalls von einer Basiszelle erwarten können.
+Es ist daher wünschenswert, sich möglichst hübsche Basiszellen zu besorgen. Die müssen aber gar nicht existieren; es könnte sein, dass alle Basiszellen hässlich sind. Kristalle werden anhand ihrer Symmetrien in Kristallklassen und Gittersysteme eingeordnet, die auch charakterisieren, was wir bestenfalls von einer Basiszelle erwarten können.
 \end{remark}
 
 \begin{lemma}[Basen aus kürzesten Vektoren]\label{kristalle:gitterbasen_2D_kuerzeste_vektoren}
 Sei $T\subseteq\IR^2$ ein zweidimensionales (!) Translationsgitter. Es sei $w_1\in T\setminus\set{0}$ ein Vektor kürzester Länge und $w_2\in T \setminus \IR w_1$ ein Vektor, der unter allen zu $w_1$ unabhängigen Gittervektoren die kürzeste Länge hat. Dann ist $\set{w_1,w_2}$ eine Gitterbasis.
 \end{lemma}
 \begin{proof}
-Nach Wahl ist $\norm{w_2}\geq\norm{w_1}$. Es sei $\theta=\sphericalangle(w_1,w_2) \in (0,\pi)$ der Winkel zwischen den beiden Vektoren.
+Nach Wahl ist $\norm{w_2}\geq\norm{w_1}$. Wir betrachten die Zelle $Z:=\Set{\lambda_1 w_1+ \lambda_2 w_2 | 0\leq \lambda_1,\lambda_2\leq 1}$, die von diesen beiden Vektoren aufgespannt wird. Die beiden Vektoren sind genau dann eine Gitterbasis, wenn in $Z$ keine weiteren Gittervektoren außer den vier offensichtlichen $0,w_1,w_2,w_1+w_2$ enthalten sind. Auf den Kanten existieren keine weiteren Gittervektoren, weil sonst $w_1$ oder $w_2$ nicht kürzest möglich wäre.
 
-Wir betrachten die Zelle $Z:=\Set{\lambda_1 w_1+ \lambda_2 w_2 | 0\leq \lambda_1,\lambda_2\leq 1}$, die von diesen beiden Vektoren aufgespannt wird. Die beiden Vektoren sind genau dann eine Gitterbasis, wenn in $Z$ keine weiteren Gittervektoren außer den vier offensichtlichen $0,w_1,w_2,w_1+w_2$ enthalten sind. Auf den Kanten existieren keine weiteren Gittervektoren, weil sonst $w_1$ oder $w_2$ nicht kürzest möglich wäre.
-
-Wir betrachten den Kreis um den Nullpunkt, der durch $w_2$ geht. Beachte, dass $w_1$ drin liegt in diesem Kreis, weil $\norm{w_1}\leq \norm{w_2}$. Innerhalb dieses Kreises liegen keine nichtoffensichtlichen Gittervektoren, denn diese hätten ja Länge $<\norm{w_2}$ im Gegensatz zur Wahl von $w_2$ als Gittervektor kürzester Länge. Wenn auf oder außerhalb des Kreises nun noch Gittervektoren lägen, dann wäre aber der Differenzvektor zum Eckpunkt  $w_1+w_2$ kürzer. Erneut ist das ein Widerspruch zur Wahl von $w_2$. Also kann nirgendwo in $Z$ ein anderer Basisvektor liegen.
+Wir betrachten den Kreis um den Nullpunkt, der durch $w_2$ geht, also Radius $\norm{w_2}$ hat. Beachte, dass $w_1$ drin liegt in diesem Kreis, weil $\norm{w_1}\leq \norm{w_2}$. Im Inneren dieses Kreises liegen keine nichtoffensichtlichen Gittervektoren, denn diese hätten ja Länge $<\norm{w_2}$ im Gegensatz zur Wahl von $w_2$ als Gittervektor kürzester Länge. Wenn auf oder außerhalb des Kreises nun noch Gittervektoren außer $w_2$ lägen, dann wäre aber der Differenzvektor zum Eckpunkt $w_1+w_2$ kürzer. (Man beachte, dass $w_1+w_2$ selbst auf dem Kreis liegen könnte; das tritt im Honigwabengitter auf) Erneut ist das ein Widerspruch zur Wahl von $w_2$. Also kann nirgendwo in $Z$ ein anderer Basisvektor liegen.
 \end{proof}
