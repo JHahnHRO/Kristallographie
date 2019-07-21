@@ -138,7 +138,7 @@ Wir sagen $\Lambda,\Lambda'$ sind im selben \udot{Gittersystem}, wenn die Punktg
 \end{definition}
 
 \begin{remark}
-Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(T)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind, d.h. wir vergessen hierbei das Motiv der Kristalle.
+Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(\Lambda)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind, d.h. wir vergessen hierbei das Motiv der Kristalle.
 \end{remark}
 
 \subsubsection{Klassifikation der dreidimensionalen Kristallsysteme}
@@ -208,17 +208,17 @@ Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_dia
 (trigonal) edge (kubisch)
 (trigonal) edge (hexagonal);
 \end{tikzpicture}
-\label{kristalle:hasse_diagramm_kristallsysteme}
 \caption{Hasse-Diagramm der sieben dreidimensionalen Kristallsysteme}
+\label{kristalle:hasse_diagramm_kristallsysteme}
 \end{figure}
 
 \begin{remark}
-Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht alle Punktgruppen und zweitens eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine andere dieser Gruppen als $\Aut(T)_0$ vorkommen kann.
+Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht alle kristallographische Punktgruppen und zweitens eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine andere dieser Gruppen als $\Aut(T)_0$ vorkommen kann.
 
 Das werden wir in zwei Schritten tun: Mit Hilfe der sogenannten \enquote{kristallographischen Restriktion} werden wir von unendlich vielen auf elf Fälle reduzieren. Im zweiten Schritt werden wir mit einer genaueren Analyse den übrigen elf noch einmal vier ausschließen.
 \end{remark}
 
-\begin{theorem}[Geometrische Einschränkungen]\label{kristalle:kristallographische_einschraenkung}
+\begin{theorem}[Kristallographische Einschränkung]\label{kristalle:kristallographische_einschraenkung}
 Sei $\Lambda\subseteq\IR^n$ ein Kristall und $g\in\Aut(\Lambda)$ eine Drehung oder Schraubung um den Winkel $\alpha$.
 \begin{enumerate}
 \item Die einzigen möglichen Winkel sind $\SI{180}{\degree}=\frac{2\pi}{2}, \SI{120}{\degree}= \frac{2\pi}{3}, \SI{90}{\degree}=\frac{2\pi}{4}$, $\SI{60}{\degree}=\frac{2\pi}{6}$ oder $\alpha=0$.
