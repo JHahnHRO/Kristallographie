@@ -33,7 +33,7 @@ das \udot{Translationsgitter} des Kristalls.
 \begin{remark}
 Weil die Punkte in $\Lambda$ einen Mindestabstand haben, haben die Elemente des Translationsgitters denselben (vielleicht sogar einen größeren) Mindestabstand. Man kann daraus folgern (wir werden es aber nicht tun), dass $Trans(\Lambda)$ unabhängige Vektoren $v_1,v_2,v_3$ enthält, sodass
 \[Trans(\Lambda) = \IZ v_1+\IZ v_2+\IZ v_3\]
-gilt. Dies können, müssen aber nicht, die drei Vektoren aus der Definition sein.
+gilt. Dies ist eine sogenannte \udot{Gitterbasis}. Dies können, müssen aber nicht, die drei Vektoren aus der Definition sein.
 \end{remark}
 
 \begin{definition}[Basiszellen und Motive]
@@ -47,13 +47,13 @@ Eine Basiszelle, die das kleinstmöglichen Volumen hat, heißt \udot{elementare 
 \begin{remark}
 $Z$ heißt \emph{Basis}zelle, weil die Kantenvektoren $v_1,v_2,v_3$ eine Vektorraumbasis von $\IR^3$ bilden, da sie linear unabhängig sind.
 
-\textsc{Achtung}: Sie müssen keine Gitterbasis von $Trans(\Lambda)$ bilden, d.h. wir können nicht zwangsläufig jeden Gittervektor als ganzzahlige Linearkombination von $v_1,v_2,v_3$ erzeugen. Z.B. könnten wir im kubischen Gitter $\IZ^3$ ja die Vektoren $2e_1,3e_2,5e_3$ betrachten. Sie sind linear unabhängig, aber kein Erzeugendensystem von $\IZ^3$, weil z.B. $e_1+e_2+e_3$ nicht als ganzzahlige Linearkombination von $2e_1, 3e_2$ und $5e_3$ darstellbar ist.
+\textsc{Achtung}: Sie müssen keine Gitterbasis von $Trans(\Lambda)$ bilden, d.h. wir können nicht zwangsläufig jeden Gittervektor als \emph{ganzzahlige} Linearkombination von $v_1,v_2,v_3$ erzeugen. Z.B. könnten wir im kubischen Gitter $\IZ^3$ ja die Vektoren $2e_1,3e_2,5e_3$ betrachten. Sie sind linear unabhängig, aber kein Erzeugendensystem von $\IZ^3$, weil z.B. $e_1+e_2+e_3$ nicht als ganzzahlige Linearkombination von $2e_1, 3e_2$ und $5e_3$ darstellbar ist.
 \end{remark}
 
 \begin{remark}
 Man kann zeigen: Die Vektoren $v_1,v_2,v_3$ bilden eine Gitterbasis von $Trans(\Lambda)$ dann und nur dann, wenn die Basiszelle elementar ist.
 
-Alle elementaren Basiszellen haben das gleiche Volumen. Das Volumen einer Basiszelle steht im Zusammenhang damit, wie viele Vektoren noch in der Basiszelle enthalten sind außer den Eckpunkten.
+Alle elementaren Basiszellen haben das gleiche Volumen. Das Volumen einer Basiszelle steht im Zusammenhang damit, wie viele Gittervektoren noch in der Basiszelle enthalten sind außer den Eckpunkten.
 \end{remark}
 
 \begin{remark}[Von Basiszellen zurück zu Kristallen]
@@ -78,3 +78,13 @@ Nach Wahl ist $\norm{w_2}\geq\norm{w_1}$. Wir betrachten die Zelle $Z:=\Set{\lam
 
 Wir betrachten den Kreis um den Nullpunkt, der durch $w_2$ geht, also Radius $\norm{w_2}$ hat. Beachte, dass $w_1$ drin liegt in diesem Kreis, weil $\norm{w_1}\leq \norm{w_2}$. Im Inneren dieses Kreises liegen keine nichtoffensichtlichen Gittervektoren, denn diese hätten ja Länge $<\norm{w_2}$ im Gegensatz zur Wahl von $w_2$ als Gittervektor kürzester Länge. Wenn auf oder außerhalb des Kreises nun noch Gittervektoren außer $w_2$ lägen, dann wäre aber der Differenzvektor zum Eckpunkt $w_1+w_2$ kürzer. (Man beachte, dass $w_1+w_2$ selbst auf dem Kreis liegen könnte; das tritt im Honigwabengitter auf) Erneut ist das ein Widerspruch zur Wahl von $w_2$. Also kann nirgendwo in $Z$ ein anderer Basisvektor liegen.
 \end{proof}
+
+\begin{remark}
+Dies ist eine besondere Eigenschaft kleiner Dimensionen, die i.A. nicht gilt. Ein Gegenbeispiel ist das vierdimensionale Gitter
+\[\Set{\begin{psmallmatrix}x_1\\x_2\\x_3\\x_4\end{psmallmatrix}\in\IR^4 | x_1,x_2,x_3,x_4\in \tfrac{1}{2}\IZ \wedge 2x_1\equiv 2x_2\equiv 2x_3\equiv 2x_4 \mod 2}\]
+Die kürzesten Vektoren haben die Länge 1, aber die vier Vektoren
+\[\begin{pmatrix}1\\0\\0\\0\end{pmatrix}, \begin{pmatrix}0\\1\\0\\0\end{pmatrix}, \begin{pmatrix}0\\0\\1\\0\end{pmatrix}, \begin{pmatrix}0\\0\\0\\1\end{pmatrix}\]
+der Länge 1 sind keine Gitterbasis. Die Menge
+\[\begin{pmatrix}1\\0\\0\\0\end{pmatrix}, \begin{pmatrix}0\\1\\0\\0\end{pmatrix}, \begin{pmatrix}0\\0\\1\\0\end{pmatrix}, \begin{pmatrix}\tfrac{1}{2}\\\tfrac{1}{2}\\\tfrac{1}{2}\\\tfrac{1}{2}\end{pmatrix}\]
+hingegen ist tatsächlich eine Gitterbasis.
+\end{remark}
