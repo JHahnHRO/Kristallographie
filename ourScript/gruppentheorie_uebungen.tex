@@ -282,18 +282,18 @@ Es seien $G,H$ zwei Gruppen. Eine Abbildung $\phi: G\to H$ heißt \udot{Gruppenh
 \[\forall g_1,g_2\in G: \phi(g_1\circ g_2) = \phi(g_1)\circ \phi(g_2)\]
 erfüllt.
 
-Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der die man Gruppenelemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das wenig bis gar nichts mit $G$ zu tun haben muss) auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
+Homomorphismen werden dazu benutzt, um Zusammenhänge zwischen verschiedenen Gruppen mathematisch zu modellieren. Wenn man z.B. in einer Situation ist, in der man die Elemente einer Gruppe $G$ auch als Symmetrien eines Objekts $X$ (das wenig bis gar nichts mit $G$ zu tun haben muss) auffassen kann, dann ist das dieses \enquote{auffassen als} genau durch einen Gruppenhomomorphismus $\phi: G\to\Aut(X)$ gegeben.
 
 Präziser:
 \begin{subproblem}
-$G$ operiere auf einer Menge $\Omega$. Die Abbildungen $\tau_g: \Omega\to\Omega, x\mapsto{^g x}$ sind bijektiv und $\tau: G\to Sym(\Omega), g\mapsto\tau_g$ ist ein Homomorphismus.
+$G$ operiere auf einer Menge $\Omega$. Die Abbildungen $\tau_g: \Omega\to\Omega, x\mapsto{^g x}$ sind bijektiv und $\tau: G\to\Sym(\Omega), g\mapsto\tau_g$ ist ein Homomorphismus.
 
-Umgekehrt: Jeder Homomorphismus $\phi: G\to Sym(\Omega)$ definiert eine Gruppenoperation von $G$ auf $\Omega$ via ${^g x} := \phi(g)(x)$.
+Umgekehrt: Jeder Homomorphismus $\phi: G\to\Sym(\Omega)$ definiert eine Gruppenoperation von $G$ auf $\Omega$ via ${^g x} := \phi(g)(x)$.
 \end{subproblem}
 
 Zur Veranschaulichung betrachte die Würfelgruppe $W$, d.h. die Isometriegruppe des Würfels. Zeige:
 \begin{subproblem}
-$W$ operiert auf der Menge der Ecken, Kanten bzw. Seiten des Würfels. Zeige, dass die drei Homomorphismen $W\to Sym(8)$, $W\to Sym(12)$ bzw. $W\to Sym(6)$ injektiv, aber nicht surjektiv sind und beschreibe auf welche Art von Permutationen sie jeweils die dreizähligen, vierzähligen Drehungen, die Spiegelungen bzw. die Inversion abbilden.
+$W$ operiert auf der Menge der Ecken, Kanten bzw. Seiten des Würfels. Zeige, dass die drei Homomorphismen $W\to S_8$, $W\to S_{12}$ bzw. $W\to S_6$ injektiv, aber nicht surjektiv sind und beschreibe auf welche Art von Permutationen sie jeweils die dreizähligen, vierzähligen Drehungen, die Spiegelungen bzw. die Inversion abbilden. (Gemeint ist: Nummeriere die Ecken / Kanten / Seiten irgendwie mit den Zahlen 1,2,... und betrachte die Permutation dieser Zahlen, die entsteht, wenn man eine Symmetrie des Würfels wirken lässt)
 \end{subproblem}
 \begin{subproblem}
 Betrachte die beiden eingeschriebenen regulären Tetraeder im Würfel:
@@ -352,7 +352,7 @@ $W$ operiert auch auf der Menge der vier Raumdiagonalen
 (0,0,1) -- (1,1,0);
 \end{tikzpicture}
 
-Zeige, dass der dadurch definierte Homomorphismus $W\to Sym(4)$ surjektiv ist. Es gibt genau eine Symmetrie $s\in W$, die nicht die Identität ist, aber trotzdem auf das neutrale Element von $Sym(4)$ abgebildet wird. Welche?
+Zeige, dass der dadurch definierte Homomorphismus $W\to S_4$ surjektiv ist. Es gibt genau eine Symmetrie $s\in W$, die nicht die Identität ist, aber trotzdem auf das neutrale Element von $S_4$ abgebildet wird. Welche?
 \end{subproblem}
 \begin{subproblem}
 Die sechs Seitenmittelpunkte bilden die Ecken eines Oktaeders. Die acht Seitenmittelpunkte eines Oktaeders bilden einen Würfel.
@@ -411,7 +411,7 @@ Daher operiert die Würfelgruppe auch als Symmetriegruppe eines Oktaeders, d.h. 
 
 Es sei nun $T$ die Tetraeder-Gruppe, d.h. die Isometriegruppe des regelmäßigen Tetraeders. 
 \begin{subproblem}
-Zeige: $T$ operiert auf der Menge der vier Eckpunkte des Tetraeders und der dazugehörige (so wie in a. definierte) Gruppenhomomorphismus $T\to Sym(4)$ ist bijektiv.
+Zeige: $T$ operiert auf der Menge der vier Eckpunkte des Tetraeders und der dazugehörige (so wie in a. definierte) Gruppenhomomorphismus $T\to S_4$ ist bijektiv.
 \end{subproblem}
 \begin{subproblem}
 Die Kantenmittelpunkte der sechs Kanten eines regulären Tetraeders bilden einen Oktaeder.
@@ -442,7 +442,7 @@ Dies liefert uns einen Homomorphismus $T\to O$. Zeige, dass dieser injektiv, abe
 \begin{subproblem}[difficulty={mittel bis schwer}]
 Mache dir wie auch für die Würfel- und Oktaedergruppe klar, dass die Ikosaeder- und die Dodekaedergruppe gleich sind.
 
-Finde außerdem einen nichttrivialen Homomorphismus $I\to Sym(5)$. (Hinweis: Im Dodekaeder gibt es fünf einbeschriebene Würfel).
+Finde außerdem einen nichttrivialen Homomorphismus $I\to S_5$. (Hinweis: Im Dodekaeder gibt es fünf einbeschriebene Würfel, die durch die Symmetrien permutiert werden).
 \end{subproblem}
 \end{problem}
 
@@ -488,10 +488,15 @@ Sei $G$ eine Gruppe. Zeige, dass
 zusammen mit der Komposition eine Gruppe ist.
 
 Es sei nun $\kappa_g: G\to G, x\mapsto gxg^{-1}$ der Konjugationsautomorphismus. Zeige, dass gilt:
-\begin{enumerate}
-\item $\kappa: G\to\operatorname{Aut}(G), g\mapsto\kappa_g$ ist ein Gruppenhomomorphismus ist.
-\item Ist $\alpha: G\to G$ ein beliebiger Gruppenautomorphismus, so gilt $\alpha\circ\kappa_g\circ\alpha^{-1} = \kappa_{\alpha(g)}$.
-\end{enumerate}
+\begin{subproblem}
+$\kappa: G\to\operatorname{Aut}(G), g\mapsto\kappa_g$ ist ein Gruppenhomomorphismus.
+\end{subproblem}
+\begin{subproblem}
+Ist $\alpha: G\to G$ ein beliebiger Gruppenautomorphismus, so gilt $\alpha\circ\kappa_g\circ\alpha^{-1} = \kappa_{\alpha(g)}$.
+\end{subproblem}
+\begin{subproblem}
+Finde eine endliche Gruppe $G$ mit $\Aut(G)=\im(\kappa)$ und eine mit $\Aut(G)\neq\im(\kappa)$.
+\end{subproblem}
 \end{problem}
 
 \begin{problem}[title={Cayley-Einbettung; \enquote{Jede Gruppe ist eine Permutationsgruppe}}]
