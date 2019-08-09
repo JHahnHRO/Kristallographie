@@ -95,7 +95,7 @@ Alle Elemente der Gruppe fixieren also $p_1$ und $p_2$. Da mit $p_1$ auch $-p_1$
 \smallbreak
 Fall 3.4.: $r=3$.
 
-O.B.d.A. nehmen wir an, dass $a_1\geq a_2\geq a_3$ ist. Die rechte Gleichung ist dann $\frac{2}{\abs{G}}+1=\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3}$.
+O.B.d.A. nehmen wir an, dass $a_1\geq a_2\geq a_3$ ist. Die rechte Gleichung ist dann $\frac{2}{\abs{G}}+1=\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3}$. Somit muss $\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3} > 1$ sein. Diese Ungleichung hat nur wenige natürliche Lösungen $a_1,a_2,a_3$:
 
 Fall 3.4.1.: $a_1=a_2=a_3=2$. Dann ist $\abs{G}=4$. Da orthogonale Abbildungen linear sind, ist ${^G(-p)} = -(^G p)$, d.h. wenn $B$ eine Bahn ist, ist $-B$ auch eine Bahn. Da es nur drei Bahnen gibt, muss mindestens eine davon $B=-B$ erfüllen, d.h. diese Bahn besteht aus zwei antipodalen Punkten, die von einem Element von $G$ vertauscht werden. OBdA ist das die erste Bahn. Die Gerade $A$ durch $\pm p_1$ ist somit $G$-invariant.
 
@@ -103,19 +103,34 @@ Fall 3.4.2.: $a_1>2$ und $a_2=a_3=2$. Dann ist $\abs{G}=2n$, wobei $n=a_1$. Dann
 
 In 3.4.1 und 3.4.2 finden wir also eine invariante Gerade $A$. Die Elemente des Stabilisators $G_{p_1}$ sind $n$ Drehungen um $A$. Die Elemente, die nicht im Stabilisator liegen, müssen $p_1$ und $-p_1$ vertauschen, sind also 180°-Drehungen um Achsen, die senkrecht zu $A$ sind. Das sind die anderen $n$ Elemente. Wir haben also eine in beiden Fällen eine Diedergruppe gefunden.
 
-Fall 3.4.3: $(a_1,a_2,a_3)=(3,3,2)$. Dann ist $\abs{G}=12$. Die vier Punkte in der ersten bzw. zweiten Bahn bilden jeweils einen regelmäßigen Tetraeder, in dessen Symmetriegruppe $G$ einbettet.
+Fall 3.4.3: $(a_1,a_2,a_3)=(3,3,2)$. Dann ist $\abs{G}=12$, $\abs{B_1}=\frac{\abs{G}}{a_1} = 4$, $\abs{B_2}=4$ und $\abs{B_3}=6$. Die vier Punkte in der ersten bzw. zweiten Bahn bilden jeweils einen regelmäßigen Tetraeder, in dessen Symmetriegruppe $G$ einbettet.
 
-Fall 3.4.4: $(a_1,a_2,a_3)=(4,3,2)$. Dann ist $\abs{G}=24$. Die sechs Punkte in der ersten Bahn bilden die Eckpunkte eines Oktaeders und die acht Punkte in der zweiten Bahn bilden die Eckpunkte eines Würfels, in dessen Symmetriegruppen $G$ jeweils einbettet.
+Fall 3.4.4: $(a_1,a_2,a_3)=(4,3,2)$. Dann ist $\abs{G}=24$, $\abs{B_1}=6, \abs{B_2}=8, \abs{B_3}=12$. Die sechs Punkte in der ersten Bahn bilden die Eckpunkte eines Oktaeders und die acht Punkte in der zweiten Bahn bilden die Eckpunkte eines Würfels, in dessen Symmetriegruppen $G$ jeweils einbettet.
 
-Fall 3.4.5: $(a_1,a_2,a_3)=(5,3,2)$. Dann ist $\abs{G}=60$. Die 12 Punkte der ersten Bahn bilden die Eckpunkte eines Dodekaeders, die 20 Punkte der zweiten Bahn bilden die Eckpunkte eines Ikosaeders, in dessen Symmetriegruppen $G$ jeweils einbettet.
+Fall 3.4.5: $(a_1,a_2,a_3)=(5,3,2)$. Dann ist $\abs{G}=60$, $\abs{B_1}=12, \abs{B_2}=20, \abs{B_3}=30$. Die 12 Punkte der ersten Bahn bilden die Eckpunkte eines regelmäßigen Ikosaeders, die 20 Punkte der zweiten Bahn bilden die Eckpunkte eines regelmäßigen Dodekaeders, in dessen Symmetriegruppen $G$ jeweils einbettet.
+
+\medbreak
+Andere Lösungen der Ungleichungen $\frac{1}{a_1}+\frac{1}{a_2}+\frac{1}{a_3} > 1$ und $a_1\geq a_2\geq a_3>1$ in $\IN$ gibt es nicht:
+
+Wäre $a_3\geq 3$, dann wäre die Summe $\leq\frac{1}{3}+\frac{1}{3}+\frac{1}{3}=1$, also muss $a_3=2$ sein.
+
+Wäre $a_2\geq 4$, dann wäre die Summe $\leq \frac{1}{4}+\frac{1}{4}+\frac{1}{2}=1$. Also muss $a_2\in\set{2,3}$ sein. Die Fälle mit $a_2=2$ haben wir aber vollständig in 3.4.1 und 3.4.2 abgedeckt. Ist $a_2=3$, dann ist $\frac{1}{a_2}+\frac{1}{a_3} = \frac{1}{3}+\frac{1}{2} = \frac{5}{6}$, also muss $a_1<6$ sein. Das sind genau die Fälle 3.4.3 bis 3.4.5.
 \end{proof}
 
 \begin{remark}
 Jede dieser Gruppen kommt als Drehgruppe eines Polyeders vor. Die Diedergruppen sind Drehgruppen von $n$-eckigen, geraden Prismen. Die zyklischen Gruppen sind z.B. die Drehgruppen von $n$-eckigen Pyramiden.
+
+Jede dieser Gruppen kommt auch als volle Symmetriegruppe eines Polyeders vor. Prismen und regelmäßige Pyramiden besitzen Spiegelsymmetrien, aber es gibt Körper, die ausschließlich Drehsymmetrien haben. (Siehe Übungsaufgaben)
+\end{remark}
+
+\begin{remark}
+Wir sehen in den Bahngrößen, die in 3.4.x vorkommen sehr deutlich, dass der Tetraeder selbst dual ist und dass Würfel und Oktaeder bzw. Ikosaeder und Dodekaeder zueinander duale Polyeder sind: Wenn wir $B_1$ als Eckenmenge des Polyeders wählen, dann ist $B_2$ die Menge der Flächenmittelpunkte und umgekehrt. In allen Fällen ist $B_3$ die Menge der Kantenmittelpunkte des Polyeders.
+
+(Andrea und Johannes haben auch einen Polyeder mitgebracht, dessen Drehgruppe die Würfelgruppe ist, der jedoch 12 Flächen besitzt!)
 \end{remark}
 
 \begin{remark}
 \emph{Nicht} jede dieser Gruppen kommt auch in den Symmetrien eines dreidimensionalen Kristalls vor, z.B. gibt es keine dreidimensionalen Kristalle mit Ikosaeder/Dodekaeder-Symmetrie und keine, die Drehungen der Ordnung 5 oder $\geq 7$ enthalten. Nur Drehungen der Ordnung 2,3,4 und 6 treten in Kristallen auf. Wir werden in \ref{kristalle:kristallographische_einschraenkung} noch sehen, wieso.
 
-Es gibt aber durchaus vierdimensionale Kristalle mit Ikosaedersymmetrien und sechsdimensionale Kristalle mit siebenzähligen Drehsymmetrien etc.
+Es gibt aber durchaus vierdimensionale Kristalle mit Ikosaedersymmetrien und sechsdimensionale Kristalle mit siebenzähligen Drehsymmetrien, siebendimensionale Kristalle mit 15-zähligen Drehsymmetrien etc.
 \end{remark}
