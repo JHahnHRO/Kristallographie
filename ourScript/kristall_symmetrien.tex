@@ -90,30 +90,10 @@ Alle $R_g$ sind orthogonal. Insbesondere fixieren sie alle den Nullvektor. Also 
 \end{proof}
 
 \begin{remark}
-Sofern die Übungsaufgaben zu Normalteilern und Quotienten bearbeitet wurden: Die Translationsuntergruppe $\mathcal{T}\leq\Aut(\lambda)$ ist ein Normalteiler (da -- wie eben bewiesen -- konjugieren mit beliebigen $g\in G$ aus Translationen wieder Translationen macht). Es ist also wohldefiniert, von der Quotientengruppe $\Aut(\Lambda) / \mathcal{T}$ zu sprechen.
+Sofern die Übungsaufgaben zu Normalteilern und Quotienten bearbeitet wurden: Die Translationsuntergruppe $\mathcal{T}\leq\Aut(\Lambda)$ ist ein Normalteiler (da -- wie eben bewiesen -- konjugieren mit beliebigen $g\in G$ aus Translationen wieder Translationen macht). Es ist also wohldefiniert, von der Quotientengruppe $\Aut(\Lambda) / \mathcal{T}$ zu sprechen.
 
 Die Punktgruppe $\Set{R_g | g\in G}$ ist kanonisch isomorph zu diesem Quotienten, indem wir $R_g$ und $g\mathcal{T}$ identifizieren.
 \end{remark}
-
-\begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
-Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}=\Aut(\Lambda)/\mathcal{T}$ geometrisch zu interpretieren ist folgende:
-
-Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse, simple Computerspiele vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder rein ins \enquote{Spielfeld} usw.
-
-\medbreak
-$g$ kann nun auch aufgefasst werden als eine Bewegung $T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist ${^g x}$ derjenige Punkt, der wie folgt entsteht:
-\begin{enumerate}
-\item Zunächst fassen wir $x\in T$ als Punkt $\hat{x}\in Z$ auf.
-\item Dann wenden wir $g$ auf diesen Punkt an.
-\item Das Ergebnis $g(\hat{x})$ liegt in irgendeiner Zelle $Z'$, die eine translatierte Kopie $Z'=\tau(Z)$ der Basiszelle ist (möglicherweise mit einer Verschiebung um $0$, d.h. $\tau=\id$). Wir machen die Translation $\tau$ rückgängig und erhalten wieder einen Punkt in $\hat{y}=\tau^{-1}(g(\hat{x}))\in Z$.
-\item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y={^g x}$.
-\end{enumerate}
-
-Man beachte, dass diese Symmetrien ${^g}: T\to T$ nicht analog zu den Symmetrien $R_g: Trans(\Lambda)\to Trans(\Lambda)$ sein müssen. Ist etwa $g$ eine Schraubung oder eine Drehung, so ist $R_g: Trans(\Lambda) \to Trans(\Lambda)$ in beiden Fällen eine Drehung. Hingegen operieren Schraubungen und Drehungen nicht unbedingt identisch auf dem 3-Torus.
-
-Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf eine Weise als Symmetriegruppe auftreten kann. Dieselbe Gruppe (hier $\Aut(\Lambda) /\mathcal{T}$) kann auf verschiedenen Objekten (hier etwa: Dem Translationsgitter und dem 3-Torus) auf völlig verschiedene Arten operieren.
-\end{remark}
-
 
 \begin{definition}[Kristallklassen]
 Wir sagen, dass zwei Kristalle $\Lambda,\Lambda'\subseteq\IR^n$ in derselben \udot{Kristallklasse} sind, wenn die beiden Punktgruppen
@@ -122,6 +102,45 @@ und
 \[\Set{R_g | g\in\Aut(\Lambda')} \leq \Aut(Trans(\Lambda'))_0 \]
 in $O(\IR^n)$ konjugiert sind.
 \end{definition}
+
+\begin{remark}[Geometrische Interpretation -- Operation auf dem 3-Torus]
+Wir wählen uns eine elementare Basiszelle $Z$ des Kristalls $\Lambda$. Eine Möglichkeit, die Punktgruppe $\Set{R_g | g\in G}=\Aut(\Lambda)/\mathcal{T}$ geometrisch zu interpretieren ist folgende:
+
+Wenn wir in $Z$ die obere mit der unteren, die rechte mit der linken und die vordere mit der hinteren Seitenfläche verkleben, erhalten wir einen sogenannten 3-Torus $T$. Man stelle sich das wie gewisse, simple Computerspiele (z.B. Snake) vor: Wenn man am rechten Rand hinausläuft, kommt man sofort am linken Rand wieder hinein ins \enquote{Spielfeld} usw. (Im Gegensatz zur Veranschaulichung des 2-Torus als Donuts / Schwimmreifens / Kaffeetasse / ... ist diese Konstruktion des 2- bzw. 3-Torus jedoch ohne Krümmung, weil wir abstandserhaltend arbeiten wollen)
+
+\medbreak
+$g\in\Aut(\Lambda)$ kann nun auch aufgefasst werden als eine Symmetrie $S_g: T\to T$, nämlich die folgende: Für einen Input-Punkt $x\in T$ ist $S_g(x)$ derjenige Punkt, der wie folgt entsteht:
+\begin{enumerate}
+\item Zunächst fassen wir $x\in T$ als Punkt $\hat{x}\in Z$ auf.
+\item Dann wenden wir $g$ auf diesen Punkt an.
+\item Das Ergebnis $g(\hat{x})$ liegt in irgendeiner Zelle $Z'$, die eine translatierte Kopie $Z'=\tau(Z)$ der Basiszelle ist (möglicherweise mit einer Verschiebung um $0$, d.h. $\tau=\id$). Wir machen die Translation $\tau$ rückgängig und erhalten wieder einen Punkt in $\hat{y}=\tau^{-1}(g(\hat{x}))\in Z$.
+\item Diesen fassen wir wieder als Punkt $y\in T$ im 3-Torus auf. Das ist dann unser Output-Punkt: $y=:S_g(x)$.
+\end{enumerate}
+
+Man beachte, dass diese Symmetrien $S_g: T\to T$ nicht analog zu den Symmetrien $R_g: Trans(\Lambda)\to Trans(\Lambda)$ sein müssen. Insbesondere haben sie noch nicht die Eigenschaft, die wir haben wollen, dass translatorische Anteile ignoriert werden. Ist etwa $g$ eine Schraubung oder eine Drehung, so ist $R_g: Trans(\Lambda) \to Trans(\Lambda)$ in beiden Fällen eine Drehung. Hingegen operieren Schraubungen und Drehungen nicht unbedingt identisch auf dem 3-Torus.
+
+Dies ist also ein weiteres Beispiel dafür, dass dieselbe Gruppe nicht nur auf eine Weise als Symmetriegruppe auftreten kann. Dieselbe Gruppe (hier $\Aut(\Lambda) /\mathcal{T}$) kann auf verschiedenen Objekten (hier etwa: Dem Translationsgitter und dem 3-Torus) auf völlig verschiedene Arten operieren.
+
+\medbreak
+Was bedeutet das für uns? Das heißt, dass wir unser Ziel, Translationsanteile vollkommen zu ignorieren, noch nicht erreicht haben mit dieser Konstruktion. Nach Konstruktion wirken zwar alle Translationen $\tau_w$ mit $w\in Trans(\Lambda)$ trivial auf $T$, aber Schraubungen und Gleitspiegelungen können Translationsanteile enthalten, die selber nicht in $Trans(\Lambda)$ liegen. Das ist etwa der Grund, wieso wir in $T$ immer noch einen Unterschied zwischen Drehungen und Schraubungen sehen können.
+
+Ein Ausweg daraus liefert folgende Beobachtung: Das Motiv $M$ definiert uns eine \emph{endliche} Punktmenge in $T$, die die Eigenschaft
+\[\forall g\in\Aut(\Lambda): S_g(M) = M\]
+hat. Wir können $\set{S_g | g\in\Aut(\Lambda)}$ also mit einer Untergruppe der Permutationsgruppe $\Sym(M)$ identifizieren. Insbesondere handelt es sich also um eine \emph{endliche} Gruppe.
+
+Ist $n$ die Ordnung dieser Gruppe, so schlussfolgern wir aus dem Satz von Lagrange, dass die Elementordnung $ord(S_g)$ stets ein Teiler von $n$ sein muss. Insbesondere gilt also $S_{g^n} = S_g^n = \id_T$.
+
+Die einzigen Symmetrien des Kristalls, die auf dem Torus wie die Identität wirken, sind aber die Translationen. Es muss mit anderen Worten einen Translationsvektor $w\in Trans(\Lambda)$ geben, sodass $g^n = \tau_w$ ist. Wenn nun $g$ eine Schraubung oder Gleitspiegelung mit Verschiebungsvektor $v$ ist, dann ist $g(x)=Q(x)+v$ und $Q(v)=v$. Somit ist
+\[\forall x: x+w=\tau_w(x)=g^n(x) = Q^n(x)+nv\]
+Wir folgern $w=nv$, d.h. $v=\frac{1}{n}w\in \frac{1}{n}Trans(\Lambda)$.
+
+In Worten: Die vorkommenden Verschiebungsvektoren sind nicht beliebig: Es muss sich genau um das $\frac{1}{n}$-fache eines Gittervektors handeln.
+
+\medbreak
+Was bedeutet das geometrisch? Wenn wir nicht die Basiszelle $Z$, sondern die parallele Zelle $\tilde{Z}:=\frac{1}{n}Z$ mit gleichem Basispunkt, gleichen Kantenrichtungen, aber $\frac{1}{n}$-fachen Kantenlängen (und somit Volumen $\frac{1}{n}^3\cdot\operatorname{vol}(Z)$) betrachten, dann haben wir einen 3-Torus $\tilde{T}$ (mit kleinerem Volumen!) gefunden, der nun folgende Eigenschaft hat: Genauso wie alle Translationen mit Verschiebungsvektor $w\in Trans(\Lambda)$ trivial auf $T$ operieren, operieren nun auch alle Translationen mit Verschiebungsvektor $v\in\frac{1}{n}Trans(\Lambda)$ trivial auf $\tilde{T}$.
+
+Insbesondere bedeutet das, dass von $g(x)=Q(x)+v$ nur der $Q$-Anteil übrig bleibt, weil $v\in\frac{1}{n}Trans(\Lambda)$ ist. Damit haben wir nun endlich (nach deutlich mehr Aufwand) auch in dieser geometrischen Sichtweise den gleichen Effekt erzielt wie zuvor: Die Symmetrien $\tilde{S}_g: \tilde{T}\to\tilde{T}$ unterscheiden nicht mehr zwischen Drehungen und Schraubungen, Spiegelungen und Gleitspiegelungen etc.
+\end{remark}
 
 \begin{remark}
 Es gibt immer endlich viele, aber möglicherweise sehr viele Kristallklassen in einer Dimension. Im dreidimensionalen Raum gibt es z.B. 32 Kristallklassen. Und trotzdem sehen Kristalle in verschiedene Kristallklassen manchmal sehr ähnlich aus.
@@ -136,7 +155,7 @@ Wir sagen $\Lambda,\Lambda'$ sind im selben \udot{Gittersystem}, wenn die Punktg
 \end{definition}
 
 \begin{remark}
-Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(\Lambda)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind, d.h. wir vergessen hierbei das Motiv der Kristalle.
+Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(\Lambda)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind. Der Grund ist, dass wir hierbei das Motiv der Kristalle vergessen. Nicht jedes Element von $\Aut(T)_0$ muss das Motiv stabilisieren.
 \end{remark}
 
 \subsubsection{Klassifikation der dreidimensionalen Gittersysteme}
@@ -172,7 +191,7 @@ Jeder tetragonale Kristall besitzt eine Basiszelle mit drei rechten Winkeln, in 
 
 Jeder hexagonal Kristall besitzt eine Basiszelle, in der die Winkel $\SI{90}{\degree}$, $\SI{90}{\degree}$ und $\SI{120}{\degree}$ sind, eine Basisrichtung eine sechszählige Symmetriachse ist und die anderen beiden zweizählige Symmetrieachsen.
 
-\item \udot{Kubisch}: ... der Inversion, einer 3- und einer 4-zähligen Drehung.
+\item \udot{Kubisch}: ... der Inversion, einer 3- und einer 4-zähligen Drehung (alternativ: zwei 4-zähligen Drehungen um zueinander senkrechte Achsen).
 
 Jeder kubische Kristall besitzt eine würfelförmige Basiszelle, in der durch alle drei Basisrichtungen vierzählige Symmetrieachsen laufen und durch alle vier Raumdiagonalen jeweils dreizählige Symmetrieachsen.
 \end{enumerate}
@@ -302,7 +321,7 @@ Der hier vorgestellte Beweis verallgemeinert sich nicht auf höhere Dimensionen.
 \begin{remark}
 Wenn wir linear unabhängige Vektoren $v_1,v_2,v_3\in Trans(\Lambda)$ gefunden haben, z.B. mit Hilfe der obigen Konstruktion, dann ist $T_0:=\IZ v_1+\IZ v_2+\IZ v_3 \leq Trans(\Lambda)$ ein Untergitter, das ggf. weniger Gittervektoren enthält und eine größere Basiszelle hat. Die so konstruierte Basiszelle ist vielleicht größer als sie sein müsste (sie ist also keine \emph{elementare} Basiszelle), kann aber den Vorteil haben, geometrisch einfacher zu sein als eine elementare Basiszelle, z.B. ist in der Situation des obigen Satzes $v_2$ und $v_3$ senkrecht auf $v_1$, d.h. die Basiszelle mit den Kanten $v_1,v_2,v_3$ ist ein rechtwinkliges Prisma mit einem Parallelogramm als Grundfläche (das auch ein Rechteck oder ein Quadrat sein kann) Es muss keine Gitterbasis von $Trans(\Lambda)$ geben, die diese Eigenschaft besitzt.
 
-Wenn wir diese Konstruktion jeweils auf diejenige Drehung mit der höchsten Ordnung anwenden, dann erhalten wir die Basiszellen aus dem Klassifikationssatz.
+Wenn wir diese Konstruktion jeweils auf diejenige Drehung mit der höchsten vorkommenden Ordnung anwenden, dann erhalten wir die Basiszellen aus dem Klassifikationssatz.
 \end{remark}
 
 \begin{proof}[Beweis der Klassifikation der Gittersysteme]
@@ -344,3 +363,13 @@ Sie ist offenbar unter Inversion und Anwendung der Rotation $g$ invariant und er
 
 Die Tetraedergruppe enthält eine 3-zählige Drehung, aber keine Diedergruppe, wird also damit auch ausgeschlossen.
 \end{proof}
+
+\begin{remark}
+Wir könnten aus diesem Resultat mit etwas Fleißarbeit auch herausfinden, dass es genau 32 Punktgruppen im dreidimensionalen Raum gibt. Wir haben nämlich gezeigt, dass die Gruppe $\Aut(T)_0 = \set{\pm g | g\in D}$ ist, wobei $D$ eine der sieben Drehgruppen aus dem Beweis ist. Wir wissen, dass die kristallographischen Punktgruppen $\Set{R_g | g\in\Aut(\Lambda)}$ stets Untergruppen von $\Aut(Trans(\Lambda))_0$ sind. Indem wir also sämtliche Untergruppen von $\pm D$ finden und identifizieren, welche davon zueinander konjugiert sind, können wir auch eine vollständige Liste von möglichen Punktgruppen angeben.
+
+Streng genommen müssten wir uns auch überzeugen, dass jede Untergruppe tatsächlich als Punktgruppe eines Kristalls vorkommt, aber man kann sich sehr leicht ein allgemeines Vorgehen überlegen, wie man aus einer gegebenen Untergruppe $U\leq\Aut(T)_0$ und einer elementaren Basiszelle $Z$ von $T$, ein Motiv $M_U\subseteq Z$ konstruiert, sodass der aus $Z$ und $M_U$ erzeugte Kristall exakt die Punktgruppe $U$ besitzt.
+\end{remark}
+
+\begin{remark}
+Der Schritt von Punkt- zu Raumgruppen ist hingegen deutlich anspruchsvoller (soweit Andrea und Johannes wissen, vielleicht gibt es ja einen Trick). Es gibt ein Verfahren, aber es erfordert sehr viel, sehr technisches und tiefgehendes mathematisches Vorwissen. Während man die Punktgruppen mit unserem jetzigen Wissen durchaus an einem langen Nachmittag auflisten könnte, indem man systematisch Untergruppen bildet, bräuchte man alleine für das Verfahren, das Johannes vorschwebt, einen eigenen Sommerakademie-Kurs und für die Durchführung dessen wahrscheinlich mehrere Tage.
+\end{remark}
