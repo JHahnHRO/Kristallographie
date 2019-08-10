@@ -158,6 +158,18 @@ Wir sagen $\Lambda,\Lambda'$ sind im selben \udot{Gittersystem}, wenn die Punktg
 Man beachte, dass nach Konstruktion $\set{R_g | g\in \Aut(\Lambda)} \leq \Aut(T)_0$ ist, aber es muss keine Gleichheit bestehen, d.h. es könnte Symmetrien des Translationsgitters geben, die nicht Symmetrien des Kristalls sind. Der Grund ist, dass wir hierbei das Motiv der Kristalle vergessen. Nicht jedes Element von $\Aut(T)_0$ muss das Motiv stabilisieren.
 \end{remark}
 
+\begin{remark}[Kristallsysteme vs. Gittersysteme]
+\textsc{Achtung}: Kristallographen benutzen auch das (leider ziemlich schwammig definierte) Wort \enquote{Kristallsystem}, das zusätzlich zu den Symmetrieeigenschaften des Translationsgitters noch die Eigenschaften des Motivs berücksichtigt. Im dreidimensionalen (aber nicht in höheren Dimensionen!) kann man folgende ad-hoc Definition verwenden:
+
+Es seien $G_1,\ldots,G_7\leq O_3(\IR^n)$ die sieben Punktgruppen der sieben Gittersysteme. Ein Kristall $\Lambda\subseteq\IR^3$ gehört zum Kristallsystem $i$, wenn die Punktgruppe von $\Lambda$ in $G_i$ enthalten ist, aber in keinem echt kleineren $G_j$.
+
+\medbreak
+Es gibt somit auch sieben Kristallsysteme und sie werden mit den gleichen sieben Worten wie die Gittersysteme bezeichnet.
+
+\medbreak
+Kristallsysteme und Gittersysteme sind jedoch nicht das gleiche Konzept! Das Kristallsystem von $\Lambda$ ist \enquote{kleinergleich} (im Sinne des Hasse-Diagramms in Abbildung \ref{kristalle:hasse_diagramm_Gittersysteme}) dem Gittersystem von $\Lambda$, aber i.A. nicht gleich. Derselbe Kristall kann im Extremfall zum triklinen Kristallsystem, aber zum kubischen Gittersystem gehören!
+\end{remark}
+
 \subsubsection{Klassifikation der dreidimensionalen Gittersysteme}
 
 \begin{remark}
@@ -239,7 +251,7 @@ Diese Gruppen sind ineinander enthalten wie in Diagramm \ref{kristalle:hasse_dia
 \end{figure}
 
 \begin{remark}
-Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht alle kristallographischen Punktgruppen und zweitens eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine anderen Gruppen als $\Aut(T)_0$ vorkommen kann.
+Wir kennen bereits diverse endliche Untergruppen von $O(\IR^3)$ aus \ref{gruppen:klassifikation_drehgruppen_in_3D}. Dies sind erstens nicht nur kristallographische Punktgruppen, zweitens sind diejenigen, die kristallographisch sind, keine vollständige Liste aller kristallographischen Punktgruppen, und drittens ist es eine unendliche Liste von Gruppen. Das ist schon einmal schlecht, weil in dem obigen Satz ja nur sieben Gruppen vorkommen. Wir müssen uns also überlegen, wie wir zeigen, dass bis auf diese sieben keine anderen Gruppen als $\Aut(T)_0$ vorkommen kann.
 
 Das werden wir in zwei Schritten tun: Mit Hilfe der sogenannten \enquote{kristallographischen Restriktion} werden wir von unendlich vielen auf elf Fälle reduzieren. Im zweiten Schritt werden wir mit einer genaueren Analyse von den übrigen elf noch einmal vier ausschließen.
 \end{remark}
@@ -304,7 +316,7 @@ Kehren wir zurück zu $v=\begin{psmallmatrix}x\\0\\z\end{psmallmatrix}$ und $v_2
 \end{proof}
 
 \begin{remark}
-Das schließt also insbesondere auch aus, dass es Kristalle mit Dodekaeder-Symmetrien gibt, denn ansonsten müsste es Drehungen der Ordnung 5 im Translationsgitter geben.
+Das schließt also insbesondere auch aus, dass es dreidimensionale Kristalle mit Dodekaeder-Symmetrien gibt, denn ansonsten müsste es Drehungen der Ordnung 5 im Translationsgitter geben.
 
 Mehr Einschränkungen gibt es jedoch nicht mehr, d.h. jede der endlichen Drehgruppen, die ausschließlich 2-, 3-, 4- oder 6-zählige Symmetrien hat, kommt tatsächlich in der Symmetriegruppe eines dreidimensionalen Kristalls vor.
 
@@ -371,5 +383,5 @@ Streng genommen müssten wir uns auch überzeugen, dass jede Untergruppe tatsäc
 \end{remark}
 
 \begin{remark}
-Der Schritt von Punkt- zu Raumgruppen ist hingegen deutlich anspruchsvoller (soweit Andrea und Johannes wissen, vielleicht gibt es ja einen Trick). Es gibt ein Verfahren, aber es erfordert sehr viel, sehr technisches und tiefgehendes mathematisches Vorwissen. Während man die Punktgruppen mit unserem jetzigen Wissen durchaus an einem langen Nachmittag auflisten könnte, indem man systematisch Untergruppen bildet, bräuchte man alleine für das Verfahren, das Johannes vorschwebt, einen eigenen Sommerakademie-Kurs und für die Durchführung dessen wahrscheinlich mehrere Tage.
+Der Schritt von Punkt- zu Raumgruppen ist hingegen deutlich anspruchsvoller (zumindest soweit Andrea und Johannes es wissen; vielleicht gibt es ja einen Trick). Es gibt ein Verfahren, aber dieses erfordert sehr viel, sehr technisches und durchaus tiefgehendes mathematisches Vorwissen. Während man die Punktgruppen mit unserem jetzigen Wissen durchaus an einem langen Nachmittag auflisten könnte, indem man systematisch Untergruppen bildet, bräuchte man alleine für das Verfahren, das Johannes vorschwebt, einen eigenen Sommerakademie-Kurs und für die Durchführung dessen wahrscheinlich mehrere Tage.
 \end{remark}
